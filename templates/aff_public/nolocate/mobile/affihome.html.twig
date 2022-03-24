@@ -1,0 +1,29 @@
+{% block body %}
+<main class="affimb">
+    <div class="_ext-p shtf marg-minus150">
+        <geo-locate prefix=""></geo-locate>
+        <div class="locate">Localisez-vous !</div>
+        <div class="container-text-info">
+            <div class="text-info">
+                <div class="info-af">
+                    <a href="" class="a-info">Affichez</a>
+                    <span class="text-diveder"> | </span>
+                    <span class="a-info">Echangez</span>
+                </div>
+            </div>
+        </div>
+    </div>
+        <x-locate city="" lclass="cargo"></x-locate>
+</main>
+{%  endblock body %}
+{% use "js/js_public.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        document.querySelector('geo-locate').addEventListener('click', function (){
+            this.setAttribute('prefix', 'search')
+        })
+    </script>
+{% endblock %}
+
+

@@ -1,0 +1,32 @@
+
+      {#  {{ include('aff_website/pop/bullator-point.html.twig') }}   #}
+        {{ include('aff_website/post/view/modale_post.html.twig') }}
+        <div class="_wb-module-first">
+            <div class="ol-2 tglaff"  id="tgl_9" style="display: none">
+                {% if dispatch is null %}
+                    {{ include('aff_messagery/board/form/form_contact_post.html.twig') }}
+                {%  else %}
+                    <div id="adcomment">
+                        <add-comment slug="{{ website.slug }}" id="{{ post.id }}" module="_blog"></add-comment>
+                    </div>
+                {%  endif %}
+            </div>
+        </div>
+
+        {% if content is not same as ("") %}
+            <div class="_post_content">
+                <div class="article_content">
+                    {{ content|raw }}
+                </div>
+            </div>
+        {% endif %}
+
+
+
+
+
+
+
+
+
+

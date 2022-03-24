@@ -1,0 +1,46 @@
+{% extends 'backoffice.html.twig' %}
+{% use('aff_master/contents/no-talk.html.twig') %}
+{%  block content %}
+<div class="bord-flex-chg-bkoff ii-comd">
+    <div class="act-mem">
+        {% for message in app.flashes('notice') %}
+            <div class="_fx-Tflhs">
+                <div class="comd-flhs">
+                    <h5>attention !</h5>
+                    <div class="_rlm-a">
+                        <div class="msg-flhs">{{ message }}.</div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        {% if  website.module.contactation.linkone is defined %}
+            <div class="_abs-tcht-wb-bo" id="tcht_wb">
+                {% if website.module.contactation  %}
+                    <div class="_co-B"><i class="far fa-comment"></i>
+                        <a href="{{ website.module.contactation.linkone }}" class="nb_msg">
+                            <div class="nbmsg">{{  msgs|length }}</div>
+                        </a>
+                    </div>
+                {% else %}
+                    <a href="{{ website.module.contactation.linkone }}" class="_co-B"><i class="far fa-comment"></i></a>
+                {% endif %}
+            </div>
+        {% endif %}
+        {{ include('aff_master/contents/cube-msgs.html.twig') }}
+    </div>
+</div>
+
+<section class="vaiss-lib">
+    <div class="_pg-act">
+        <div class="fx-cub ii_cub">
+            {{ include('aff_master/contents/actionmember.html.twig') }}
+            {{ include('aff_master/contents/cube-post.html.twig') }}
+            {{ include('aff_master/contents/cube-infoweb.html.twig') }}
+            {{ include('aff_master/contents/cube-annonce.html.twig') }}
+            {{ include('aff_master/contents/cube-lrg.html.twig') }}
+            {{ include('aff_master/contents/cube-text.html.twig') }}
+            {{ include('aff_master/contents/cube-link.html.twig') }}
+        </div>
+    </div>
+</section>
+{% endblock content %}

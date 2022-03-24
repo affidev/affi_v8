@@ -1,0 +1,28 @@
+{# zone-header-mob.html.twig #}
+ {% if  website.template.background %}
+    <div class="website-sh_mob" style="background-image: url('{{ website.template.background.getWebPath }}')"></div>
+{%  else %}
+    <div class="website-sh_mob" style="background-color: #0a53be"></div>
+{%  endif %}
+
+<div class="head-v8_wb_mob">
+    <div class="_pic-website" title="panneau info de {{ board.namewebsite }}">
+        {% if board.template.logo.namefile is defined %}
+            {%  set pict = asset('spaceweb/template/'~board.template.logo.namefile ) %}
+        {%  else %}
+            {%  set pict = asset('img/pinsaffi.png') %}
+        {%  endif %}
+        <div class="web-inf af_flx-nW">
+            <div class="logo-website_mob" style="background-image: url({{ pict }})"></div>
+        </div>
+        <div class="nav_see_mob">
+            {{ include('aff_search/'~agent~'/just-see.website.html.twig',{city:website.locality.slugcity}) }}
+        </div>
+    </div>
+</div>
+
+<div class="panwh">
+    {{ include('svg/'~agent~'/pannewh.html.twig') }}
+</div>
+
+

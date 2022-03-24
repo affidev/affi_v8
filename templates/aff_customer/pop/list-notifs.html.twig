@@ -1,0 +1,10 @@
+<div class="_nav-bell-wb">
+    <div class="abs-compt-pop">
+        <div class="space_tag_loc">
+            {%  if msgsnoread is defined %}
+                <div class="bul-pop" >{{msgsnoread|length}}</div>
+            {% endif %}
+        </div>
+    </div>
+    <a class="ico_be" href="{{path('list_notification_customer') }}"><i class="fa fa-comments-o" aria-hidden="true"></i></a>
+</div>

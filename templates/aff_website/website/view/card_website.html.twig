@@ -1,0 +1,100 @@
+<div class="card-wb">
+    <div class="head-wb flex-fix">
+        {% if  website.template.background is not null %}
+            {% set style = website.template.background.getWebPath %}
+        {%  else %}
+            {% set style = '#0a53be' %}
+        {%  endif %}
+
+        <div class="website-sh desktop mosaic-provider-jobcards" style="background-image: url({{ style}})">
+            <div class="wbsite-inf">
+                <div class="navaffi-bk">
+                    {% if pw %}
+                        {{ include('aff_menu/pop/'~agent~'/logoliteadm.html.twig') }}
+                    {%  else %}
+                        {{ include('aff_menu/pop/'~agent~'/logolite.html.twig') }}
+                    {%  endif %}
+                    <div>
+                        <h1>{{ website.namewebsite }}</h1>
+                        <h2>{{ website.template.description }}</h2>
+                    </div>
+                </div>
+{#
+                <div class="navaffi-bk">
+                        {{ include('aff_website/pop/bullator_wb-point.html.twig') }}
+                </div>
+#}
+            </div>
+            {#
+            {% if pw %}
+            <div class="fx-end-mrg">
+                <a class="nav_bulle_to_go" href="{{ path('ospace',{'city':board.locality.slugcity,'nameboard':board.slug}) }}">
+                    <div class="bul-go_affi_v5 bull-ov _bta-act" id="shwlaff">
+
+                        <div class="">J'Affiche</div>
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            #}
+        </div>
+        {#
+        <div class="zone-command">
+            {{ include('aff_website/pop/followtor.html.twig') }}
+
+            <div class="button-wp">
+                <button class="bulletoggle pop_button" data-affitgl="tgl_2">Ses partenaires
+                    <i class="fa fa-flag"></i>
+                </button>
+            </div>
+
+        </div>
+        #}
+        <div class="map-wb">
+            <div class="wp-info">
+                <div class="af_flx-W fx-c pdbt15 a_centwhite">
+                    <div class="w_titleinfo">
+                        <h2 title="info de {{ website.namewebsite }}">{{ website.template.activities }}</h2>
+
+                        {% if website.template.sector.adresse[0] is defined %}
+                            {%  set adr = website.template.sector.adresse[0] %}
+                            <h5 class="adrrss"> {{ adr.numero }} {{ adr.nomvoie }} {{ adr.codepostal }} {{ adr.nomcommune }} </h5>
+                        {% else %}
+                            <h3 class="adrrss">{{ website.locality.city }}</h3>
+                        {%  endif %}
+                        {%  if website.attached %}
+                            {{ include('aff_website/generies/opencity.html.twig') }}
+                        {%  endif %}
+                    </div>
+
+                    {%  if  website.template.url is defined %}
+                        <button class="pop_button com_a_col">
+                            <i class="fa fa-link"></i>{{ website.template.url }}
+                        </button>
+                    {%  endif %}
+
+                    {%  if  website.template.telephonespaceweb is defined %}
+                        <a class="pop_button com_a_col" href="tel:"~{{ website.template.telephonespaceweb }}">
+                            <i class="fa fa-phone"></i>
+                            <div class="com_a_in">Appellez</div>
+                            {#    <div class="tel">{{ website.template.telephonespaceweb }}</div> #}
+                        </a>
+                    {%  endif %}
+
+                    {% if website.contactation is not null %}
+                        <div class="button-wp">
+                            <button class="bulletoggle pop_button com_a_col" data-tglswitch="tgl_9" data-action="sh">
+                                <i class="fa fa-comment"></i>contactez
+                            </button>
+                        </div>
+                    {% endif %}
+
+                    <a href="{{ path('board', {'slugcity': website.locality.slugcity ,'slug': website.slug }) }}" class="pop_button com_a_col">
+                        <i class="fa fa-star"></i>
+                        <div class="com_a_in">les affiches</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

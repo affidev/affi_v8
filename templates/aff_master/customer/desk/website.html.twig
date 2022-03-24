@@ -1,0 +1,22 @@
+{%  block content %}
+<section class="vaiss-lib">
+    <div class="_pg-act">
+        <div class="fx-cub ii_cub2">
+            {# {{ include('customer/headers/'~agent~'headerCustomer.html.twig') }}
+            {{ include('navigation/'~agent~'navcenterpublic.html.twig') }}
+           {{ include('backoffice/customer/board/'~agent~'boardprofil.html.twig') }}  #}
+            <div> {{ include('aff_master/contents/talkwebsite.html.twig') }}
+                {{ include('aff_master/'~directory~'/view/cube-commande.html.twig') }}
+            </div>
+           <div>
+               {{ include('aff_master/website/view/actionwebsite.html.twig') }}
+               {{ include('aff_master/'~directory~'/view/cube-module.html.twig') }}
+           </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+{% use "js/js_customer.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

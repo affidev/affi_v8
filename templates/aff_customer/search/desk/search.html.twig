@@ -1,0 +1,59 @@
+{% block body %}
+    <div class="showwb_fx_v6">
+        <div class="contact-fixed">
+            <div class="_fx-C cdr-lit-trans" >
+            </div>
+        </div>
+    </div>
+    <div class="fx_wb-c">
+        <!-- module de recherche sur affichange -->
+        <section class="tglaff" id="tgl_0">
+            <div class="fx-content_rep_v6">
+                <x-search name="no" op=""></x-search>
+            </div>
+        </section>
+        <!-- partenaires -->
+
+            <div class="fx-content_rep_v6">
+                <div class="af_flx-C-nW">
+                    <h2>ils affichent ....</h2>
+                    {% for spw in wbsitesuser %}
+                        {%  set  rocket = spw.website %}
+                        <div class="wb_board">
+
+                            <a href="{{ path( 'tab_spaceweb', {"id":rocket.id}) }}" class="pop_item-rep_v6" data-website="{{ rocket.id }}">
+                                {#  <i class="fa fa-times abs-croos"></i> #}
+                                <div class="notbd-img">
+                                    {%  if rocket.template.logo.namefile is defined %}
+                                        <div class="iner-img_notbd" style="background-image: url('{{ asset('spaceweb/template/'~rocket.template.logo.namefile) }}')"></div>
+                                    {%  else %}
+                                        <div class="iner-img_notbd" style="background-image: url('{{ asset('img/pinsaffi.png' ) }}')"></div>
+
+                                    {%  endif %}
+                                </div>
+                                <div class="modal_innerpopo">
+                                    <p>{{rocket.namewebsite}} </p>
+                                    <div class="me_ampoul">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    {% else %}
+                        <div class="pop_item-rep">
+                            {#  <i class="fa fa-times abs-croos"></i> #}
+                            <div class="notbd-img">
+                                <div class="i-partner"><i class="fa fa-address-book-o"></i></div>
+                            </div>
+                            <div class="modal_innerpopo">
+                                <p>rien par ici</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+    </div>
+{%  endblock body %}
+{% use "js/js_search.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

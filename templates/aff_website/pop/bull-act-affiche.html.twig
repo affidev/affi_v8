@@ -1,0 +1,15 @@
+{% if admin[1] %}
+    <div class="bull_act">
+        <div class="bt-nwpb-dk_v6">
+            <div class="i-bt">
+                <a href="{{ path('tab_spaceweb', {'id':website.id}) }}"><i class="fa fa-edit"></i></a>
+            </div>
+        </div>
+    </div>
+{%  else %}
+    <div class="bulletoggle bull_act" data-affitgl="tgl_5">
+        <div class="bt-nwpb-dk_v6">
+            <div class="i-bt"><i class="fa fa-edit"></i></div>
+        </div>
+    </div>
+{%  endif %}

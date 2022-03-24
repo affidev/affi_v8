@@ -1,0 +1,16 @@
+{% block body %}
+    {%  set entity, typ = post, "blog" %}
+    <section class="affi_board">
+        {{ include('aff_website/elements/'~agent~'/zonecommand.html.twig') }}
+        <article class="w-post mosaic desktop mosaic-provider-jobcards mosaic-provider-hydrated">
+    {{ include('aff_website/post/'~agent~'showpostdesk.html.twig') }}
+        </article>
+
+        {{ include('aff_website/post/'~agent~'/showpostothers.html.twig') }}
+    </section>
+{%  endblock body %}
+{% use "js/js_public_wb.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+

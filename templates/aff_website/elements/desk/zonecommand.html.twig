@@ -1,0 +1,7 @@
+<div class="zone-command-show">
+    {{ include('aff_website/elements/'~agent~'/websitepanneau.html.twig') }}
+   <a  href="{{ path('board', {'slugcity': website.locality.slugcity ,'slug': website.slug }) }}" class="goaff_v6">
+        <i class="fa fa-th" aria-hidden="true"></i>
+        <h3>le panneau</h3>
+    </a>
+</div>

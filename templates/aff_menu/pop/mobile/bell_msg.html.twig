@@ -1,0 +1,10 @@
+<div class="_nav-bell-wb">
+    <div class="abs-compt-pop">
+        <div class="space_tag_loc">
+            {%  if msgsnoread is defined %}
+                <div class="bul-pop" >{{msgsnoread|length}}</div>
+            {% endif %}
+        </div>
+    </div>
+    <a class="ico_be _co-W" href="{{path('all_message_customer') }}"><i class="fa fa-bell-o" aria-hidden="true"></i></a>
+</div>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% block head %}
+        <title>{% block title %}{{vartwig.title}}{% endblock %}</title>
+        {{ include('head/head.html.twig') }}
+    {% endblock head %}
+    {{ encore_entry_link_tags('app') }}
+</head>
+{%  set agent = app.session.get('agent') %}
+<body class="{{ agent=='desk/'? 'wbadmindesk' : '' }}">
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('./_service-worker.js').then(function(registration) {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
+            });
+    })
+    }
+</script>
+
+
+{#
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QN32CLNRWV"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-QN32CLNRWV');
+</script>
+#}
+
+{#  <main class="cont_admin {{ agent=='desk/'? 'maindesk' : 'mainmob' }}"> #}
+<div class="wb-inf-" data-idwb="{{ board.id }}" data-slugwb="{{ board.slug }}" data-namewb="{{ board.namewebsite }}" data-agent="{{ agent }}" data-replacejs="{{ replacejs?'yes':'no' }}"></div>
+{% block menu %}
+{% endblock menu %}
+{% block core %}
+    {% block body %}
+    {% endblock body %}
+    {% block javascripts %}
+    {% endblock %}
+{% endblock core %}
+{#  /main> #}
+</body>
+</html>

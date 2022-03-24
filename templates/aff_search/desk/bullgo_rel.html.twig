@@ -1,0 +1,20 @@
+{%  if is_granted("ROLE_CUSTOMER") %}
+    <div class="rel-nav-ospace">
+        <div class="nav_bulle_rel_to_go">
+            <div class="bul-go_affi_v5 bull-ov _bta-act" id="shwlaff">
+                {# <i class="fa fa-renren" aria-hidden="true"></i>  href="{{ path('new_generic_postation') }} #}
+                <div class="">J'Affiche</div>
+            </div>
+        </div>
+        {{ include('aff_customer/header/headerbulleboardcustomer.html.twig') }}
+    </div>
+{% else %}
+    <div class="rel-nav-ospace">
+        <div class="nav_bulle_rel_to_go">
+            <div class="bul-go_affi_v5 bull-ov _bta-act" id="shwlaff">
+                <div class="">J'Affiche</div>
+            </div>
+        </div>
+        {{ include('aff_customer/header/headerbulleboardnoconnect.html.twig') }}
+    </div>
+{%  endif %}

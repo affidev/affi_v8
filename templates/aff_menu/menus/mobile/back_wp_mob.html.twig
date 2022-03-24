@@ -1,0 +1,82 @@
+<div class="menu_msg">
+        <div class="direct-bar">
+            {%  if back is defined %}
+            <a href="{{ back }}" aria-label="Retour"  class="msg-IconButton direct-act">
+                <svg xmlns="http://www.w3.org/2000/svg" focusable="false" role="img" fill="currentColor"
+                     viewBox="0 0 24 24" aria-hidden="true" class="direct-svg">
+                    <path d="M14.112 18.002c.2.2.52.204.716.008l.707-.707a.507.507 0 00-.009-.716L10.94 12l4.587-4.587c.2-.2.205-.521.01-.716l-.708-.708a.507.507 0 00-.716.01l-5.648 5.647c-.1.1-.148.234-.143.367.002.124.05.247.143.34l.001.001a.758.758 0 00.008.008l5.64 5.64z"></path>
+                </svg>
+            </a>
+            {% else %}
+                <a href="{{ path('show_wp',{'id':board.id } ) }}" aria-label="Retour"  class="msg-IconButton direct-act">
+                    <svg xmlns="http://www.w3.org/2000/svg" focusable="false" role="img" fill="currentColor"
+                         viewBox="0 0 24 24" aria-hidden="true" class="direct-svg">
+                        <path d="M14.112 18.002c.2.2.52.204.716.008l.707-.707a.507.507 0 00-.009-.716L10.94 12l4.587-4.587c.2-.2.205-.521.01-.716l-.708-.708a.507.507 0 00-.716.01l-5.648 5.647c-.1.1-.148.234-.143.367.002.124.05.247.143.34l.001.001a.758.758 0 00.008.008l5.64 5.64z"></path>
+                    </svg>
+                </a>
+            {%  endif %}
+        </div>
+
+        <div class="iner_msg_bar flex-iner">
+            <div class="css-1ynscn6">
+                <div class="AccordionList-text">{{ website.namewebsite }}</div>
+            </div>
+        </div>
+
+        <div class="css-ry3gq6">
+            <div data-cy="conv-action-overflow-menu" class="msg-OverflowMenu css-79elbk e9oebfa0">
+                <button aria-haspopup="true" aria-controls="menu--1" aria-label="Plus d'options"
+                        class="e8ju0x51 css-131rq7a ex6cvhv1" id="menu-button--menu" type="button"
+                        data-reach-menu-button="">
+                    <svg xmlns="http://www.w3.org/2000/svg" focusable="false" role="img" fill="currentColor"
+                         viewBox="0 0 24 24" aria-hidden="true" class="direct-svg eac13zx0">
+                        <path d="M12 7c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 7c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
+                    </svg>
+                </button>
+
+                <div class="css-1g4x5kn e9oebfa1">
+                    <div hidden="" class="css-i0qikl efbfg9s0" data-reach-menu="" data-reach-menu-popover="">
+                        <div aria-labelledby="menu-button--menu" role="menu" tabindex="-1" dir="ltr"
+                             class="css-1ymwyqj e1o7jwm50" id="menu--1" data-reach-menu-items="">
+                            <div class="css-1s3rh3q eu4oa1w0">
+                                <div role="menuitem" tabindex="-1" class="msg-OverflowMenuItem css-1owlqog ehvvxyn1"
+                                     data-valuetext="Détails" data-reach-menu-item="" id="option-0--menu--1">
+                                    <div data-cy="conv-action-View_Details" class="css-1r1kql8">
+                                        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" role="img"
+                                             fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
+                                             class="css-1xqhio eac13zx0">
+                                            <path fill-rule="evenodd"
+                                                  d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM11 7.25a.25.25 0 01.25-.25h1.5a.25.25 0 01.25.25v1.5a.25.25 0 01-.25.25h-1.5a.25.25 0 01-.25-.25v-1.5zm0 4a.25.25 0 01.25-.25h1.5a.25.25 0 01.25.25v5.5a.25.25 0 01-.25.25h-1.5a.25.25 0 01-.25-.25v-5.5z"
+                                                  clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span class="css-13htf5s">Détails</span></div>
+                                </div>
+                                <div role="menuitem" tabindex="-1" class="msg-OverflowMenuItem css-1owlqog ehvvxyn1"
+                                     data-valuetext="Archiver" data-reach-menu-item="" id="option-1--menu--1">
+                                    <div data-cy="conv-action-Archive" class="css-1r1kql8">
+                                        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" role="img"
+                                             fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
+                                             class="css-1xqhio eac13zx0">
+                                            <path fill-rule="evenodd"
+                                                  d="M3 3.5a.5.5 0 01.5-.5h17a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H20v12a1 1 0 01-1 1H5a1 1 0 01-1-1V8h-.5a.5.5 0 01-.5-.5v-4zm8 5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5v5.878l2.182-2.181a.5.5 0 01.707 0l.707.707a.5.5 0 010 .707l-4.242 4.242a.5.5 0 01-.708 0l-4.242-4.242a.5.5 0 010-.707l.707-.707a.5.5 0 01.707 0L11 14.379V8.5z"
+                                                  clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span class="css-13htf5s">Archiver</span></div>
+                                </div>
+                                <div role="menuitem" tabindex="-1" class="msg-OverflowMenuItem css-1owlqog ehvvxyn1"
+                                     data-valuetext="Signaler" data-reach-menu-item="" id="option-2--menu--1">
+                                    <div data-cy="conv-action-Report" class="css-1r1kql8">
+                                        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" role="img"
+                                             fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
+                                             class="css-1xqhio eac13zx0">
+                                            <path d="M3 3.5a.5.5 0 01.5-.5h9.191a.5.5 0 01.447.276l.724 1.448a.5.5 0 00.447.276H20.5a.5.5 0 01.5.5v10a.5.5 0 01-.5.5h-6.191a.5.5 0 01-.447-.276l-.724-1.448a.5.5 0 00-.447-.276H5v6.5a.5.5 0 01-.5.5h-1a.5.5 0 01-.5-.5v-17z"></path>
+                                        </svg>
+                                        <span class="css-13htf5s">Signaler</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,78 @@
+{%  set ite = 0 %}
+
+
+
+    <div class="menustar_mob tglaff" id="tgl_0">
+        {{ include('aff_website/header/headerwp_mob.html.twig') }}
+    </div>
+
+    <div class="mdl_mob tglaff sty_affi" id="tgl_1"style="display: none">
+        <div class="tit_pag">
+           <button class="arrow_wb buttontoggle" data-affitgl="tgl_0"><i class="fa fa-arrow-circle-left sz_link"></i></button>
+            <h2>Actualités</h2>
+        </div>
+
+        {%  for key, notice in notices %}
+            <div class="board_module">
+                {% if key is same as "menu" %}
+                    {% if notice|length > 0 %}
+                        {{ include('aff_website/view/modale_menu.html.twig') }}
+                    {%  endif %}
+                {% elseif key is same as "notices" %}
+                    {% if notice|length > 0 %}
+                        {% set firstnotice = notice|first %}
+                        {%  if firstnotice is not null %}
+                            {%  set ite = 1 %}
+                            {%  if firstnotice.promo is not defined %}
+                                {%  set post = firstnotice %}
+                                {{ include('aff_website/view/modale_post_mob.html.twig') }}
+                            {%  else %}
+                                {%  set offre = firstnotice %}
+                                {{ include('aff_website/view/modale_offre.html.twig') }}
+                            {%  endif %}
+                        {%  else %}
+                            {{ include('aff_website/view/modale_no.html.twig') }}
+                        {%  endif %}
+                    {%  endif %}
+                {% endif %}
+            </div>
+        {%  endfor %}
+
+    </div>
+
+    <div class="mdl_mob tglaff z_ind5c" id="tgl_3" style="display: none">
+        <div class="tit_pag">
+            <button class="arrow_wb buttontoggle" data-affitgl="tgl_0"><i class="fa fa-arrow-circle-left"></i></button>
+            <h2>partenaires du {{ website.namewebsite }}</h2>
+        </div>
+        {{ include('aff_website/view/websiteLink_mob.html.twig') }}
+    </div>
+
+    <div class="mdl_mob tglaff z_ind5c" id="tgl_2" style="display: none">
+        <div class="tit_pag">
+            <button class="arrow_wb buttontoggle" data-affitgl="tgl_0"><i class="fa fa-arrow-circle-left"></i></button>
+            <h2>Messagerie</h2>
+        </div>
+        {% if not user %}
+            <div id="testmail">
+                <test-mailmsg slug="{{ website.slug }}"></test-mailmsg>
+            </div>
+        {%  else %}
+            <div id="testmail">
+                <add-comment slug="{{ website.slug }}"></add-comment>
+            </div>
+        {%  endif %}
+    </div>
+
+
+
+    <div class="mdl_mob tglaff z_ind5c" id="tgl_4" style="display: none">
+  {#   {{ include('aff_website/view/showallothers.html.twig') }}  #}
+    </div>
+
+    <div class="mdl_mob tglaff z_ind5c" id="tgl_5" style="display: none">
+    {{ include('footer/mobile/affichange_footer_rel.html.twig') }}
+    </div>
+
+
+

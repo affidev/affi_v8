@@ -1,0 +1,43 @@
+<div class="pos-incub-l_mob">
+    <p>Votre panneau par defaut : <h2>{{ board.namewebsite }}</h2></p>
+    <a class="pop-mn" href="{{ path('ospace', {'city':board.locality.city,'nameboard':board.slug}) }}">
+        {% if board.template.logo %}
+            <div  class="bkgrndlogo" style="background-image: url('{{ asset('spaceweb/template/'~board.template.logo.namefile ) }}')"></div>
+        {% else %}
+            <div class="bkgrndlogo" style="
+                    background-image: url('{{ asset('img/pinsaffi.png') }}')"></div>
+        {% endif %}
+    </a>
+</div>
+
+<p>Changez de panneau : </p>
+<div class="pos-incub-l_mob">
+
+        {%  if  dispatch.spwsite|length > 1 %}
+        {% for pw in dispatch.spwsite %}
+            {%  if  pw.website.id is not same as board.id %}
+            <a class="pop-mn_mob {{pw.isadmin??'activ'}}" href="{{ path('change_board', {'id':pw.website.id}) }}">
+                {% if pw.website.template.logo %}
+                    <div  class="bkgrndlogo" style="background-image: url('{{ asset('spaceweb/template/'~pw.website.template.logo.namefile ) }}')"></div>
+                {% else %}
+                    <div class="bkgrndlogo" style="
+                            background-image: url('{{ asset('img/pinsaffi.png') }}')"></div>
+                {% endif %}
+                <div class="inerlink_mob">{{ pw.website.namewebsite|capitalize }}</div>
+            </a>
+            {%  endif %}
+        {%  endfor %}
+        {%  endif %}
+            <a href="{{path('add_board')}}" class="bt-andestand">J'ouvre un nouveau panneau</a>
+    </div>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+{% block body %}
+    {{ include('aff_menu/menus/wb_back_mob.html.twig') }}
+    <section class="_wb-ospace_mob">
+      {{ include('aff_customer/board/view/showmsg.html.twig') }}
+    </section>
+{%  endblock body %}
+{% use "js/js_customer.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

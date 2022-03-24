@@ -1,0 +1,22 @@
+{% block body %}
+    <section class="_pg-account_mob">
+        {{ include('aff_menu/menus/mobile/titleaccount_mob.html.twig') }}
+        <div class="space-inner-account">
+            <div class="af_flx-C-W fx-c">
+                <h3>Nouvelle commande</h3>
+                <div class="process-module_glass">
+                    <div class="stape-process-lit">
+                        <h5>Client <strong></strong></h5>
+                    </div>
+                    {{ form_start(form) }}
+                    {{ form_rest(form) }}
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock body %}
+{% use "js/js_customer.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

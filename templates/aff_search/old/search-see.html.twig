@@ -1,0 +1,61 @@
+<div class="_fx-R_v3">
+    <div class="space-tag" id="city" data-citydflt="{{ city }}">
+        <div class="search_order_tag active2">
+
+            <div class="ipt_osp">
+                <div class="-stp0-osp">
+                    <div class="_i-cL">
+                        <div class="hsuHs">
+                                        <span class="wFncld z1asCe MZy1Rb">
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                        </span>
+                        </div>
+                    </div>
+
+                    <div class="-stp01">
+                        <div class="_in-stp01"></div>
+                        <input id="localize_gps_codep" name="localize_gps[codep]" class="_in-stp02_desk _in-stp02" type="search" data-lclass="{{ tag.l_class??"cargo"}}" aria-autocomplete="both" aria-haspopup="false" autocapitalize="off" autocomplete="off"  placeholder="{{ city??"" }}" role="combobox" spellcheck="false" title="Rechercher"  aria-label="Rech.">
+                    </div>
+                    {#
+                    <div class="-stp3">
+                        <div class="clear-button XoaYSb" aria-label="Effacer" role="button" tabindex="0">
+                            <span class="z1asCe"><i class="fa fa-close" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+
+                    #}
+                    <a class="nav-ospace" href="{{ path('cargo_public',{'slugcity':city|lower}) }}">
+                        <div class="nav_bulle_to_go">
+                            <div class="bul-go_affi_v5 bull-ov _bta-act" id="shwlaff">
+                                <div class="">voir</div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="_iner-Lst0">
+                <div class="_iner-Lst0-in1"></div>
+                <div class="_Lst0" >
+                    {#<div class="_sep-01"></div>#}
+                    <ul class="_Ul-l01" style="display: none" role="listbox" tabindex="0">
+                        <li class="_Il-l01 resulcp" data-affi="#localize_gps_codep" role="option" tabindex="0" >
+                            <div class="FFI-sugest">
+                                <div class="_ic-02">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </div>
+                                <div class="_Op-1" role="option">
+                                    <div class="_in_Op-1">
+                                        <span class="city" data-affi-ville></span>&nbsp(<span class="codpo" data-affi-code-postal></span>)
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

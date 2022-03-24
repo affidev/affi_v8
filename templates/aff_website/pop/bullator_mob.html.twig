@@ -1,0 +1,23 @@
+<div class="zone-bullator_mob">
+    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        <div class="{{ iscatch?'todebulle':'tobulle' }}" id="buller" data-idbulle="{{ iscatch }}" data-entity="{{ entity }}" data-typ="{{ typ }}">
+            {%  if iscatch %}
+                <i class="fa fa-get-pocket" aria-hidden="true"></i>
+            {%  else %}
+                <i class="fa fa-circle-o-notch" aria-hidden="true"></i>
+            {%  endif %}
+        </div>
+    {%  else %}
+        <div class="af-simpl">
+            <div class="tobulle" id="catchaffi" title="vous devez être connecté pour activer les bulles">
+                <i class="fa fa-circle-o-notch" aria-hidden="true"></i>
+            </div>
+            <div class="infocastch" id="tgl_catch">
+                <div class="iner-inf-catch">
+                    Vous aimez cette info ?<br>Alors soufflez la pour qu'elle arrive en avant sur sa localité,
+                    <a class="toconnect" href="{{ path('app_login') }}">Pour souffler, Connectez-vous</a>
+                </div>
+            </div>
+        </div>
+    {%  endif %}
+</div>

@@ -1,0 +1,39 @@
+<div class="hd-nav-osp">
+    <div class="navaffi-bk">
+        <div class="afnav-fl">
+            <div class="navlogo_affi">
+                <a href="{{ path('cargo_public') }}" class="navlogo-svg">{{ include('svg/50x50_AfCHG_blanc.html.twig') }}</a>
+            </div>
+        </div>
+
+        <div class="afnav-fl">
+            <div class="afnav-link-brd">
+                <div class="afnav-alk">Vie associative</div>
+            </div>
+            <div class="afnav-link-brd">
+                <div class="afnav-alk">Activités locales</div>
+            </div>
+            <div class="afnav-link-brd">
+                <div class="afnav-alk">Ressources numériques</div>
+            </div>
+        </div>
+    </div>
+    {%  if official is defined and official|length >0 %}
+        <a class="goaff_v6" target="_blank" href="{{ official[0].url }}"><i class="fa fa-link"></i> voir le site officiel de cette localité</a>
+    {%  endif %}
+
+    <div class="navaffi-bk">
+        {{ include('aff_menu/pop/'~agent~'/modal-pop-customer.html.twig') }}
+        <div class="afnav-fl">
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                {{ include('aff_menu/pop/'~agent~'/all_bell_msg.html.twig') }}
+            {% else %}
+                <div class="afnav-link-brd">
+                    <a href="" class="afnav-alk">Affichez-vous</a>
+                </div>
+            {%  endif %}
+        </div>
+    </div>
+
+</div>
+

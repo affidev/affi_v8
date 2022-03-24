@@ -1,0 +1,8 @@
+<a  class="_pic-website" href="{{ path('show_website',{'city':website.locality.slugcity,'nameboard':website.slug}) }}" title="panneau info de {{ website.namewebsite }}">
+    <h3>{{ website.namewebsite }}</h3>
+    {% if website.template.background.namefile is defined and website.template.background.namefile is not null %}
+        <div class="bull-website" style="background-image: url({{ asset('spaceweb/template/'~website.template.background.namefile) }})"></div>
+    {%  else %}
+        {{include('aff_website/navigation/logolite.html.twig')}}
+    {%  endif %}
+</a>

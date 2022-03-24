@@ -1,0 +1,72 @@
+<div class="flrow">
+    <div class="fx-cub ii_cub2">
+        <div class="O_list-cube">
+
+            <div class="pos-incub-i">
+                  <a class="bt-newmod" href="{{ path('new_offre',{'id':board.id}) }}">Nouvel article</a>
+            </div>
+
+            <div class="list-incub">
+                  {%  for tab in shops %}
+                        {%  if tab.media.imagejpg[0] is defined  %}
+                            {%  set ill= tab.media.imagejpg[0].getwebPath %}
+                        {%  else %}
+                            {%  set ill= "img/AffiChange.png" %}
+                        {% endif %}
+                        <div class="mod-incub">
+                            <div class="pos-incub-i">
+                                <div class="pos-incub-l w-cb1">
+                                    <div class="tit-pos-cub">{{ tab.titre }}</div>
+                                    <div class="inf_cub">
+                                        <div class="illust-list">
+                                            <div class="iner-illust" style="background-image: url('{{ asset(ill) }}')"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                    <div class="pos-incub-px">
+                        <div class="account_module">
+                            <div class="publiedby">publié par : {{ tab.author.name }} <br>le : {{ tab.createAt|date("j-m-Y") }}</div>
+                        </div>
+                        <div class="pos-incub-px w-cb3">
+                        {% if (dispatch.id is same as (tab.author.id))  or (dispatch.id == 1) %}
+                            <div class="tools-msg">
+                                <a class="e-tool" title="edition de l'offfre" href="{{ path('edit_offre', {'id':tab.id}) }}">
+                                    <i class=" fa fa-edit" data-descr="editer.."></i>
+                                </a>
+                                <a class="e-tool" title="etat de la publication" href="{{ path('publied_offre', {'id':tab.id}) }}">
+                                    {%  if tab.publied %}
+                                        <div class="_icO-rd green" ><i class="fa fa-flag-checkered" aria-hidden="true"></i></div>
+                                    {% else %}
+                                        <div class="_icO-rd red" ><i class="fa fa-flag" aria-hidden="true"></i></div>
+                                    {%  endif %}
+                                </a>
+                                <a class="e-tool" title="suppression" href="{{ path('form-delete_offre', {'id':tab.id}) }}">
+                                   <i class=" fa fa-trash" data-descr="suppression offre"></i>
+                                </a>
+                            </div>
+                        {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    {% else %}
+                        <div class="pop-board">
+                           <div class="til_rlt">pas encore d'évenement programmé</div>
+                        </div>
+                    {%  endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

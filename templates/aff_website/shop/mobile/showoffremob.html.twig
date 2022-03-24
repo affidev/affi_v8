@@ -1,0 +1,81 @@
+<section class="affi_post_mob">
+    <div class="w_more-fixed bgrop_modal" id="morinf" style="display: none">
+        {{ include('aff_website/shop/'~agent~'/basket.html.twig') }}
+    </div>
+    <article class="wb-post_mob">
+     {# {{ include('aff_website/pop/bullator.html.twig') }} #}
+        {{ include('aff_website/shop/view/modale_offre_mob.html.twig') }}
+        {% if content is not same as ("") %}
+            <div class="_post_content">
+                <div class="article_content">
+                    {{ content|raw }}
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="ol-commd_mob">
+            {% if  website.contactation is not null %}
+                <div class=" button-wp">
+                    <button class="bulletoggle pop_button" data-affitgl="tgl_9"><i class="fa fa-comments-o" aria-hidden="true"></i> Echangez avec le vendeur</button>
+                </div>
+            {% endif %}
+
+                <div class="goaff_v6 moregoa">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <h3>acheter</h3>
+                </div>
+        </div>
+
+        <div class="_wb-module-first_mob">
+            <div class="ol-2 tglaff"  id="tgl_9" style="display: none">
+                {% if dispatch is null %}
+                    <div id="testmail">
+                        <test-mailmsg slug="{{ website.slug }}" id="{{ offre.id }}" module="_shop"></test-mailmsg>
+                    </div>
+                {%  else %}
+                    <div id="adcomment">
+                        <add-comment slug="{{ website.slug }}" id="{{ offre.id }}" module="_shop"></add-comment>
+                    </div>
+                {%  endif %}
+            </div>
+        </div>
+
+    </article>
+
+    <div class="_scrollflownew _dk _post w100">
+        <div class="board-list-replace">
+            <nav class="other">
+                <div class="nogo"><h3>et aussi</h3></div>
+            </nav>
+
+            <div class="flex-notb_v6-fix">
+                {% for otheroffre in offres|slice(0, 6) %}
+                    {% if otheroffre.id != offre.id %}
+                        <div class="last-postall_v6-fix">
+                            {{include('aff_website/shop/view/popform_mb.html.twig')}}
+                        </div>
+                    {% endif %}
+                {% else %}
+                    <div class="flex-notb_v6-fix">
+                        <div class="last-postall_v6-fix">
+                            <div class="affiche">
+                                <div class="evnet_titre_v5">pas d'autre produit actuellement !!</div>
+                            </div>
+                            <div class="boarder">
+                            </div>
+                        </div>
+                    </div>
+                {%  endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+

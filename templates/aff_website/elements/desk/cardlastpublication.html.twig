@@ -1,0 +1,24 @@
+<div class="fx-content_rep_v6">
+    <div class="flex-notb_v6-fix">
+    {%  if notices['post'] is defined and notices['post']|length >0 %}
+
+        {% set firstnotice = notices['post']|first %}
+        {%  if firstnotice is not null %}
+            {%  set ite = 1 %}
+            {%  if firstnotice.promo is not defined %}
+                {%  set otherpost = firstnotice %}
+                <div class="last-postall_v6-fix">
+                {{include('aff_website/post/view/poppost.html.twig')}}
+                </div>
+            {%  else %}
+                {%  set otheroffre = firstnotice %}
+                <div class="last-postall_v6-fix">
+                {{include('aff_website/shop/view/popshop.html.twig')}}
+                </div>
+            {%  endif %}
+        {%  else %}
+            {{ include('aff_website/view/modale_no.html.twig') }}
+        {%  endif %}
+    {%  endif %}
+    </div>
+</div>

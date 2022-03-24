@@ -1,0 +1,29 @@
+<div class="flex-board">
+    {% for wb in partners %}
+            <a class="wb_board_partner_mob" href="{{ path( 'show_website', {"city":wb.locality.city,"nameboard":wb.slug}) }}" data-website="{{ wb.id }}">
+                <div  class="pop_partner_mob">
+                    <div class="notbd-img_mob">
+                        {%  if wb.template.logo.namefile is defined %}
+                            <div class="iner-img_notbd_mob" style="background-image: url('{{ asset('spaceweb/template/'~wb.template.logo.namefile) }}')"></div>
+                        {%  else %}
+                            <div class="iner-img_notbd_mob" style="background-image: url('{{ asset('img/pinsaffi.png' ) }}')"></div>
+
+                        {%  endif %}
+                    </div>
+                </div>
+                <div class="modal_innerpopo_mob">
+                    <p>{{wb.namewebsite}} </p>
+                    <div class="me_ampoul">
+                    </div>
+                </div>
+            </a>
+    {% else %}
+        <div class="pop_item-rep">
+            <div class="modal_innerpopo_mob">
+                <p>Vous soutenez aucun panneau actuellement</p>
+                <div class="me_ampoul">
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

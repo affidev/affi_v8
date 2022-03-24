@@ -1,0 +1,10 @@
+<div class="wb-logo-lite">
+    {% if board.template.logo %}
+        <a  href="{{ path('show_website',{'city':board.locality.slugcity,'nameboard':board.slug}) }}" class="bkgrndlogo" style="background-image: url('{{ asset('spaceweb/template/'~board.template.logo.namefile ) }}')">
+        </a>
+    {% else %}
+        <a href="{{ path('show_website',{'city':board.locality.slugcity,'nameboard':board.slug}) }}" class="bkgrndlogo" style="
+                background-image: url('{{ asset('img/pinsaffi.png') }}')">
+        </a>
+    {% endif %}
+</div>

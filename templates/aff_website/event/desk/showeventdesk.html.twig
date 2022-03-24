@@ -1,0 +1,36 @@
+
+        {{ include('aff_website/event/view/modale_eventfull.html.twig') }}
+        <div class="_wb-module-first">
+            <div class="ol-2 tglaff"  id="tgl_9" style="display: none">
+                {% if dispatch is null %}
+                    <div id="testmail">
+                        <test-mailmsg slug="{{ website.slug }}" id="{{ event.id }}" module="_blog"></test-mailmsg>
+                    </div>
+                    {#
+                    {%  set titpage= "Messagerie" %}
+                    {{ include('aff_messagery/conversations/form/form_msg-affiche.html.twig') }}
+                    #}
+                {%  else %}
+                    <div id="adcomment">
+                        <add-comment slug="{{ website.slug }}" id="{{ event.id }}" module="_blog"></add-comment>
+                    </div>
+                {%  endif %}
+            </div>
+        </div>
+
+        {% if content is not same as ("") %}
+            <div class="_post_content">
+                <div class="article_content">
+                    {{ content|raw }}
+                </div>
+            </div>
+        {% endif %}
+
+
+
+
+
+
+
+
+

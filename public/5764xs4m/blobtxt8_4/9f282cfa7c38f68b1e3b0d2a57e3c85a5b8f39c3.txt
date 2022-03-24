@@ -1,0 +1,3 @@
+<div class="stape_bull" id="websit" data-module="2" data-content=""><br />
+        <h2 style="text-align: center">edition du post : Ouverture du point info Affichange</h2><br />
+    </div>

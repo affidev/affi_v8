@@ -1,5 +1,8 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
+    globals:
+        app_affi: '%env(APP_AFFI)%'
+        key_admin: '%env(KEY_ADMIN)%'
 
 when@test:
     twig:

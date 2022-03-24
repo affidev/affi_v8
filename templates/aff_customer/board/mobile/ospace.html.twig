@@ -1,0 +1,14 @@
+{% block body %}
+{{ include('elements/zone-header-wbadmin-mod.html.twig') }}
+{{ include('aff_menu/menus/footer_menu_mob.html.twig') }}
+<section class="_wb-ospace_mob">
+    <div class="contener-cube"></div>
+    <div class="head-bull_mob">
+        <a href="{{path('module_event',{'city':board.locality.slugcity, 'nameboard':board.slug})}}" class="bt-live">Live</a>
+    </div>
+</section>
+{%  endblock body %}
+{% use "js/mobile/js_ospaceboard.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

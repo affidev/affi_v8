@@ -1,0 +1,21 @@
+{# menu public version desk #}
+<div class="littlespacevague_lrg_v5">
+    {# <div class="_fx-abs fx-c _bg-op-trs _sz6 _bdrad glob_affi _co-B"> #}
+    <div class="_fx-abs _sz250 glob_affi _co-B">
+        <div class="_ext-p shtf">
+            <div class="_i-Wbs bulletoggle " data-affitgl="tgl_4">{{ include('svg/50x50_AfCHG_blanc.html.twig') }}</div>
+            <span class="locate">{{ city }}</span>
+        </div>
+    </div>
+
+    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        {{ include('aff_public/pop/bell_msg.html.twig') }}
+        {{ include('aff_menu/'~agent~'/profilnav.html.twig') }}
+        {{ include('aff_menu/'~agent~'/popcustomer.html.twig') }}
+    {%  else %}
+        {{ include('aff_menu/'~agent~'/profilnav.html.twig') }}
+        {{ include('aff_menu/'~agent~'/poppublic.html.twig') }}
+    {%  endif %}
+
+
+</div>

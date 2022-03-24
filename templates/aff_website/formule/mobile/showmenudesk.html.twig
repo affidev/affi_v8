@@ -1,0 +1,83 @@
+<section class="affi_board">
+    <aside class="wp-post">
+        <div class="_wboard-tit bgrop_v5" >
+            <div class="w_pictfull">
+                {% if menu.pictformule.namefile is defined %}
+                    <img  src="{{ asset('upload/module/'~menu.pictformule.namefile ) }}" alt="">
+                {% else%}
+                    <img  src="{{ asset('spaceweb/template/ccec7f38ec542f83ad1e32407de3288b81a870f8.jpg' ) }}" alt="">
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="inner-post w_titlpost">
+            <div class="_inner-fix bgrop_v5 ">
+                <h2>{{ menu.name|capitalize }}</h2>
+                <div class="iner-col_v6">
+                    <div class="_iner-inf_mb_v6">
+                        <h3>description</h3>
+                    </div>
+                </div>
+                <div class="_inner ">
+                    <time itemprop = "startDate" pubdate><h3 class="provd_pitch_v5">du {{ menu.parution.starttime|date("d-m-Y") }} au {{ menu.parution.endtime|date("d-m-Y") }}</h3></time>
+                </div>
+                <div class="iner-col_v6 cdr-lit">
+                    <div class="_fx-R">
+                        {%  for declin in menu.catformules %}
+                            <div class="edcli">
+                                <h2>{{ declin.name }}</h2>
+                                <h5>{{ declin.declinaison.name }}</h5>
+                                <span class="price-form">{{ declin.prix }} €</span>
+                            </div>
+                        {%  endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+    <article class="_inner_detail w_post bgrop_v5">
+        <div class="ti-sst_chap_v2">
+            <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+            <h3> menu</h3>
+        </div>
+        <div class="_inner">
+            <div class="iner-inf_v6 pd15 bgrop_v5">
+                <div class="iner-col_v6 cdr-lit">
+                    <div class="iner-inf_comp_mk">
+                        <div class="ti-sst_chap_v2">
+                            <ul><h3>entrée</h3>
+                                {%  for art in menu.articles %}
+                                    {%  if art.categorie.name is same as ("entree") %}
+                                        <li class="tit-menu">{{ art.titre }}</li>
+                                    {% endif %}
+                                {%  endfor %}
+                            </ul>
+                            <ul><h3>plat</h3>
+                                {%  for art in menu.articles %}
+                                    {%  if art.categorie.name is same as ("plat") %}
+                                        <li>{{ art.titre }}</li>
+                                    {% endif %}
+                                {%  endfor %}
+                            </ul>
+                            <ul><h3>dessert</h3>
+                                {%  for art in menu.articles %}
+                                    {%  if art.categorie.name is same as ("dessert") %}
+                                        <li>{{ art.titre }}</li>
+                                    {% endif %}
+                                {%  endfor %}
+                            </ul>
+                            <ul><h3>boisson</h3>
+                                {%  for art in menu.articles %}
+                                    {%  if art.categorie is same as ("boisson") %}
+                                        <li>{{ art.titre }}</li>
+                                    {% endif %}
+                                {%  endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>

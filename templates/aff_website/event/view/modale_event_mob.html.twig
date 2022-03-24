@@ -1,0 +1,32 @@
+<div class="wp-event">
+    <div class="inner-event">
+        <h3 class="goaff_event_mob">Live !</h3>
+        <div class="w_titlevent_mob">
+            <h2 title="evenement de {{ website.namewebsite }}">{{ event.titre|lower|capitalize }}</h2>
+            {% if event.description is not same as (" ") %}
+                <h3>{{ event.description|raw|lower|capitalize }}</h3> {# {{post.subject|u.truncate(80, '...')|lower|capitalize}} #}
+            {% endif %}
+        </div>
+        <time itemprop = "startDate" class="dateevent">mis en ligne le : {{ event.createAt|date("d-m-Y") }}</time>
+        <time itemprop = "startDate" pubdate><b>du {{ event.appointment.starttime|date("d-m-Y") }} au {{ event.appointment.endtime|date("d-m-Y") }}</b></time>
+        <div class="author">par : {{ event.author.name }}</div>
+        {#
+        <a class=" button-wp" href="{{path('show_event',{'slugcity':website.locality.slugcity,'slug':website.slug, 'id':event.id }) }}">
+            <button class="pop_button">en savoir plus
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+            </button>
+        </a>
+        #}
+    </div>
+
+    <div class="illustr-event_mob" >
+        <div class="e_pictfull">
+            {% if event.media.imagejpg|length > 0 and event.media.imagejpg[0].namefile is defined %}
+                <img src="{{ asset(event.media.imagejpg[0].getWebPath) }}" alt="image affiche">
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+

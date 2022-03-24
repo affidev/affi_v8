@@ -1,0 +1,14 @@
+<div class="cube-bd w100">
+    <div class="cbe_cnt">
+        <div class="c_i_b">
+            <div class="in_cib">
+                <div class="in-cib-lrg-tit">
+                    <h3 class="tit-cib-lg">les messages de l'affiche :</h3>
+                </div>
+                {%  for msg in msgps %}
+                {{ include('aff_messagery/elements/listmessagepublication.html.twig') }}
+                {%  endfor %}
+            </div>
+        </div>
+    </div>
+</div>

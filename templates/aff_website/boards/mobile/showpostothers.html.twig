@@ -1,0 +1,22 @@
+<div class="_scrollflownew _dk _post w100">
+    <div class="board-list-replace">
+        <div class="goaff_v6"><h3>les autres affiches</h3></div>
+        <div class="flex-notb_v6-fix">
+        {% for post in posts %}
+            <a href="{{path('show_post',{'slugcity':website.locality.slugcity,'slug':website.slug, 'posta':post.slug, 'id':post.id }) }}" class="last-postall_v6-fix">
+                {{include('aff_website/post/view/poppost_mb.html.twig')}}
+            </a>
+        {% else %}
+            <div class="flex-notb_v6-fix">
+                <div class="last-postall_v6-fix">
+                    <div class="affiche">
+                        <div class="evnet_titre_v5">Pas d'autre affiche publiées actuellement</div>
+                    </div>
+                    <div class="boarder">
+                    </div>
+                </div>
+            </div>
+        {%  endfor %}
+        </div>
+    </div>
+</div>

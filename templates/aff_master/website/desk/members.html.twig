@@ -1,0 +1,14 @@
+{% block body %}
+    <section class="vaiss-lib">
+        <div class="_pg-act">
+            <h2>{{ board.namewebsite }}</h2>
+            <div class="fx-cub ii_cub2">
+                {{ include('aff_master/website/view/memberslist.html.twig') }}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% use "js/js_edit_website.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

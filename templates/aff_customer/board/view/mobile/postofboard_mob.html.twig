@@ -1,0 +1,48 @@
+<div class="list-incub_mob">
+    <div class="pos-incub-i">
+      <a class="bt-newmod" href="{{ path('new_postation',{'id':board.id}) }}">Nouvelle affiche</a>
+    </div>
+</div>
+
+<div class="list-incub_mob">
+    {%  for tab in posts %}
+        {%  if tab.media.imagejpg[0] is defined  %}
+            {%  set ill= tab.media.imagejpg[0].getwebPath %}
+        {%  else %}
+            {%  set ill= "img/AffiChange.png" %}
+        {% endif %}
+                <div class="el-list-publi_mob">
+                    <div class="af_flx-C">
+                        <div class="tit-pos-cub_mob">{{ tab.titre }}</div>
+
+                       <div class="publiedby">publié par : {{ tab.author.name }} <br>le : {{ tab.createAt|date("j-m-Y") }}</div>
+
+                        <a class="pop_button" href="{{ path('board_blog',{'id':tab.id}) }}">détails
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <div class="inf_cub_mob">
+                        <div class="illust-list_mob">
+                            <div class="iner-illust_mob" style="background-image: url('{{ asset(ill) }}')"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+    {%  else %}
+        <div class="flex-board">
+            <h3> affichez-vous</h3>
+        </div>
+    {%  endfor %}
+</div>
+
+
+
+
+
+
+
+
+
+

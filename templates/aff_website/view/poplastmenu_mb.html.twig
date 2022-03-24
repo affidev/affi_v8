@@ -1,0 +1,89 @@
+
+{% if menu.pictformule.namefile is defined %}
+    <img  class="bull-post-last_mb"src="{{ asset('upload/module/'~menu.pictformule.namefile ) }}" alt="">
+{% endif %}
+<div class="pop-menu-v6">
+        <div class="first_head_v6">
+            <div itemprop="title_v2" class="evnet_titre_mb">
+                <h2>{{menu.name}}</h2>
+            </div>
+            <time itemprop = "startDate" pubdate><b>du {{ menu.parution.starttime|date("d-m-Y") }} au {{ menu.parution.endtime|date("d-m-Y") }}</b></time>
+        </div>
+        <div class="_fx-R_v6">
+            {%  for declin in menu.catformules %}
+            <div class="info-catform">
+                <h2>{{ declin.name }}</h2>
+                <h5>{{ declin.declinaison.name }}</h5>
+                <span class="price-form">{{ declin.prix }} €</span>
+            </div>
+            {%  endfor %}
+        </div>
+        <div class="detail-menu">
+            <div class="_fx-R_v6">
+                <div class="cat-art">
+                    <div class="tit_cat-art">Entrée</div>
+                    {%  for article in menu.articles %}
+                        {% if article.categorie.id is defined %}
+                        {%  if article.categorie.id is same as(1) %}
+                            <div class="art-formule">
+                                <h5>{{ article.titre }}</h5>
+                                {% if article.pict is not null  %}
+                                    <div class="img-art_formule">
+                                        <img src="{{ asset('spaceweb/template/'~article.pict.namefile ) }}" alt="">
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {%  endif %}
+                        {% endif %}
+                    {%  endfor %}
+                </div>
+                <div class="cat-art">
+                    <div class="tit_cat-art">PLat</div>
+                    {%  for article in menu.articles %}
+                        {% if article.categorie.id is defined %}
+                            {%  if article.categorie.id is same as(2) %}
+                            <div class="art-formule">
+                                <h5>{{ article.titre }}</h5>
+                                {% if article.pict is not null  %}
+                                    <div class="img-art_formule">
+                                        <img src="{{ asset('spaceweb/template/'~article.pict.namefile ) }}" alt="">
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {%  endif %}
+                        {% endif %}
+                    {%  endfor %}
+                </div>
+                <div class="cat-art">
+                    <div class="tit_cat-art">dessert</div>
+                    {%  for article in menu.articles %}
+                        {% if article.categorie.id is defined %}
+                        {%  if article.categorie.id is same as(3) %}
+                            <div class="art-formule">
+                                <h5>{{ article.titre }}</h5>
+                                {% if article.pict is not null  %}
+                                    <div class="img-art_formule">
+                                        <img src="{{ asset('spaceweb/template/'~article.pict.namefile ) }}" alt="">
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                        {%  endif %}
+                    {%  endfor %}
+                </div>
+            </div>
+            <div class="cat-drnk">
+                <div class="tit_cat-art-cou">Boisson</div>
+                {%  for article in menu.articles %}
+                    {% if article.categorie.id is defined %}
+                    {%  if article.categorie.id is same as(4) %}
+                        <div class="art-drnk">
+                            <h5>{{ article.titre }}</h5>
+                        </div>
+                    {% endif %}
+                    {%  endif %}
+                {%  endfor %}
+            </div>
+        </div>
+</div>
+

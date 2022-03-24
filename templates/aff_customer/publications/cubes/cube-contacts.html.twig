@@ -1,0 +1,73 @@
+<div class="cube-li">
+    <div class="in_cib">
+        <div class="in-cib-lrg-tit">
+            <h3 class="tit-cib-lg">Ils suivent cette publication</h3>
+        </div>
+        <div class="list-cube fx-row">
+            {%  if contacts|length >0 %}
+                {%  set conts = contacts.contact ?? [] %}
+                {%  set disps = contacts.dispatch ?? [] %}
+                <div class="onglet-toog">
+                    <div class="ongl-1">
+                        {% for cont in conts %}
+                            <div class="list-incub">
+                                <div class="pos-incub-i">
+                                    <div class="pos-incub-l">
+                                        <div class="all-in">
+                                            <span class="tit-pos-cub">
+                                                {{cont.emailcanonical}}
+                                            </span>
+                                        </div>
+                                        <div class="timdate_pos">
+                                            ras
+                                        </div>
+                                    </div>
+                                    <div class="bt-cub" role="button">
+                                        <a class="FKF6mc TpQm9d" href="" target="_blank">
+                                            <div class="in_cibS-Vd"></div>
+                                            <div class="in_cibS-bot"></div>
+                                            <span class="in_cibS-spn1">
+                    <span class="in_cibS-spn2">
+                        <span class="tit-cb">creez</span>
+                    </span>
+                </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="ongl-2">
+                        {% for disp in disps %}
+                            <div class="list-incub">
+                                <div class="pos-incub-i">
+                                    <div class="pos-incub-l">
+                                        <div class="all-in">
+                                            <span class="tit-pos-cub">
+                                                {{disp.name}}
+                                            </span>
+                                        </div>
+                                        <div class="timdate_pos">
+                                            ras
+                                        </div>
+                                    </div>
+                                    <div class="bt-cub" role="button">
+                                        <a class="FKF6mc TpQm9d" href="" target="_blank">
+                                            <div class="in_cibS-Vd"></div>
+                                            <div class="in_cibS-bot"></div>
+                                            <span class="in_cibS-spn1">
+                        <span class="in_cibS-spn2">
+                            <span class="tit-cb">creez</span>
+                        </span>
+                    </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {%  endif %}
+        </div>
+    </div>
+</div>

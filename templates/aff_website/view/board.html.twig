@@ -1,0 +1,68 @@
+{%  set ite = 0 %}
+
+    <div class="af_rel af_flx-C fx_center af_w-50 tglaff z_ind5c" id="tgl_1" style="display: none">
+        {{ include('aff_website/view/websiteLink.html.twig') }}
+    </div>
+    <div class="af_rel af_flx-C fx_center af_w-50 tglaff z_ind5c" id="tgl_3" style="display: none">
+        {% if dispatch is not defined %}
+            <div id="testmail">
+                <test-mailmsg slug="{{ website.slug }}"></test-mailmsg>
+            </div>
+        {%  else %}
+            <div id="testmail">
+                <add-comment slug="{{ website.slug }}"></add-comment>
+            </div>
+        {%  endif %}
+    </div>
+    <div class="af_rl af_flx-C w100 tglaff sty_affi" id="tgl_0">
+        <div class="af_rl af_flx cent-cent pd15">
+            <h2>Actualités</h2>
+        </div>
+        <div class="card_module">
+            {%  if notices['post'] is defined and notices['post']|length >0 %}
+                <div class="board_module card_box">
+                    {% set firstnotice = notices['post']|first %}
+                    {%  if firstnotice is not null %}
+                        {%  set ite = 1 %}
+                        {%  if firstnotice.promo is not defined %}
+                            {%  set post = firstnotice %}
+                            <a class="affiche" href="{{path('show_post',{'slugcity':website.locality.slugcity,'slug':website.slug, 'posta':post.slug, 'id':post.id }) }}">
+                            {{ include('aff_website/view/modale_post.html.twig') }}
+                            </a>
+                        {%  else %}
+                            {%  set offre = firstnotice %}
+                            {{ include('aff_website/view/modale_offre.html.twig') }}
+                        {%  endif %}
+                    {%  else %}
+                        {{ include('aff_website/view/modale_no.html.twig') }}
+                    {%  endif %}
+                </div>
+            {%  endif %}
+            <div class="_post_comment">
+                <div class="list-comment">
+                    {%  if comments is defined %}
+                        {%  for comment in comments %}
+                            <div class="comment-post">
+                                {{ comment }}
+                            </div>
+                        {%  else %}
+                            <div class="comment-post">
+                                Pas encore de commentaire sur cette affiche
+                            </div>
+                        {% endfor %}
+                    {%  endif %}
+                </div>
+            </div>
+            <div class="zone-command">
+                <a  href="{{ path('board', {'slugcity': website.locality.slugcity ,'slug': website.slug }) }}" class="goaff_v6 _bulle-act">
+                    <i class="fa fa-link" aria-hidden="true"></i>
+                    <h3>le panneau</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Commande</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        @page {
+            margin: 0cm 0cm;
+        }
+        body {
+            margin-top: 4cm;
+            margin-left: 2cm;
+            margin-right: 2cm;
+            margin-bottom: 2cm;
+        }
+        header{
+            position: fixed;
+            top: 1cm;
+            left: 0cm;
+            right: 0cm;
+            height: 3cm;
+        }
+        footer {
+            position: fixed;
+            bottom: 0cm;
+            left: 0cm;
+            right: 0cm;
+            height: 2cm;
+            /** Extra personal styles **/
+            background-color: #060662;
+            color: white;
+            text-align: center;
+        }
+        main {
+            font-size: 0.8rem;
+        }
+        main h5{
+            font-size: 1rem;
+            color: #060662;
+        }
+        span{
+            color:dodgerblue;
+        }
+        .title-page{
+            text-align: left;
+        }
+        .content-fact{
+            font-size: 0.8rem;
+        }
+        .total-fact{
+            text-align: center;
+            font-size: 0.8rem;
+        }
+        .solde_table{
+            width: 15cm;
+            font-size: 0.8rem;
+        }
+        .tab-rib{
+            font-size: 0.7rem;
+        }
+        .footer-fac{
+            padding: 15px;
+            font-size: 0.8rem;
+        }
+        .footer-fac p{
+            font-size: 0.6rem;
+        }
+        .mention-fac{
+            font-size: 0.5rem;
+        }
+        .info-brand{
+            margin-bottom: 10px;
+        }
+        .footer-brand{
+            padding: 10px;
+            margin: auto;
+            text-align: center;
+            font-size: 0.6rem;
+        }
+        .name-brand .h3, h3{
+            font-size: 0.8em;
+        }
+        li{
+            text-decoration: none;
+            list-style: none;
+        }
+        .td0{
+            width: 1cm;
+        }
+        .td1{
+            width: auto;
+        }
+        .td3{
+            width: 1.5cm;
+            text-align: center;
+        }
+        .td4{
+            width: 1.5cm;
+            text-align: right;
+        }
+        .td5{
+            width: 1.5cm;
+            text-align: right;
+        }
+        .logo-top{
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    {% set website = order.wbcustomer.website %}
+    <header>
+        <div class="header-pdf">
+            <div class="logo-top"><img src="https://affichange.com/img/AffiChanGe.png" width="80px" height="80px" alt="logo affichange"></div>
+        </div>
+    </header>
+    <main>
+        <div class="info-brand">
+            <div class="customer">
+            </div>
+        </div>
+        <h5 class="title-page">Commande N° {{ order.numcommande }} du {{ order.date|date('d/m/Y') }}
+            {% if order.products[0].subscription is not null %}
+                 - pour la periode du : {{ order.products[0].subscription.starttime|date('d/m/y') }} au {{ order.products[0].subscription.endtime|date('d/m/y') }}
+            {% endif %}
+        </h5>
+        <hr>
+
+        <table class="table table-striped content-fact" style="font-size: 0.7rem; margin: auto;">
+            <thead>
+                <tr>
+                    <th>Réf-</th>
+                    <th>Designation</th>
+                    <th> qté/budget </th>
+                    <th>prix/taux</th>
+                    <th>total HT</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for cmd in order.listproducts %}
+                {% if cmd.remised %}
+                    {%  set price = cmd.priceht %}
+                {% else %}
+                    {%  set price = cmd.product.price %}
+                {% endif %}
+                <tr>
+                    <td class="td0">{{ cmd.product.name }}</td>
+                    <td class="td1">{{ cmd.product.description }} : {{ cmd.description }}</td>
+                    <td class="td3">{{ cmd.multiple }}</td>
+                    {%  if cmd.product.unit is same as('€') %}
+                        <td class="td4">{{ price|number_format(2,',', '.') }} €</td>
+                        <td class="td5">{{ ( price*cmd.multiple )|number_format(2,',', '.') }} €</td>
+                    {% else %}
+                        <td class="td4">{{ price }} %</td>
+                        <td class="td5">{{ (( price*cmd.multiple )/100)|number_format(2,',', '.') }} €</td>
+                    {%  endif %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="total-fact">
+            <table class="solde_table table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Total H.T</th>
+                        <th>TVA(20%)</th>
+                        <th>Total TTC</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{order.totalht|number_format(2,',', '.') }} € </td>
+                        <td>{{ order.totaltva|number_format(2,',', '.') }} € </td>
+                        <td>{{ order.totalttc|number_format(2,',', '.') }} € </td>
+                    </tr>
+                    </tbody>
+            </table>
+        </div>
+
+    </main>
+</body>
+</html>

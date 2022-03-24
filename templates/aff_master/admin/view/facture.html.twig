@@ -1,0 +1,121 @@
+{# ./templates/pdf/feuillematch.html.twig #}
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>facture</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        @page {
+            padding: 15px;
+        }
+        img{
+            width: 150px;
+            height: auto;
+        }
+        span{
+            color:dodgerblue;
+        }
+        .header-pdf{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 36px;
+        }
+    </style>
+</head>
+<body>
+    <div class="entete">
+        <div class="header-pdf">
+            <div class="logo-top"><img src="https://affichange.com/images/newlogo.png"  alt="logo affichange"></div>
+            <h6 class="title-pdf">AffiChanGe</h6>
+        </div>
+        <div class="info.brand">
+            <ul class="brand-info">
+                <li class="brand-li">{{ brand.adress1 }}</li>
+                <li class="brand-li">{{ brand.adress2 }}</li>
+                <li class="brand-li">{{ brand.codepost }} - {{ brand.city }}</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <h5>Facture </h5>
+
+    <div class="info.brand">
+        <h5>Client : </h5>
+        <ul class="brand-info">
+            <li class="brand-li">{{ customer.adress1 }}</li>
+            <li class="brand-li">{{ customer.adress2 }}</li>
+            <li class="brand-li">{{ customer.codepost }}</li>
+            <li class="brand-li">{{ customer.city }}</li>
+        </ul>
+    </div>
+    <h4>Détails :</h4>
+    <p><strong>date de la facture : {{ fact.datefact|format_date(locale='fr') }} </strong></p>
+    <p><strong>Numéro : {{ fact.datefact|format_date(locale='fr') }} </strong></p>
+    <p><strong>N° client : {{ fact.datefact|format_date(locale='fr') }} </strong></p>
+
+    <h5>Prestations :</h5>
+
+    <div class="content-fact">
+        <table class="list__table__match table table-striped match-dom" style="font-size: 0.8rem; width: 90%;">
+        <thead>
+        <tr>
+            <th>Réference</th>
+            <th>Designation</th>
+            <th>Web site</th>
+            <th>Total HT</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for prod in fact.product %}
+
+                <tr>
+                    <td>{{ prod.ref }}</td>
+                    <td>{{prod.designation }}</td>
+                    <td>{{ Prod.website.name }}</td>
+                    <td>{{ prod.price }}</td>
+                </tr>
+
+            {% endfor %}
+            </tbody>
+            </table>
+        <hr>
+    </div>
+    <div class="total-fact">
+        <table class="list__table__match table table-striped match-dom" style="font-size: 0.8rem; width: 90%;">
+            <thead>
+            <tr>
+                <th>Total H.T</th>
+                <th>TVA(20%)</th>
+                <th>Total TTC</th>
+            </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>{{ fact.ht }}</td>
+                    <td>{{ fact.tva }}</td>
+                    <td>{{ fact.ttc }}</td>
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <div class="footer-fac">
+        <h3 class="reg-fact">Réglement : {{ fact.reglt }}</h3>
+        <p  class="mention-fac">Nous nous réservons la propriété des droits de création, de développement et le maintien des services et abonnements définis par la présente facture jusqu’au paiement intégral de leur prix. Le client reconnaît avoir pris connaissance des conditions générales de vente et déclare accepter sans réserve. Aucun escompte ne sera accordé et ne pourra être déduit directement par le client. Tout retard de paiement entraînera des pénalités de retard égales à 3 fois le taux d’intérêt légal soit 1.95% et une indemnité forfaitaire de 20% des sommes réclamées.
+        </p>
+    </div>
+    <div class="footer-brand">
+        <h3 class="name-brand">{{ brand.name }}</h3>
+        <p> SAS au capital de 1000 € - RCS Saint Nazaire 795 072 115 000012 Ape : 6012Z
+        </p>
+        <p>affichange.com - <span class="Afg">affichange</span></p>
+    </div>
+</body>
+</html>

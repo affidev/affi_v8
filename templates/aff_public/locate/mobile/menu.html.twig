@@ -1,0 +1,38 @@
+{{ include('aff_menu/menus/'~agent~'/modale_mob_customer.html.twig') }}
+<div class="searchbar_mob">
+    <x-locate city="{{ locate.city }}" lclass="cargo"></x-locate>
+    <div class="fx-pw-dk-col">
+        <div class="pd15">
+            <x-website class="content_relat-search" city="{{ city }}"></x-website>
+            <div class="container-text-info">
+                <div class="text-info">
+                    <div class="info-af">
+                        <button class="text-switch shtext-switch bt_trans bulleswith" data-textswitch="tgl_0" data-action="nh">Les affiches</button>
+                        <span class="text-diveder"> | </span>
+                        <button class="text-switch bt_trans bulleswith" data-textswitch="tgl_1" data-action="sh">Les panneaux</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{#
+<div class="button-search_mob">
+    <button class="scroll_top bulleswith b_little_mob" data-switch="tgl_1" data-action="sh"><i class="fa fa-users"></i> tous</button>
+    <button class="scroll_top bulleswith no-switch b_little_mob" data-switch="tgl_0" data-action="nh"><i class="fa fa-flag"></i> Le panneau local</button>
+</div>
+#}
+
+
+    {# ancienne version 16/01/2022
+    <div class="button-search">
+        <button class="scroll_top bulleswith b_little_mob" data-switch="tgl_1" data-action="sh"><i class="fa fa-users"></i> les panneaux</button>
+        <button class="scroll_top bulleswith no-switch b_little_mob" data-switch="tgl_0" data-action="nh"><i class="fa fa-flag"></i> Le panneau local</button>
+       {{ include('aff_search/'~agent~'/bullgo.html.twig') }}
+    </div>
+      {#   <a href="" class="scroll_top  b_little_mob" ><i class="fa fa-edit"></i> J'affiche</a>  #}
+
+
+
+
+

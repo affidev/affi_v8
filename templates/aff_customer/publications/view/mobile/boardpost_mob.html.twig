@@ -1,0 +1,39 @@
+{%  set entity = entity.post %}
+        {{ include('elements/blog-zoneaction_mob.html.twig') }}
+        <div class="nav-onglaff">
+            <div class="nav-bar baract-on"  data-navbar="1">
+                <h3>Message</h3>
+                <div class="bull_tag active" >
+                    <div class="-br-Ma">{{ msgps|length }}</div>
+                </div>
+            </div>
+            <div class="nav-bar baract-of" data-navbar="2">
+                 <h3>Catch</h3>
+                <div class="bull_tag active" >
+                     <div class="-br-Ma">{{ bulles|length }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="onglaff">
+            <div class="onglaff-bar" id="bar-1">
+                <div class="list-board-pub">
+                    {{ include('aff_customer/publications/cubes/cube-messagery.html.twig') }}
+                  {#   {{ include('aff_customer/publications/cubes/cube-contacts.html.twig') }}  #}
+
+                </div>
+            </div>
+            <div class="onglaff-bar" id="bar-2" style="display: none">
+                {{ include('aff_customer/publications/cubes/cube-follow.html.twig') }}
+            </div>
+        </div>
+      {#   {{ include('aff_customer/publications/cubes/cube-stat.html.twig') }} #}
+
+
+
+
+
+
+
+
+
+

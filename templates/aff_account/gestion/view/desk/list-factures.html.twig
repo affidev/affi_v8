@@ -1,0 +1,46 @@
+<div class="container-bo_v5">
+    <div class="flrow">
+        <div class="fx-cub ii_cub2">
+            <div class="O_list-cube">
+                <div class="list-incub">
+                    <div class="pos-incub-i">
+                        <div class="pos-incub-l">
+                            <div class="tit-pos-cub">dernières facture</div>
+                            <table class="list__table__match table table-striped match-dom" style="margin: auto;">
+                                <thead>
+                                <tr>
+                                    <th>N°</th>
+                                    <th>date</th>
+                                    <th>Montant</th>
+                                    <th>etat</th>
+                                    {#  <th>show</th> #}
+                                    <th>telecharger</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for fact in facts %}
+                                    <tr>
+                                        <td>{{fact.numfact}}</td>
+                                        <td>{{fact.createAt|date('d/m/Y')}}</td>
+                                        <td>{{fact.montantttc|number_format(2,',', '.')}} € TTC</td>
+                                        {% if fact.valider %}
+                                            <td><span style="color:red">soldée</span></td>
+                                        {% else %}
+                                            <td><span style="color:red">à regler</span></td>
+                                        {% endif %}
+                                        {#   <td style="display: inline-block">
+                                        <a class="bt_affi" href="{{ path('show_facture', {'id': fact.id}) }}"><i class="fa fa-eye"></i></a> -
+                                    </td>
+                                        #}
+                                        <td><a class="bt_affi" href="{{ asset('wb-v5/gest/5OpmlGr8574-t657aERZqsdt-457/admin-/pdf'~fact.pdfacture) }}" target="_blank"><i class="fa fa-file-pdf-o"></i></a></td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

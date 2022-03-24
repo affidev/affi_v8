@@ -1,0 +1,53 @@
+<div class="af_flx-C fx-c w100">
+    <div class="list-incub_mob">
+        <div class="pos-incub-i">
+            <a class="bt-newmod" href="{{ path('new_event',{'id':board.id}) }}">Nouvel Evenement</a>
+        </div>
+    </div>
+    <div class="list-incub">
+        {% for event in events %}
+            {% if event.media.imagejpg[0] is defined %}
+                {% set ill= event.media.imagejpg[0].getwebPath %}
+            {% else %}
+                {% set ill= "img/AffiChange.png" %}
+            {% endif %}
+
+            <div class="pos-incub-l_mob">
+                <div class="af_flx-C">
+                    <div class="tit-pos-cub_mob">{{ event.titre }}</div>
+                    <div class="content">
+                        {{ event.description }}
+                    </div>
+
+                    <div class="publiedby">date evenement : du {{ event.appointment.starttime|date('d:m:Y') }}
+                        au {{ event.appointment.endtime|date('d:m:Y') }}</div>
+                    <div class="_cg1enf">créée le : {{ event.createAt|date("j-m-Y") }}</div>
+
+                    <a class="pop_button" href="{{ path('edit_event',{'id':event.id}) }}">modifier
+                        <i class="fa fa-comments-o" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="inf_cub_mob">
+                    <div class="illust-list_mob">
+                        <div class="iner-illust_mob" style="background-image: url('{{ asset(ill) }}')"></div>
+                    </div>
+                </div>
+            </div>
+
+        {% else %}
+            <div class="pop-board">
+                <div class="pos-incub">
+                    <div class="_t-c _m-lr-5">
+                        <div class="til_rlt">pas encore d'évenement programmé'</div>
+                    </div>
+                    <a class="bt-pp" href="{{ path('new_event',{'id':board.id}) }}"><i class="fa fa-edit" aria-hidden="true"></i>créez</a>
+                    <div class="timdate_pos">
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+

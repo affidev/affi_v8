@@ -1,0 +1,13 @@
+<div class="button-wp">
+        <a class="pop_button" href="{{ path('ospace',{'city':board.locality.slugcity,'nameboard':board.slug}) }}">
+                <div class="wb-logo-lite">
+                        {% if board.template.logo %}
+                                <div class="bkgrndlogo" style="background-image: url('{{ asset('spaceweb/template/'~board.template.logo.namefile ) }}')"></div>
+                        {% else %}
+                                <div class="bkgrndlogo" style="
+                                        background-image: url('{{ asset('img/pinsaffi.png') }}')"></div>
+                        {% endif %}
+                </div>
+                {{ board.namewebsite }}
+        </a>
+</div>

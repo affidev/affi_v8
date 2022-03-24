@@ -1,0 +1,9 @@
+{% block body %}
+    <div class="fx_wb-c">
+        {{ include('aff_account/gestion/view/'~agent~'/newpanneau.html.twig') }}
+    </div>
+{%  endblock body %}
+{% use('js/js_customer_newboard.html.twig') %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

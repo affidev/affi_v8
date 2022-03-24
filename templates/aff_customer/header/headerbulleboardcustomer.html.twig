@@ -1,0 +1,21 @@
+<div class="cargo-opsace" id="tgl_b" data-cargo="{{ cargo??"" }}" style="display: none">
+    {%  if cargo is not null %}
+    <div class="cargobulle" data-cargo="{{ cargo??"" }}">
+        <div class="w100_25 hcargobulle">
+        </div>
+    </div>
+    {%  else %}
+            <div class="cargobulle" data-cargo="">
+                <div class="w100_25 hcargobulle">
+                    <div class="no-cargo">
+                        <h2 style="text-align: center">vous n'avez pas de panneau sur cette localité.<br>
+                            Vous souhaitez publiez sur {{ city}} ?</h2>
+                        <button class="goaff_v6 _bulle-act">non, je vais sur un de mes panneaux</button>
+                        <button class="goaff_v6 _bulle-act">oui, j'ouvre un panneau sur {{ city }}</button>
+                    </div>
+                </div>
+            </div>
+    {%  endif %}
+</div>
+
+

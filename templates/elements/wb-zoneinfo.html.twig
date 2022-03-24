@@ -1,0 +1,14 @@
+<div class="web-inf">
+       <div class="zone-inf-msg">
+        <div class="op-msg">
+            <h1>{{ website.namewebsite }}</h1>
+            <h2>{{ website.template.description }}</h2>
+        </div>
+        <div class="tools-msg">
+            <a class="e-tool" title="parmaetre du panneau" href="{{ path('members',{'id':board.id}) }}"><i class="fa fa-users" aria-hidden="true"></i></a>
+            <a class="e-tool" title="messagerie"  href="{{path('board_board',{'id': board.id }) }}"><i class="fa fa-comment-o" aria-hidden="true"></i></a>
+          {#   <a class="e-tool" title="messagerie" href="{{ path('search_partner',{'id':board.id}) }}"><i class="fa fa-cloud" aria-hidden="true"></i></a> #}
+            <a class="e-tool" title="paramètres" href="{{ path('parameters',{'id':board.id}) }}"><i class="fa fa-cog" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</div>

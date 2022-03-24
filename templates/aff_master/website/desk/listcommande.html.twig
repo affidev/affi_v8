@@ -1,0 +1,27 @@
+{%  block content %}
+    <section class="vaiss-lib">
+        <div class="_pg-act">
+            <h2>{{ website.namewebsite }}</h2>
+            <div class="fx-cub ii_cub2">
+                <div>
+                    {{ include('aff_master/'~directory~'/view/cube-commande.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+{% use "js/js_customer.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+{# vestige ancienne version pour recup si necessaire
+
+  <a style="color: #0a0a0a" href="{{ path('edit_panneau_admin',{'id':website.id}) }}">Edition de :{{ website.namewebsite }}</a>
+                <div> {{ include('aff_master/contents/talkwebsite.html.twig') }}
+                    {{ include('aff_master/'~directory~'/view/cube-commande.html.twig') }}
+                </div>
+  {{ include('aff_master/website/view/actionwebsite.html.twig') }}
+
+
+ #}

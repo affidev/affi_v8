@@ -1,0 +1,12 @@
+{% block body %}
+        <section class="affi_board">
+            {{ include('aff_website/elements/'~agent~'/zonecommand.html.twig') }}
+            {{ include('aff_website/event/'~agent~'showeventdesk.html.twig') }}
+        </section>
+{%  endblock body %}
+{% use "js/js_public_wb.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+

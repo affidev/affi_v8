@@ -1,0 +1,21 @@
+<div class="zone-command-inv">
+    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        <div class="{{ iscatch?'todebulle':'tobulle' }}" id="buller" data-idbulle="{{ iscatch }}" data-entity="{{ entity.id }}" data-typ="{{ typ }}">
+            <i class="fa fa-archive" aria-hidden="true"></i>
+            <h3>{{ iscatch?'je debulle':'je bulle' }}</h3>
+        </div>
+    {%  else %}
+        <div class="af-simpl">
+            <div class="tobulle" id="catchaffi" title="vous devez être connecté pour activer les bulles">
+                <i class="fa fa-archive" aria-hidden="true"></i>
+                <h3>je bulle</h3>
+            </div>
+            <div class="infocastch" id="tgl_catch">
+                <div class="iner-inf-catch">
+                    Pour ajouter cette publication à votre panneau personnel
+                    <a href="{{ path('app_login') }}">Connectez-vous</a>
+                </div>
+            </div>
+        </div>
+    {%  endif %}
+</div>

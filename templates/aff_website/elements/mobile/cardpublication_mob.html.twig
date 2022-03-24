@@ -1,0 +1,13 @@
+{%  if notice.promo is not defined %}
+    {%  set otherpost = notice %}
+    <div class="last-postall_mob">
+        {{include('aff_website/post/view/poppost_mob.html.twig')}}
+    </div>
+{%  else %}
+    {%  set otheroffre = notice %}
+    <div class="last-postall_mob">
+        {{include('aff_website/shop/view/popshop_mob.html.twig')}}
+    </div>
+{%  endif %}
+
+

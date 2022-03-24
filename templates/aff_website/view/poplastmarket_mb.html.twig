@@ -1,0 +1,36 @@
+
+    {% if offre.media.imagejpg[0].namefile is defined %}
+        <img  class="bull-post-last_mb"src="{{ asset('upload/module/'~offre.media.imagejpg[0].namefile ) }}" alt="">
+    {% else %}
+        <img class="bull-post-last_mb" src="{{ asset('img/pinsaffi.png') }}" alt="">
+    {% endif %}
+    <div class="pop-post-abs_v2">
+
+        <div class="bef-post_v2">
+            <div class="first_head_v2">
+                <div class="scooped_v2">
+                    <div itemprop="title_v2" class="evnet_titre_mb">
+                        <h2>{{offre.titre}}</h2>
+                    </div>
+                    <div class="event_second_titl_v2">
+                        <h3>{{offre.descriptif|u.truncate(80, '...')}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="_fx-R_v2 _fx-convers_inv_v2">
+                <div class="info-post_mb_v2 ">
+                    <span class="datepubli_event">mis en ligne le : <time itemprop = "startDate" pubdate><b>{{ offre.createAt|date("d-m-Y") }}</b></time>&nbsp;par&nbsp;</span>
+                    <span class="datepubli_event">{{offre.author.name| upper}}</span>
+                </div>
+            </div>
+            <aside class="event_info_v2">
+                <div class="meet-avs_v2">
+                    <div class="_l-bb1_v2">
+                        <div class="_in-l-bb1-post_v2">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+

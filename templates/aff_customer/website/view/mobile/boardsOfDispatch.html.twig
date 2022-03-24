@@ -1,0 +1,62 @@
+<div class="gnav gnav-reset" id="gnav-footer-container">
+    <nav  class="main">
+        <ul class="AccordionList AccordionList-items">
+            {% for spw in dispatch.spwsite %}
+            <li class="AccordionList-item">
+                <a class="AccordionList-link" href="{{ path('ospace',{"city":spw.website.locality.city,"nameboard":spw.website.slug}) }}" data-website="{{ spw.website.id }}">
+                    {%  if spw.website.template.logo.namefile is defined %}
+                        <div class="iner-img_notbd_mob" style="background-image: url('{{ asset('spaceweb/template/'~spw.website.template.logo.namefile) }}')"></div>
+                    {%  else %}
+                        <div class="iner-img_notbd_mob" style="background-image: url('{{ asset('img/pinsaffi.png' ) }}')"></div>
+                    {%  endif %}
+                    <div class="AccordionList-text">
+                        {{spw.website.namewebsite}}</div>
+                    <svg class="chevronRight" fill="currentColor" focusable="false" role="img" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg" height="24px" width="24px"><title>chevron right</title>
+                        <path d="M9.888 5.998a.506.506 0 00-.716-.008l-.707.707a.506.506 0 00.01.716L13.06 12l-4.587 4.587c-.2.2-.204.521-.009.716l.707.707a.507.507 0 00.717-.009l5.647-5.648c.1-.1.148-.233.144-.366a.492.492 0 00-.144-.34v-.001a.611.611 0 00-.009-.009L9.888 5.998z"></path>
+                    </svg>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</div>
+<a href="{{path('add_board')}}" class="bt-andestand">J'ouvre un nouveau panneau</a>
+{#
+
+<div class="flex-board">
+    {% for spw in dispatch.spwsite %}
+        <div class="wb_board">
+
+            <a href="{{ path( 'ospace', {"city":spw.website.locality.city,"nameboard":spw.website.slug}) }}" class="pop_item-rep_v6" data-website="{{ spw.website.id }}">
+
+            <div class="notbd-img">
+                {%  if spw.website.template.logo.namefile is defined %}
+                <div class="iner-img_notbd" style="background-image: url('{{ asset('spaceweb/template/'~spw.website.template.logo.namefile) }}')"></div>
+                {%  else %}
+                    <div class="iner-img_notbd" style="background-image: url('{{ asset('img/pinsaffi.png' ) }}')"></div>
+
+                {%  endif %}
+            </div>
+            <div class="modal_innerpopo">
+                <p>{{spw.website.namewebsite}} </p>
+                <div class="me_ampoul">
+                </div>
+            </div>
+        </a>
+        </div>
+    {% else %}
+        <div class="pop_item-rep">
+            <div class="notbd-img">
+                <div class="iner-img_notbd" style="background-image: url('{{ asset('img/pinsaffi.png' ) }}')"></div>
+            </div>
+            <div class="modal_innerpopo">
+                <p>pas encore de panneau attaché à votre compte</p>
+                <div class="me_ampoul">
+                    snif
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+#}

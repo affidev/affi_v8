@@ -1,0 +1,22 @@
+{%  if locate is defined %}
+
+    <a class="af_flx-nW fx-c" href="{{ path('cargo_public',{'slugcity':city}) }}">
+        <div id="citynow">
+            <div class="_i-Wbs" >{{ include('svg/50x50_AfCHG_blanc.html.twig') }}</div>
+        </div>
+        <div class="sty_affi_mob">
+            <h1>{{ city|capitalize }}</h1>
+        </div>
+    </a>
+
+
+{%  else %}
+    <div class="af_flx-nW fx-c">
+        <div id="glassrocket">
+            <div class="_i-Wbs bulletoggle " data-affitgl="tgl_10">{{ include('svg/50x50_AfCHG_blanc.html.twig') }}</div>
+        </div>
+        <div class="sty_affi_mob">
+            <h1>AffiChanGe</h1>
+        </div>
+    </div>
+{%  endif %}

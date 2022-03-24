@@ -1,0 +1,77 @@
+<section class="affi_post_mob">
+    <article class="wb-post_mob">
+
+        {{ include('aff_website/post/view/modale_post_mob.html.twig') }}
+
+        {% if content is not same as ("") %}
+            <div class="_post_content_mob">
+                <div class="article_content_mob">
+                    {{ content|raw }}
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="ol-commd_mob">
+            {% if  website.contactation is not null %}
+                <div class=" button-wp" >
+                    <button class="bulletoggle pop_button" data-tglswitch="tgl_9" data-action="sh"><i class="fa fa-comments-o" aria-hidden="true"></i> J'échange sur cette affiche</button>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="_wb-module-first_mob">
+            <div class="ol-2 tglaff"  id="tgl_9" style="display: none">
+                {% if dispatch is null %}
+                    {{ include('aff_messagery/board/form/form_contact_post.html.twig') }}
+                    {#
+                    <div id="testmail">
+                        <test-mailmsg slug="{{ website.slug }}" id="{{ post.id }}" module="_blog"></test-mailmsg>
+                    </div>
+                    #}
+                {%  else %}
+                    <div id="adcomment">
+                        <add-comment slug="{{ website.slug }}" id="{{ post.id }}" module="_blog"></add-comment>
+                    </div>
+                {%  endif %}
+            </div>
+        </div>
+
+    </article>
+
+    <div class="_scrollflownew _dk _post w100">
+        <div class="board-list-replace">
+            <nav class="other">
+                <div class="nogo"><h3>et aussi</h3></div>
+            </nav>
+
+            <div class="flex-notb_v8-mob">
+                    {% for otherpost in posts|slice(0, 6) %}
+                        {% if otherpost.id != post.id %}
+                            <div class="last-postall_mob">
+                                {{include('aff_website/post/view/poppost_mob.html.twig')}}
+                            </div>
+                        {%  endif %}
+                {% else %}
+                    <div class="flex-notb_v8-mob">
+                        <div class="last-postall_v6-fix">
+                            <div class="affiche">
+                                <div class="evnet_titre_v5">pas d'autre affiche actuellement !!</div>
+                            </div>
+                            <div class="boarder">
+                            </div>
+                        </div>
+                    </div>
+                {%  endfor %}
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+

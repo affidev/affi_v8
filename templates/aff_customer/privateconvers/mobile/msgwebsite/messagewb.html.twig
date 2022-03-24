@@ -1,0 +1,23 @@
+{# messageWb version mobile#}
+{% block body %}
+    <div class="universaff_mob">
+        <div class="wb-inf-" data-website="{{ website.id }}" data-slug="{{ website.slug }}"></div>
+        {{ include('website/member/mobile/headerWb/blockWbmobLiteMember.html.twig') }}
+        {{ include('website/member/desk/headerWb/blockflash.html.twig') }}
+        <div class="ii_switch">
+                {{ include('navigation/'~agent~'actionLinkWb.html.twig') }}
+                <div class="fx-pw">
+                    {{ include('navigation/'~agent~'Colcenter_msg.html.twig') }}
+                    <div class="mesg-fx">
+                        {{ include('website/commun/conversall.html.twig') }}
+                        {{ include('website/public/'~agent~'conversations/msgwebsite/'~action~'.html.twig') }}
+                    </div>
+                    {{ include('website/public/footers/footer_answer.html.twig') }}
+                </div>
+        </div>
+    </div>
+{% endblock %}
+{% use "js/js-webmessage.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

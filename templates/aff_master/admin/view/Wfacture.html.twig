@@ -1,0 +1,194 @@
+{# ./templates/pdf/wfacture.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>facture</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        @page {
+            padding: 25px;
+            font-size: 0.9em;
+        }
+        .entete{
+            margin-bottom: 25px;
+        }
+        img{
+            width: 80px;
+            height: auto;
+        }
+        span{
+            color:dodgerblue;
+        }
+        .header-pdf{
+        }
+        .header-pdf h6{
+            font-size: 1rem;
+        }
+        .section-in{
+            margin: auto;
+        }
+        .content-page{
+        }
+        .title-page{
+            text-align: center
+        }
+        .content-fact{
+            min-height: 350px;
+        }
+        .total-fact{
+            width: 389px;
+            text-align: center;
+        }
+        .footer-fac{
+            width: 80%;
+            margin: auto;
+            font-size: 0.8rem;
+        }
+        .footer-brand{
+            text-align: center;
+            font-size: 0.6rem;
+            line-height: 2px;
+        }
+        .name-brand .h3, h3{
+            font-size: 1em;
+        }
+        li{
+            text-decoration: none;
+            list-style: none;
+        }
+        .td0{
+
+        }
+        .td1{
+
+        }
+        .td2{
+
+        }
+        .td3{
+            max-width: 20px;
+        }
+        .td4{
+            max-width: 20px;
+        }
+        .td5{
+            min-width: 30px;
+        }
+        .periode{
+            width: 100%;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+{% set website = order.wbcustomer.website %}
+
+<div class="entete">
+    <div class="header-pdf">
+        <div class="logo-top"><img src="https://affichange.com/img/AffiChanGe.png"  alt="logo affichange"></div>
+        <h6 class="title-pdf">AffiChanGe</h6>
+    </div>
+    <div class="info-brand">
+        <div class="brand-info">
+            <div class="brand-li">3, rue de la tranquillité</div>
+            <div class="brand-li">44830 - Bouaye</div>
+            <div class="brand-li">www.affichange.com</div>
+            <div class="brand-li"><a href="https://affichange.com/msg/formcontact/affichange/Dc7zkgFhLpCoH5a2vbiNGUOZ">affichange@</a></div>
+        </div>
+    </div>
+</div>
+
+<div class="content-page">
+    <div class="info-brand">
+        <div class="customer">
+            <h5>{{ website.namewebsite }}</h5>
+            <div class="brand-info">
+                <div class="brand-li">{{ website.template.sector.adresse[0].numero}}  {{ website.template.sector.adresse[0].nomVoie}}</div>
+                <div class="brand-li">{{ website.template.sector.adresse[0].codePostal }} - {{ website.template.sector.adresse[0].nomCommune }}</div>
+            </div>
+        </div>
+    </div>
+
+    <h5 class="title-page">FACTURE N° {{ facture.numfact }} du {{ facture.createAt|format_date(locale='fr') }}</h5>
+
+    <div class="section-in">
+        <p>N° client : {{ website.createAt|date("Y") }}-WB-{{ website.id }}{{ order.wbcustomer.numero }} </p>
+        <p>administrateur website : {{ dispatch.name }} </p>
+        <h5 style="text-align: center">Prestations :</h5>
+
+        <div class="content-fact">
+            <table class="list__table__match table table-striped match-dom" style="font-size: 0.8rem; margin: auto;">
+                <thead>
+               {# <tr><th>Commande N° {{ order.numcommande }} du {{ order.date|format_date(locale='fr') }}</th></tr> #}
+                <tr>
+                    <th>Réference</th>
+                    <th>Designation</th>
+                    <th> - </th>
+                    <th> qté/budget </th>
+                    <th>prix/ taux</th>
+                    <th>total HT</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for cmd in order.products %} {# products ici est Wborderproduct #}
+                    {% if cmd.subscription is not null %}
+                        {% if loop.first %}
+                        <tr class="periode">pour la periode du : {{ cmd.subscription.starttime|date('d/m/y') }} au {{ cmd.subscription.endtime|date('d/m/y') }}</tr>
+                        {%  endif %}
+                    {% endif %}
+                    <tr>
+                        <td class="td0">{{ cmd.product.name }}</td>
+                        <td class="td1">{{ cmd.product.description }}</td>
+                        <td class="td2">{{ cmd.description }}</td>
+                        <td class="td3">{{ cmd.multiple }}</td>
+                        {%  if cmd.product.unit is same as('€') %}
+                            <td class="td4">{{ cmd.priceht|number_format(2,',', '.') }} €  HT</td>
+                            <td class="td5">{{ ( cmd.priceht*cmd.multiple )|number_format(2,',', '.') }} €  HT</td>
+                        {% else %}
+                            <td class="td4">{{ cmd.priceht }} %</td>
+                            <td class="td5">{{ (( cmd.priceht*cmd.multiple )/100)|number_format(2,',', '.') }} €  HT</td>
+                        {%  endif %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <hr>
+        </div>
+        <div class="total-fact">
+            <table class="list__table__match table table-striped match-dom">
+                <thead>
+                <tr>
+                    <th>Total H.T</th>
+                    <th>TVA(20%)</th>
+                    <th>Total TTC</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{order.totalht|number_format(2,',', '.') }} € </td>
+                    <td>{{ order.totaltva|number_format(2,',', '.') }} € </td>
+                    <td>{{ order.totalttc|number_format(2,',', '.') }} € </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+
+
+        <div class="footer-fac">
+            <h3 class="reg-fact">Réglement : virement bancaire à reception de facture</h3>
+            <p  class="mention-fac">Nous nous réservons la propriété des droits de création, de développement, le maintien des services définis par la présente facture jusqu’au paiement intégral de son prix. Le client reconnaît avoir pris connaissance des conditions générales de vente et déclare les accepter sans réserve. Aucun escompte ne sera accordé. Tout retard de paiement entraînera des pénalités de retard égales à 3 fois le taux d’intérêt légal soit 1.95% et une indemnité forfaitaire de 20% des sommes réclamées.
+            </p>
+        </div>
+
+        <div class="footer-brand">
+            <h3 class="name-brand">AffiChange - NBCOM</h3>
+            <p> SAS au capital de 1000 € - RCS Saint Nazaire 795 072 115 000012 Ape : 6012Z
+            </p>
+            <p>affichange.com - <span class="Afg">affichange</span></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

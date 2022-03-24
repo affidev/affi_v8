@@ -1,0 +1,39 @@
+{% block body %}
+    <div class="showwb_fx_v6">
+        <div class="contact-fixed">
+            <div class="_fx-C cdr-lit-trans" >
+            </div>
+        </div>
+    </div>
+    <div class="fx_wb-c">
+        <div class="_scrollflownew _dk _post w100">
+            <div class="board-list-replace">
+                <nav class="other">
+                    <div class="nogo"><h3>et aussi</h3></div>
+                </nav>
+                <div class="flex-notb_v6-fix">
+                    {% for blog in favoris.blog|slice(0, 6) %}
+                        {%  set post=blog.post %}
+                        <div class="last-postall_v6-fix">
+                            {{include('aff_website/view/poppost_mb.html.twig')}}
+                        </div>
+                    {% else %}
+                        <div class="flex-notb_v6-fix">
+                            <div class="last-postall_v6-fix">
+                                <div class="affiche">
+                                    <div class="evnet_titre_v5">pas d'autre affiche actuellement !!</div>
+                                </div>
+                                <div class="boarder">
+                                </div>
+                            </div>
+                        </div>
+                    {%  endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{%  endblock body %}
+{% use "js/js_public_wb.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

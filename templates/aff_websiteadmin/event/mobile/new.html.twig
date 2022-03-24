@@ -1,0 +1,9 @@
+{% block body %}
+<section class="_wb-ospace_mob">
+    <x-event board="{{ board.id }}" partners="" city="{{ city }}" event="{{event}}"></x-event>
+</section>
+{% endblock %}
+{% use "js/js-event.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

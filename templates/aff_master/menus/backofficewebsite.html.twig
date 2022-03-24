@@ -1,0 +1,43 @@
+<div class="_men-fl-bkoff">
+        <div class="menu-bo_sp">
+            <div class="pop-tab_menu _cl-cl">
+                <div class="bubble-menu-litt-rock">
+                    <a class="mn-link" href="{{path('back_admin',{'keyboard':key_admin}) }}">
+                        <i class="fa fa-home mgr_5" aria-hidden="true"></i><span>Menu</span>
+                        <h5></h5>
+                    </a>
+                </div>
+                <div class="bubble-menu-litt-rock">
+                    <a class="mn-link" href="{{ path('back_admin_gest_wbsite',{'id':website.id}) }}">
+                        <i class="fa fa-th mgr_5" aria-hidden="true"></i><span>le panneau</span>
+                        <h5>gestion commandes</h5>
+                    </a>
+                </div>
+                <div class="bubble-menu-litt-rock">
+                    <a class="mn-link" href="{{ path('spaceweblocalize_init_admin',{'id':website.id}) }}">
+                        <i class="fa fa-map-marker mgr_5" aria-hidden="true"></i><span>Adresse</span>
+                        <h5>adresse du panneau</h5>
+                    </a>
+                </div>
+                <div class="bubble-menu-litt-rock">
+                    <a class="mn-link" href="{{ path('edit_panneau_admin',{'id':website.id}) }}">
+                        <i class="fa fa-id-card-o mgr_5" aria-hidden="true"></i><span>Infos</span>
+                        <h5>les infos du panneau</h5>
+                    </a>
+                </div>
+                <div class="bubble-menu-litt-rock">
+                    <a class="mn-link" href="{{ path('opendays_edit_admin',{'id':website.id}) }}">
+                        <i class="fa fa-calendar mgr_5" aria-hidden="true"></i><span>Horaires</span>
+                        <h5>informez sur vos horaires d'ouverture</h5>
+                    </a>
+                </div>
+                <div class="bubble-menu-litt-rock">
+                    <a class="mn-link" href="{{ path('back_admin_wbsite_commande_list',{'id':website.id}) }}">
+                        <i class="fa fa-shopping-cart mgr_5" aria-hidden="true"></i><span>Commande</span>
+                        <h5>gestion facturation</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+</div>

@@ -1,0 +1,76 @@
+<div class="gnav gnav-reset" id="gnav-footer-container">
+    <nav  class="main">
+
+        <ul class="AccordionList AccordionList-items">
+
+            <li class="AccordionList-item">
+                <a class="AccordionList-link" href="{{ path('show_website',{'city':board.locality.slugcity,'nameboard':board.slug}) }}">
+                    <div class="AccordionList-text">{{ website.namewebsite }}</div>
+                    <svg class="chevronRight" fill="currentColor" focusable="false" role="img" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg" height="24px" width="24px"><title>chevron right</title>
+                        <path d="M9.888 5.998a.506.506 0 00-.716-.008l-.707.707a.506.506 0 00.01.716L13.06 12l-4.587 4.587c-.2.2-.204.521-.009.716l.707.707a.507.507 0 00.717-.009l5.647-5.648c.1-.1.148-.233.144-.366a.492.492 0 00-.144-.34v-.001a.611.611 0 00-.009-.009L9.888 5.998z"></path>
+                    </svg>
+                </a>
+            </li>
+
+            <li data-toogle-accordion="toog-publications">
+                <div role="button" class="AccordionList-header AccordionList-item AccordionList-headerItem AccordionList-collapsed"
+                     tabindex="0" aria-haspopup="true" aria-controls="toog-publications" aria-expanded="false"
+                     data-element-toogle="toog-publications" data-gnav-action="open">
+                    <div class="AccordionList-text">Publications</div>
+                    <span class="AccordionList-actionIcon">
+
+                        <svg class="chevronDown" fill="currentColor" focusable="false" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="24px"
+                             width="24px"><title>chevron down</title>
+                            <path d="M18.002 9.888c.2-.2.204-.521.008-.716l-.707-.708a.506.506 0 00-.716.01L12 13.06 7.413 8.474a.507.507 0 00-.716-.01l-.708.707a.507.507 0 00.01.717l5.647 5.648c.1.1.234.148.367.143a.491.491 0 00.34-.144h.001l.008-.008 5.64-5.64z"></path>
+                        </svg>
+
+                        <svg class="chevronUp" fill="currentColor" focusable="false" role="img" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg" height="24px" width="24px"><title>chevron up</title>
+                            <path d="M18.003 14.112c.2.2.204.521.008.716l-.707.708a.506.506 0 01-.716-.01l-4.587-4.587-4.587 4.587c-.2.2-.521.205-.716.01l-.708-.707a.507.507 0 01.01-.717l5.647-5.648c.1-.1.234-.148.367-.143.125.002.247.05.34.144h.001a.364.364 0 01.008.008l5.64 5.64z"></path>
+                        </svg>
+
+                    </span>
+                </div>
+               <ul id="FooterJobseekerLinks" class="AccordionList-items AccordionList-togglableItems">
+                    <li class="AccordionList-item"><a class="AccordionList-link"
+                                                      href="{{path('module_blog',{'city':board.locality.slugcity, 'nameboard':board.slug})}}">
+                            <div class="AccordionList-text">Vos Affiches</div>
+                        </a></li>
+                    <li class="AccordionList-item"><a class="AccordionList-link" href="{{path('module_event',{'city':board.locality.slugcity, 'nameboard':board.slug})}}">
+                            <div class="AccordionList-text">Vos lives (évènements, localisation en temps réel..)</div>
+                        </a></li>
+                    <li class="AccordionList-item">
+                        {%  if isActivity('module_found', vartwig.tabActivities) %}
+                        <a class="AccordionList-link" href="{{path('module_found',{'city':board.locality.slugcity, 'nameboard':board.slug}) }}">
+                            <div class="AccordionList-text">Menus</div>
+                        </a>
+                        {% else %}
+                            <a class="AccordionList-link" href="{{ path('addmodule_website',{'activ':'module_found','id':board.id}) }}">
+                                <div class="AccordionList-text">Activez le module "Restaurant-traiteur"</div>
+                            </a>
+                        {% endif %}
+
+                    </li>
+                    <li class="AccordionList-item">
+                        {%  if isActivity('module_shop', vartwig.tabActivities) %}
+                        <a class="AccordionList-link" href="{{path('module_shop',{'city':board.locality.slugcity, 'nameboard':board.slug})}}">
+                            <div class="AccordionList-text">Offre</div>
+                        </a>
+                        {% else %}
+                            <a class="AccordionList-link" href="{{ path('addmodule_website',{'activ':'module_shop','id':board.id}) }}">
+                                <div class="AccordionList-text">Ouvrez votre boutique</div>
+                            </a>
+                        {% endif %}
+                    </li>
+                </ul>
+
+            </li>
+
+
+
+
+        </ul>
+
+    </nav>
+</div>

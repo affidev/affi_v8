@@ -1,0 +1,26 @@
+https://pwa-workshop.js.org/fr/1-manifest/#proprietes-du-manifeste
+
+
+.last-postall_v6-fix {
+    background-color: #f4f3ef91;
+    border-radius: 16px;
+    /* box-shadow: 0 1px 0 2px rgb(43 43 43 / 14%); */
+    display: none;
+    min-height: 250px;
+    position: absolute;
+    transition: all .5s ease;
+    width: 302px;
+    border: solid 0.5px #80808024;
+}
+
+.evnet_titre_v5 {
+    /* background-color: white; */
+    color: #717478;
+    font-family: var(--fontMedium);
+    font-size: 2.5rem;
+    /* font-weight: 400; */
+    line-height: normal;
+    /* min-height: auto; */
+    padding: 20px;
+    border-radius: 5px;
+}

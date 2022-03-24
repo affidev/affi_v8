@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="FR">
+<head>
+    {% block head %}
+        <title>{% block title %}{{vartwig.title}}{% endblock %}</title>
+        {{ include('head/head.html.twig') }}
+    {% endblock head %}
+    {{ encore_entry_link_tags('app') }}
+</head>
+{%  set agent = app.session.get('agent') %}
+{%  set city = app.session.get('city') %}
+<body class="wpbocusto">
+
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('./_service-worker.js').then(function(registration) {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+    }
+</script>
+{#
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QN32CLNRWV"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-QN32CLNRWV');
+</script>
+#}
+<div class="wb-inf-" data-agent="{{ agent }}" data-pg="{{ pg??'hm' }}" data-customer="{{ dispatch.customer.id }}" data-replacejs="{{ replacejs?'yes':'no' }}"></div>
+{% block menu %}
+{% endblock menu %}
+{% block core %}
+        {% block body %}
+        {% endblock body %}
+        {% block javascripts %}
+        {% endblock %}
+{% endblock core %}
+</body>
+</html>

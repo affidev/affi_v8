@@ -1,0 +1,50 @@
+
+<div class="container-bo_v5">
+    {{ include('aff_customer/menu/websitemenu.html.twig') }}
+    <div class="flrow">
+        <div class="fx-cub ii_cub2">
+            <div class="O_list-cube">
+
+
+                <div class="list-incub">
+                    <div class="pos-incub-i">
+                      <a class="bt-newmod" href="{{ path('new_postation',{'id':board.id}) }}">Nouvelle affiche</a>
+                    </div>
+                </div>
+
+
+                <div class="list-incub">
+                    <div class="flex-notb_v6-fix">
+                        {% for notice in lastsnotice %}
+                            <div class=""
+                            {%  if notice.promo is not defined %}
+                                {%  set post =notice %}
+                                <div class="last-postall_v6-fix">
+                                    {{include('aff_public/view/noticecity.html.twig')}}
+                                </div>
+                            {%  else %}
+                                {%  set offre = notice %}
+                                <div class="last-postall_v6-fix">
+                                    {{include('aff_public/view/offrecity.html.twig')}}
+                                </div>
+                            {%  endif %}
+                        {%  else %}
+                            <div class="flex-board">
+                                <h3>  Pas de nouvelle affiche actuellement sur {{ city|capitalize }}</h3>
+                            </div>
+                        {%  endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

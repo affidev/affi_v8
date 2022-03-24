@@ -1,0 +1,259 @@
+{#
+<div class="_wboard">
+<aside class="_mb-Wb-pi_v6">
+     <div class="fx-pw fx-st pd15">
+         <div class="_fx-C cdr-lit_v6 bgrop_v5">
+             <div class="_fx-C fx-c">
+                 <div class="header-web-desk_v4 nav-afdk">
+                     <div class="desk-blukx_v5">
+                         <div class="fx-col fx-c">
+                             <div class="_p-t10">
+                                 <div class="_en-b_mb_v6 wbsite">
+                                     <h1 itemprop="brand">{{ website.namewebsite }}</h1>
+                                     <h3 itemprop="baseline" class="provd_pitch_v5">{{ website.template.baseline }}</h3>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+
+             </div>
+             <div class="_fx-R fx-c">
+             {{ include('aff_website/generies/opencity.html.twig') }}
+             </div>
+         </div>
+     </div>
+     </div>
+ </aside>#}
+{#
+{{ include('aff_website/navigation/'~agent~'wboard_title.html.twig') }}
+#}
+<div class="container-pop_v6" id="morinf" style="display: none">
+    <div class="tit-item">infos</div>
+    <div class="info-website">
+        <aside class="_add-inf_v6">
+            <div class="iner-inf_v6 pd15 bgrop_v5">
+                <div class="iner-col_v6">
+                    <div class="_iner-inf_mb_v6">
+                        <h2>{{ website.template.description }}</h2>
+                    </div>
+                </div>
+                <div class="iner-col_v6 cdr-lit">
+                    <div class="content_iner-info">
+                        {% if website.template.sector.adresse[0] is defined %}
+                            {%  set adr = website.template.sector.adresse[0] %}
+                            <div class="adrrss"> {{ adr.numero }} {{ adr.nomvoie }} {{ adr.codepostal }} {{ adr.nomcommune }} </div>
+                        {%  endif %}
+                        <a href="tel.{{ website.template.telephonespaceweb }}">{{ website.template.telephonespaceweb }}</a>
+                        <p>{{ website.template.activities }}</p>
+                    </div>
+                </div>
+            </div>
+            <div id="morewb">
+                <div class="bt-inf_v6">
+                    <div class="i-bt goa moregoa">
+                        <i class="fa fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="resa-activ"><span class="forplus"><i class="fa fa-plus-circle"></i></span><span class="formoins" style="display: none"><i class="fa fa-minus-circle"></i></span> d'infos</div>
+            </div>
+
+        </aside>
+        <aside class="_add-inf_v6" >
+            <div class="iner-inf_v6 pd15 bgrop_v5">
+                <div class="iner-col_v6">
+                    <div class="_iner-inf_mb_v6">
+                        {% if website.template.tagueries|length > 0 %}
+                            <div class="_fx-R fx-c">
+                                {% for tag in website.template.tagueries %}
+                                    {%  if tag.name is not same as("") %}
+                                        <div class="space_tag_when_mb">
+                                            <div class="space-tag">
+                                                <div class="bull_tag active" >
+                                                    <div class="-br-Ma">{{tag.name}}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="iner-col_v6 cdr-lit">
+                    <div class="content_iner-info">
+                        {% if openday.tab is defined %}
+                            {%  set tb = ['day'] %}
+                            <ul>
+                                {% for day in openday.tab %}
+                                    <li>
+                                        <div class="adrrss"> {{ day.day }}
+                                            {% if  day.selected %}
+                                                {% if day.tab|length > 1 %}
+                                                    {%  set hr1 =  day.tab[0].startminutes  + day.tab[0].alongminute  %}
+                                                    {%  set hr2 =  day.tab[1].startminutes  + day.tab[1].alongminute  %}
+                                                    <span class="adrrss"> de : {{ day.tab[0].startminutes // 60 }} h {{ (day.tab[0].startminutes  % 60) != 0 ? day.tab[0].startminutes  % 60 :"00" }} à : {{ hr1  // 60  }} h {{ (hr1  % 60 ) != 0 ? hr1  % 60 :"00" }} </span>
+                                                    <span class="adrrss">  et de : {{ day.tab[1].startminutes // 60 }} h {{ (day.tab[1].startminutes  % 60) != 0 ? day.tab[1].startminutes  % 60 :"00" }} à : {{ hr2  // 60  }} h {{ (hr2  % 60 ) != 0 ? hr2  % 60 :"00" }} </span>
+                                                {%  else %}
+                                                    {%  set hr =  day.tab[0].startminutes  + day.tab[0].alongminute  %}
+                                                    <span class="adrrss"> de : {{ day.tab[0].startminutes // 60 }} h {{ (day.tab[0].startminutes  % 60) != 0 ? day.tab[0].startminutes  % 60 :"00" }} à : {{ hr  // 60  }} h {{ (hr  % 60 ) != 0 ? hr  % 60 :"00" }} </span>
+                                                {%  endif %}
+                                            {%  else %}
+                                                <span class="adrrss"> fermé  </span>
+                                            {%  endif %}
+                                        </div>
+                                    </li>
+                                {%  endfor %}
+                            </ul>
+                        {%  endif %}
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<section class="affi_website">
+
+{% if notice.menu|length >0 %}
+    <div class="container-pop_v6">
+    {% set menu =notice.menu|first %}
+        <div class="goaff_v6"><h3>à table !</h3></div>
+        <div class="last-event_v6">
+            {{include('aff_website/public/desk/view/poplastmenu_mb.html.twig')}}
+        </div>
+        {%  if module.resa %}
+            {{ include('aff_website/generies/generyresa_v6.html.twig') }}
+        {% endif %}
+    </div>
+{% endif %}
+
+{% if notice.post|length >0 %}
+    <div class="container-pop_v6">
+    {% set lastpost = notice.post|first %}
+        <div class="goaff_v6"><h3>derniere affiche</h3></div>
+        <a href="{{path('show_post',{'slugcity':website.locality.slugcity,'slug':website.slug, 'posta':lastpost.slug, 'id':lastpost.id }) }}" class="last-notice_v6">
+            {{include('aff_website/public/desk/view/poplastpost_mb.html.twig')}}
+        </a>
+    </div>
+{% else %}
+    Pas d'affiche récente sur le panneau
+{% endif %}
+
+{%  if module.shop %}
+{% if notice.offre|length >0 %}
+    <div class="container-pop_v6">
+    {% set lastoffre =notice.offre|first %}
+        <div class="goaff_v6"><h3>nouveau dans la boutique</h3></div>
+        <a href="{{path('show_offre',{'slugcity':website.locality.slugcity,'slug':website.slug, 'offra':lastoffre.slug, 'id':lastoffre.id }) }}" class="last-notice_v6">
+            {{include('aff_website/public/desk/view/poplastoffre_mb.html.twig')}}
+        </a>
+    </div>
+{% else %}
+<div class="container-pop_v6">
+    <div class="goaff_v6"><h3>Pas de produit dans la boutique</h3></div>
+</div>
+{% endif %}
+{% endif %}
+
+{% if notice.market|length >0 %}
+    <div class="container-poplrg_v6">
+    {% set menu =notice.market|first %}
+        <div class="goaff_v6"><h3>actuellement sur les marchés</h3></div>
+        <a href="{{path('show_post',{'slugcity':website.locality.slugcity,'slug':website.slug, 'posta':post.slug, 'id':post.id }) }}" class="last-event_v6">
+            {{include('aff_website/public/desk/view/poplastmarket_mb.html.twig')}}
+        </a>
+    </div>
+ {% endif %}
+
+{% if notice.event|length >0 %}
+    <div class="container-poplrg_v6">
+        {% set menu =notice.event|first %}
+        <div class="goaff_v6"><h3>prochain rendez-vous</h3></div>
+        <a href="{{path('show_post',{'slugcity':website.locality.slugcity,'slug':website.slug, 'posta':post.slug, 'id':post.id }) }}" class="last-event_v6">
+            {{include('aff_website/public/desk/view/poplastevent_mb.html.twig')}}
+        </a>
+    </div>
+{% endif %}
+</section>
+{# <div class="_wboard">
+    <aside class="_add-inf_v6">
+        <div class="iner-inf_v6 pd15 bgrop_v5">
+            <div class="iner-col_v6">
+                <div class="_iner-inf_mb_v6">
+                    <h2>{{ website.template.description }}</h2>
+                </div>
+            </div>
+            <div class="iner-col_v6 cdr-lit">
+                <div class="content_iner-info">
+                    {% if website.template.sector.adresse[0] is defined %}
+                        {%  set adr = website.template.sector.adresse[0] %}
+                        <div class="adrrss"> {{ adr.numero }} {{ adr.nomvoie }} {{ adr.codepostal }} {{ adr.nomcommune }} </div>
+                    {%  endif %}
+                    <a href="tel.{{ website.template.telephonespaceweb }}">{{ website.template.telephonespaceweb }}</a>
+                    <p>{{ website.template.activities }}</p>
+                </div>
+            </div>
+        </div>
+        <div id="morewb">
+            <div class="bt-inf_v6">
+                <div class="i-bt goa moregoa">
+                    <i class="fa fa-info-circle"></i>
+                </div>
+            </div>
+            <div class="resa-activ"><span class="forplus"><i class="fa fa-plus-circle"></i></span><span class="formoins" style="display: none"><i class="fa fa-minus-circle"></i></span> d'infos</div>
+        </div>
+
+    </aside>
+    <aside class="_add-inf_v6" id="morinf" style="display: none">
+        <div class="iner-inf_v6 pd15 bgrop_v5">
+            <div class="iner-col_v6">
+                <div class="_iner-inf_mb_v6">
+                    {% if website.template.tagueries|length > 0 %}
+                        <div class="_fx-R fx-c">
+                            {% for tag in website.template.tagueries %}
+                                {%  if tag.name is not same as("") %}
+                                    <div class="space_tag_when_mb">
+                                        <div class="space-tag">
+                                            <div class="bull_tag active" >
+                                                <div class="-br-Ma">{{tag.name}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="iner-col_v6 cdr-lit">
+                <div class="content_iner-info">
+                    {% if openday.tab is defined %}
+                        {%  set tb = ['day'] %}
+                        <ul>
+                            {% for day in openday.tab %}
+                                <li>
+                                    <div class="adrrss"> {{ day.day }}
+                                        {% if  day.selected %}
+                                            {% if day.tab|length > 1 %}
+                                                {%  set hr1 =  day.tab[0].startminutes  + day.tab[0].alongminute  %}
+                                                {%  set hr2 =  day.tab[1].startminutes  + day.tab[1].alongminute  %}
+                                                <span class="adrrss"> de : {{ day.tab[0].startminutes // 60 }} h {{ (day.tab[0].startminutes  % 60) != 0 ? day.tab[0].startminutes  % 60 :"00" }} à : {{ hr1  // 60  }} h {{ (hr1  % 60 ) != 0 ? hr1  % 60 :"00" }} </span>
+                                                <span class="adrrss">  et de : {{ day.tab[1].startminutes // 60 }} h {{ (day.tab[1].startminutes  % 60) != 0 ? day.tab[1].startminutes  % 60 :"00" }} à : {{ hr2  // 60  }} h {{ (hr2  % 60 ) != 0 ? hr2  % 60 :"00" }} </span>
+                                            {%  else %}
+                                                {%  set hr =  day.tab[0].startminutes  + day.tab[0].alongminute  %}
+                                                <span class="adrrss"> de : {{ day.tab[0].startminutes // 60 }} h {{ (day.tab[0].startminutes  % 60) != 0 ? day.tab[0].startminutes  % 60 :"00" }} à : {{ hr  // 60  }} h {{ (hr  % 60 ) != 0 ? hr  % 60 :"00" }} </span>
+                                            {%  endif %}
+                                        {%  else %}
+                                            <span class="adrrss"> fermé  </span>
+                                        {%  endif %}
+                                    </div>
+                                </li>
+                            {%  endfor %}
+                        </ul>
+                    {%  endif %}
+                </div>
+            </div>
+        </div>
+    </aside>
+</div> #}

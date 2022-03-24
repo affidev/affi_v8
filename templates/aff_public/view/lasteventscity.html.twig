@@ -1,0 +1,28 @@
+
+    {% for tabevent in events %}
+            <div class="wp-event_card">
+                    <div class="inner-event head-l">
+                            <h3 class="goaff_event-fix min30"></h3>
+                            <div class="w_titlevent">
+                                    <h2 title="evenement de {{ tabevent.board.namewebsite }}">{{ tabevent.event.titre|lower|capitalize }}</h2>
+                                    {% if tabevent.event.description is not same as (" ") %}
+                                            <h3>{{ tabevent.event.description|raw|lower|capitalize }}</h3> {# {{post.subject|u.truncate(80, '...')|lower|capitalize}} #}
+                                    {% endif %}
+                            </div>
+                         {#   <time itemprop = "startDate" class="dateevent">mis en ligne le : {{ tabevent.event.createAt|date("d-m-Y") }}</time> #}
+                          {#  <time itemprop = "startDate" pubdate><b>du {{ tabevent.event.appointment.starttime|date("d-m-Y") }} au {{ tabevent.event.appointment.endtime|date("d-m-Y") }}</b></time> #}
+                            <time itemprop = "endDate" pubdate><b>jusqu'au {{ tabevent.event.appointment.endtime|date("d-m-Y") }}</b></time>
+                            <div class="author">sur : {{ tabevent.board.namewebsite }}</div>
+                    </div>
+
+                    <div class="illustr-event_card" >
+                            <div class="e_pictfull_card">
+                                    {% if tabevent.event.media.imagejpg|length > 0 and tabevent.event.media.imagejpg[0].namefile is defined %}
+                                            <img src="{{ asset(tabevent.event.media.imagejpg[0].getWebPath) }}" alt="image affiche">
+                                    {% endif %}
+                            </div>
+                    </div>
+            </div>
+    {%  endfor %}
+
+

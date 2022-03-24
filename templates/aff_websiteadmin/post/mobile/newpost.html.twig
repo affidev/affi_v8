@@ -1,0 +1,11 @@
+{% block body %}
+    <section class="_wb-ospace_mob">
+            <div id="postar" data-content="" data-post={{post}}></div>
+            {{ include('aff_websiteadmin/post/form/mobile/formaddarticleadmin.html.twig') }}
+    </section>
+
+{% endblock body%}
+{% use "js/js-post.html.twig" %}
+{% block javascripts %}
+{{ parent() }}
+{% endblock %}

@@ -1,0 +1,12 @@
+<a href="{{ path('show_website',{'city':website.locality.slugcity,'nameboard':website.slug}) }}" class="goaff_v6">
+    <div class="af_flx fx-c">
+        <div class="wb-logo-lite">
+            {% if board.template.logo %}
+                <div  class="bkgrndlogo" style="background-image: url('{{ asset('spaceweb/template/'~board.template.logo.namefile ) }}')"></div>
+            {% else %}
+                <div class="bkgrndlogo" style="background-image: url('{{ asset('img/pinsaffi.png') }}')"></div>
+            {% endif %}
+        </div>
+        <h3 class="goaff-h">{{ website.namewebsite }}</h3>
+    </div>
+</a>

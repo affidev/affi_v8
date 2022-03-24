@@ -1,0 +1,55 @@
+<div class="_affiboard-tittle_v6 _wboard-tit w_more bgrop_v5 cdr-lit" id="morinf" style="display: none"> >
+    <div class="goaff_v6"><h3>horaires</h3></div>
+    <div class="_inner ">
+        <div class="iner-inf_v6 pd15 bgrop_v5">
+            {#    <div class="iner-col_v6">  les tagueries
+                    <div class="_iner-inf_mb_v6">
+                            {% if website.template.tagueries|length > 0 %}
+                                <div class="_fx-R fx-c">
+                                    {% for tag in website.template.tagueries %}
+                                        {%  if tag.name is not same as("") %}
+                                            <div class="space_tag_when_mb">
+                                                <div class="space-tag">
+                                                    <div class="bull_tag active" >
+                                                        <div class="-br-Ma">{{tag.name}}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+            #}
+            <div class="iner-col_v6 cdr-lit">
+                <div class="content_iner-info">
+                    {% if openday.tab is defined %}
+                        {%  set tb = ['day'] %}
+                        <ul>
+                            {% for day in openday.tab %}
+                                <li>
+                                    <div class="adrrss"> {{ day.day }}
+                                        {% if  day.selected %}
+                                            {% if day.tab|length > 1 %}
+                                                {%  set hr1 =  day.tab[0].startminutes  + day.tab[0].alongminute  %}
+                                                {%  set hr2 =  day.tab[1].startminutes  + day.tab[1].alongminute  %}
+                                                <span class="adrrss"> de : {{ day.tab[0].startminutes // 60 }} h {{ (day.tab[0].startminutes  % 60) != 0 ? day.tab[0].startminutes  % 60 :"00" }} à : {{ hr1  // 60  }} h {{ (hr1  % 60 ) != 0 ? hr1  % 60 :"00" }} </span>
+                                                <span class="adrrss">  et de : {{ day.tab[1].startminutes // 60 }} h {{ (day.tab[1].startminutes  % 60) != 0 ? day.tab[1].startminutes  % 60 :"00" }} à : {{ hr2  // 60  }} h {{ (hr2  % 60 ) != 0 ? hr2  % 60 :"00" }} </span>
+                                            {%  else %}
+                                                {%  set hr =  day.tab[0].startminutes  + day.tab[0].alongminute  %}
+                                                <span class="adrrss"> de : {{ day.tab[0].startminutes // 60 }} h {{ (day.tab[0].startminutes  % 60) != 0 ? day.tab[0].startminutes  % 60 :"00" }} à : {{ hr  // 60  }} h {{ (hr  % 60 ) != 0 ? hr  % 60 :"00" }} </span>
+                                            {%  endif %}
+                                        {%  else %}
+                                            <span class="adrrss"> fermé  </span>
+                                        {%  endif %}
+                                    </div>
+                                </li>
+                            {%  endfor %}
+                        </ul>
+                    {%  endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<a class="mininotice" href="{{path('show_post',{'slugcity':post.website.locality.slugcity,'slug':post.website.slug, 'posta':post.slug, 'id':post.id }) }}">
+    <div class="af_flx-C-nW">
+        <div class="evnet_titre_mob">{{post.titre|lower|capitalize}}</div>
+        <div class="mininotice_iner">
+        {% if post.media.imagejpg[0].namefile is defined %}
+            <div class="img-allnotice_mob" style="background-image: url('{{ asset('upload/module/'~post.media.imagejpg[0].namefile ) }} ')"></div>
+        {% endif %}
+        {% if post.subject is not same as (" ") %}
+            <div class="_fx-R_v2 _fx-convers_inv_mob">
+                <div class="info-post_mob">
+                    <div class="event_second_titl_mob">{{post.subject|u.truncate(80, '...')|lower|capitalize}}</div>
+                </div>
+            </div>
+        {% endif %}
+        </div>
+    </div>
+</a>
+

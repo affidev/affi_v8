@@ -1,0 +1,55 @@
+<div class="cbe-fx4 cube-bd">
+    <div class="cbe_cnt">
+        <div class="c_i_b">
+            <div class="in_cib">
+
+            <div class="in-cib-lrg-tit">
+                <h3 class="tit-cib-lg">Vos messages</h3>
+            </div>
+                {% if board.contactation is not null %}
+                    <div class="_nav-bell-wb_adm">
+                        <div class="abs-compt-pop">
+                            <div class="space_tag_loc">
+                                {%  if msgsnoread is defined %}
+                                    <div class="bul-pop" >{{msgsnoread|length}}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <a class="ico_be" href="{{path('board_board',{'id': board.id }) }}"><i class="fa fa-comments-o" aria-hidden="true"></i></a>
+                    </div>
+                {%  else %}
+
+                {% endif %}
+            <div class="_t-c _m-lr-5">
+                <div class="til_rlt">Messages non lus :</div>
+                <div class="space_tag_loc">
+                    {%  if msgsnoread is defined %}
+                        <div class="bull_tag active" >
+                            <div class="-br-Ma">{{msgsnoread|length}}</div>
+                        </div>
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+
+                <div class="Rt3Tbf">
+                    <div class="nX2Utf">
+                        <span class="GlMVdd" aria-label="Partagez votre profil d'établissement et obtenez de nouveaux avis de clients">Tous vos messages</span>
+                        <div class="kxr9cf"></div>
+                    </div>
+                </div>
+
+                <div class="bt-cub" role="button">
+                    <a class="FKF6mc TpQm9d" href="{{path('board_board',{'id': board.id }) }}">
+                    <div class="in_cibS-Vd"></div>
+                    <div class="in_cibS-bot"></div>
+                        <span class="in_cibS-spn1">
+                        <span class="in_cibS-spn2">
+                            <span class="tit-cb">boite de message</span>
+                        </span>
+                    </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,84 @@
+<div class="flrow">
+    <div class="fx-cub ii_cub2">
+        <div class="O_list-cube">
+
+            <div class="pos-incub-i">
+                <a class="bt-newmod" href="{{ path('new_postation',{'id':board.id}) }}">Nouvelle affiche</a>
+            </div>
+
+            <div class="list-incub">
+                {%  for tab in posts %}
+                    {%  if tab.media.imagejpg[0] is defined  %}
+                        {%  set ill= tab.media.imagejpg[0].getwebPath %}
+                    {%  else %}
+                        {%  set ill= "img/AffiChange.png" %}
+                    {% endif %}
+                        <div class="mod-incub">
+                    <div class="pos-incub-i">
+                        <div class="pos-incub-l w-cb1">
+                            <div class="tit-pos-cub">{{ tab.titre }}</div>
+                            <div class="inf_cub">
+                                <div class="illust-list">
+                                    <div class="iner-illust" style="background-image: url('{{ asset(ill) }}')"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pos-incub-px">
+                            <div class="account_module">
+                                <div class="publiedby">publié par : {{ tab.author.name }} </div>
+                                <p>le : {{ tab.createAt|date("j-m-Y") }}</p>
+                            </div>
+
+                            <div class="pos-incub-px w-cb3">
+
+                            {% set post=tab %}
+                            {% if (dispatch.id is same as (post.author.id))  or (dispatch.id == 1) %}
+                                <div class="tools-msg">
+                                    <a class="e-tool" title="edition de l'affiche" href="{{ path('edit_post', {'id':post.id}) }}">
+                                        <i class=" fa fa-edit" data-descr="editer.."></i>
+                                    </a>
+                                    <a class="e-tool" title="etat de la publication"  href="{{ path('publied_post', {'id':post.id, 'board':board.id}) }}">
+                                        {%  if post.publied %}
+                                            <div class="_icO-rd green"><i class="fa fa-flag-checkered" aria-hidden="true"></i></div>
+                                        {% else %}
+                                            <div class="_icO-rd red"><i class="fa fa-flag" aria-hidden="true"></i></div>
+                                        {%  endif %}
+                                    </a>
+                                    <a class="e-tool" title="messagerie" href="{{ path('form-delete_post', {'id':post.id}) }}"><i class=" fa fa-trash" data-descr="en bulle.."></i></a>
+                                </div>
+                            {% endif %}
+                            {#
+                            <div class=" button-wp" >
+                                <a class="pop_button" href="{{ path('board_blog',{'id':tab.id}) }}">messages
+                                    <i class="fa fa-comments-o" aria-hidden="true"></i>
+                                </a>
+                            </div>
+
+                            #}
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                {%  else %}
+                    <div class="pop-board">
+                        <div class="pos-incub">
+                            <div class="_t-c _m-lr-5">
+                                <div class="til_rlt">affichez-vous</div>
+                            </div>
+                        </div>
+                    </div>
+                {%  endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+

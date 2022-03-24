@@ -1,0 +1,60 @@
+<div class="container-bo_v5">
+    <div class="flrow">
+        <div class="fx-cub ii_cub2">
+            <div class="O_list-cube">
+                <div class="list-incub" id="cubcity">
+                    <div class="pos-incub-i">
+                        <div class="pos-incub-l">
+                            <h1 class="tit-cib-lg">{{vartwig.title}}</h1>
+                                <add-entity author="dispath"></add-entity>
+                            <div class="pos-incub-l">
+                                <div class="list-incub" id="bonosucess" style="display: none">
+                                    {{ form_start(form)}}
+                                    <div class="gp-form-row-col2">
+                                        <div class="iner-bt">
+                                            <button type="submit" id="subform" class="btn-send">J'ouvre ce nouveau panneau</button>
+                                        </div>
+                                    </div>
+                                    {{form_rest(form)}}
+                                    {{form_end(form)}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{#
+<div class="list-incub" id="bonosucess" style="display: none">
+             {{ form_start(form)}}
+
+             <div class="pos-incub-i">
+                 <div class="pos-incub-l">
+                     <div class="group-form-profil">
+                         <div class="field-glass">
+                             {{ form_label(form.namewebsite, "nom du panneau:") }}
+                             {{ form_widget(form.namewebsite, {'attr': {'class': 'form-affi'}}) }}
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+<div class="gp-form-row-col2">
+    <div class="iner-bt">
+        <button type="submit" id="subform" class="btn-send">J'ouvre ce nouveau panneau</button>
+    </div>
+</div>
+{{form_rest(form)}}
+                    {{form_end(form)}}
+</div>
+#}
+ {#
+ <h3>Sélectionnez une ville</h3>
+ <div class="up-rocket">
+     {{ include('/aff_search/'~agent~'/search-affiche-connect_v2.html.twig') }}
+ </div>
+#}

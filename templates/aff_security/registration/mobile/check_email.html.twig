@@ -1,0 +1,24 @@
+{% block body %}
+    <div class="log-machina_mob">
+        <div class="svg-bulle_open">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">{# <circle cx="100" cy="100" r="80"/>#}</svg>
+            <div class="content_login_affi_mob">
+                <h2>presque fini...{{ user.emailCanonical }}</h2>
+                <div class="sous_connector">
+                    <h4>Confirmez votre adresse mail</h4>
+                    <p>Un e-mail a été envoyé à l''adresse {{ user.emailCanonical }}.<br>
+                        Il contient un lien d''activation sur lequel il vous faudra cliquer afin d'activer votre compte.</p>
+                    <p>à tout de suite sur AffiChange</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    <script>
+        window.onunload = function() {
+            localStorage.clear();
+        }
+    </script>
+{% endblock %}

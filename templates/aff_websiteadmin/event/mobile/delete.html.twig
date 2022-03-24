@@ -1,0 +1,23 @@
+{% block body %}
+<div class="_wb">
+    <div class="container-bo_v5">
+        {{ include('aff_customer/menu/websitemenu.html.twig') }}
+        <section class="_wb-ospace">
+            <div class="head-wb-space">
+                <div class="web-inf">
+                    <h1>{{ website.namewebsite }}</h1>
+                    <h2>{{ website.template.description }}</h2>
+                </div>
+            </div>
+        {{ include('aff_websiteadmin/event/form/deleteform.html.twig') }}
+        </section>
+    </div>
+</div>
+{% endblock %}
+{% use "js/js_website.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+
+

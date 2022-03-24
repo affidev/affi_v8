@@ -1,0 +1,58 @@
+{% block body %}
+
+    <div class="fx-pw-dk-col">
+        <div class="_en-b_pb mt-5">
+            <div class="_pb">
+                <!-- affichez-vous -->
+                <div class="choice-flex">
+                    <div class="_fx _sz250 glob_affi _co-B">
+                        <div class="_ext-p shtf">
+                            <geo-locate prefix=""></geo-locate>
+                            <div class="locate">Localisez-vous !</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {%  if locate %}
+                <x-locate city="{{ locate.city }}" lclass="cargo"></x-locate>
+          {#     {{ include('aff_search/'~agent~'/search-affiche-connect_v2.html.twig',{'locatecity':locate.city}) }} #}
+            {%  else %}
+                <x-locate city="" lclass="cargo"></x-locate>
+            {%  endif %}
+            <div class="container-text-info">
+                <div class="text-info">
+                    <div class="info-af">
+                        <a href="" class="a-info">Affichez</a>
+                        <span class="text-diveder"> | </span>
+                        <span class="a-info">Echangez</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ include('footer/'~agent~'/affichange_footer_rel.html.twig') }}
+
+{%  endblock body %}
+{% use "js/js_public.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        document.querySelector('geo-locate').addEventListener('click', function (){
+            this.setAttribute('prefix', 'search')
+        })
+    </script>
+{% endblock %}
+
+
+{#
+<div class="container-text-info">
+                <div class="text-info">
+<div class="info-af">
+                   <span class="text-a-info">Professionnel, artisan, club, association</span>
+                   <span class="text-diveder"> | </span>
+                   <span class="text-a-info">Affichez-vous</span>
+               </div>
+                   </div>
+            </div>
+#}

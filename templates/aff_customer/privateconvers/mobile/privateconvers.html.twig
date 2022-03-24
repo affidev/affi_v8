@@ -1,0 +1,17 @@
+{# conversationversion mobile#}
+{% block body %}
+    <div class="universaff_mob">
+        <div class="ii_switch">
+            <div class="fx-pw">
+                {{ include('navigation/'~agent~'navcenterpublic_msg.html.twig') }}
+                <div class="mesg-fx">
+                    {{ include('backoffice/customer/privateconvers/mobile/form/form_contact.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% use "js/js-register.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

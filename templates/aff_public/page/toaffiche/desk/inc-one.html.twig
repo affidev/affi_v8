@@ -1,0 +1,143 @@
+<section class="spwb-body">
+    <div class="borderblur_bb"></div>
+    <div class="filterblur_pg"></div>
+    <h1>Web de proximité</h1>
+    <h5>Affichez-vous</h5>
+    <article class="article_info">
+            <h3 class="the_question">Plus proche, plus simple, plus humain</h3>
+            <div class="container">
+                <div class="row mt">
+                    <div class="col-lg-4 centered si slideUp">
+                        <i class="fa fa-heart"></i>
+                        <h4>L'internet local</h4>
+                        <p>AffiChange n'est pas un réseau d'envergure planètere. Son champ d'action, c'est votre proximité.
+                            Sa vocation, promouvoir les circuits courts, les activités et services et producteurs locaux de votre
+                            environnement.<br><em><a href="">-> le choix affichange</a> </em></p>
+                    </div>
+                    <div class="col-lg-4 centered si slideUp">
+                        <i class="fa fa-flag"></i>
+                        <h4>Soufflez vos infos de proximité</h4>
+                        <p>Moteur de proposition libre par localisation,"Soufflez" vos infos, annonces et humeur dans l'univers AffiChange.
+                            Vos "bulles" pourront être captées par d'autres <strong>"SpaceWeb"</strong>... mais uniquement s'ils le souhaite.
+                            <strong>C'est ça la "libre proposition" AffiChange.</strong> </p>
+                    </div>
+                    <div class="col-lg-4 centered si slideUp">
+                        <i class="fa fa-cog"></i>
+                        <h4>Préservez votre vie personnelle.</h4>
+                        <p>En intialiseant votre <strong>"SpaceWeb"</strong> et garder l'historique de vos messages, un lien avec vos contacts avec la
+                            garanti de votre confidentialité et de ne pas recevoir de réponse intrusive. </p>
+                    </div>
+                </div>
+            </div>
+            <h2 class="question">Développez vos contacts locaux avec les outils de communication de votre <strong>"SpaceWeb"</strong></h2>
+
+            <div class="container">
+                <div class="row mt">
+                    <div class="col-lg-4 centered si slideUp">
+                        <i class="fa fa-flask"></i>
+                        <h4>Un lien de contact</h4>
+                        <p>Ajoutez un formulaire de contact à vos media web (site, blog..) avec juste un lien "html".
+                            Suivez vos messages depuis votre <strong>"SpaceWeb"</strong>. Fini les messages des robots, la maintenance et la mise à jour de votre formulaire.</p>
+                    </div>
+                    <div class="col-lg-4 centered si slideUp">
+                        <i class="fa fa-eye"></i>
+                        <h4>Réservation en ligne</h4>
+                        <p>En quelques instants, ajoutez sur le web un formulaire de réservation en ligne.
+                            Intialisez votre module et disposez immédiatement d'un lien de réservation. Positionnez le partout où vous avez besoin.</p>
+                    </div>
+                    <div class="col-lg-4 centered si slideUp">
+                        <i class="fa fa-mobile"></i>
+                        <h4>Votre agenda local</h4>
+                        <p>Votre informations locale toujours à jour. Affichez vos dates de marché, vos prochains atelier découverte, porte ouverte..
+                            Gardez la main sur vos horaires d'ouvertures et diffusez les en un seul lien.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% if app.session.has('contact') %}
+            <div class="space-bb">
+                <a class="stape_order_bb action_bb" href="{{ path('go_news_spwb',{'id':app.session.get('contact')}) }}">
+                    <div class="stape_bb" >
+                        <h6>Initialisez votre <strong>"SpaceWeb"</strong></h6>
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            <hr>
+
+        <div class="content-article">
+            <h2 class="the_question">Comment ça marche ?</h2>
+            <p>Pour initilaiser votre <strong>"SpaceWeb"</strong>, il suffit d'une' adresse email valide et définir un mot
+                de passe. Votre email sera vérifier à travers un message de confirmation auquel vous devrez répondre, classique !</p>
+            <hr>
+             <h3 class="the_question">Le spaceWeb c'est quoi exatement ?</h3>
+            <h5>Votre Interface de naviagation et de communication dans l'univers AffiChanGe</h5>
+                <p>Sans rentrer dans les details techniques, le fonctionnement d'AffiChange repose sur une distribution d'entités relationnelles, les
+                <strong>"SpaceWeb"</strong>. Tous les <strong>"SpaceWeb"</strong> naviguent au sein d'un univers relatif commun, accessible via interneet. Cet univers est une representation relative du monde réelle en France.
+                Les <strong>"SpaceWeb"</strong> sont repérables en fonction de leur localisation défini par le noyau.(coordonnées gps).
+                Les différents <strong>"SpaceWeb"</strong> peuvent partager une même localisation et se deplacer dans AffiChange, comme lors d'un déplacement, d'un voyage.
+                Chaque <strong>"SpaceWeb"</strong> est attaché à un noyau unique. Par exemple, cette page est publié par le <strong>"SpaceWeb"</strong> dont le noyau est contact@affiChange.com. Votre <strong>"SpaceWeb"</strong> sera lié à votre noyau.
+                Cette architecture donne à chaque noyau une couche de sécurité, son independance, sa physionomie personnelle et sa liberté d'action. AffiChange n'est pas un réseau, mais un ensemble d'entité
+                independantes, sa taille est égale à la somme des entités.<br>
+
+            <h3 class="the_question">Le noyau</h3>
+                <p> Le noyau c'est vous ! Pour initialiser votre noyau, il suffit de lui renseigner votre adresse mail et le sécuriser par un mot de passe.
+                Vous disposez immdiatement alors de votre <strong>"SpaceWeb"</strong>.</p>
+                <p> Utilisez votre <strong>"SpaceWeb"</strong> pour publiez vos infos, référencer vos projets et activités, échanger dans votre proximité, créez vos lien de contact.
+                  </p>
+        </div>
+    </article>
+</section>
+<div id="cta-bar">
+    <div class="container">
+        <div class="centered">
+            <p>AffiChanGe vous ouvre l'univers virtuel de votre proximité sur le web.<p>
+            <a href="#"><h4>plus d'info avant d'activer votre noyau ?</h4></a>
+        </div>
+    </div>
+</div>
+<div id="f">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <h4>Affi Où</h4>
+                <p>
+                    BP 4020<br>44830<br> Bouaye, FR<br>
+                </p>
+                <p>
+                    <a href="{{ path('contact_module_spwb', {"slug":"formulaire-de-test", "id" :"9", "key":"1Ca2uJkLeQKgOi9qxDplYjXv"}) }}"><i class="fa fa-envelope-o"></i> contact affi</a>
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <h4>en savoir plus</h4>
+                <p>
+                    <i class="fa fa-angle-right"></i> formulaire contact<br>
+                    <i class="fa fa-angle-right"></i> module reservation<br>
+                    <i class="fa fa-angle-right"></i> agenda evenement<br>
+                    <i class="fa fa-angle-right"></i> Le moteur AffiChanGe<br>
+                    <i class="fa fa-angle-right"></i> Comment AffiChange vit<br>
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <h4>Derniers providers</h4>
+                <p>
+                    <i class="fa fa-angle-right"></i>Mademoiselle Gingembre<br>
+                    <i class="fa fa-angle-right"></i>Chenais Energie<br>
+                    <i class="fa fa-angle-right"></i>Aux petits oignons<br>
+                    <i class="fa fa-angle-right"></i>SmookyPAris<br>
+                    <i class="fa fa-angle-right"></i>permisbateau-paris<br>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="copyrights">
+    <div class="container">
+        <p>
+            © Copyrights 2020<strong>AffiChanGe</strong>. Tous droits réservés
+        </p>
+        <div class="credits">
+                votre spaceweb by <a href="https://affichange.com/">affichange.com</a>
+        </div>
+    </div>
+</div>

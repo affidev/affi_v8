@@ -1,0 +1,165 @@
+<div class="gnav gnav-reset" id="gnav-footer-container">
+    <footer role="contentinfo" class="main" data-gnav-region="MainFooter" data-reactroot="">
+
+        <ul class="AccordionList AccordionList-items">
+
+            <li class="AccordionList-item">
+                <a class="AccordionList-link" href="{{ path('show_website',{'city':board.locality.slugcity,'nameboard':board.slug}) }}">
+                    <div class="AccordionList-text">{{ website.namewebsite }}</div>
+                    <svg class="chevronRight" fill="currentColor" focusable="false" role="img" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg" height="24px" width="24px"><title>chevron right</title>
+                        <path d="M9.888 5.998a.506.506 0 00-.716-.008l-.707.707a.506.506 0 00.01.716L13.06 12l-4.587 4.587c-.2.2-.204.521-.009.716l.707.707a.507.507 0 00.717-.009l5.647-5.648c.1-.1.148-.233.144-.366a.492.492 0 00-.144-.34v-.001a.611.611 0 00-.009-.009L9.888 5.998z"></path>
+                    </svg>
+                </a>
+            </li>
+
+            <li data-toogle-accordion="toog-publications">
+                <div role="button" class="AccordionList-header AccordionList-item AccordionList-headerItem AccordionList-collapsed"
+                     tabindex="0" aria-haspopup="true" aria-controls="toog-publications" aria-expanded="false"
+                     data-element-toogle="toog-publications" data-gnav-action="open">
+                    <div class="AccordionList-text">Publications</div>
+                    <span class="AccordionList-actionIcon">
+
+                        <svg class="chevronDown" fill="currentColor" focusable="false" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="24px"
+                             width="24px"><title>chevron down</title>
+                            <path d="M18.002 9.888c.2-.2.204-.521.008-.716l-.707-.708a.506.506 0 00-.716.01L12 13.06 7.413 8.474a.507.507 0 00-.716-.01l-.708.707a.507.507 0 00.01.717l5.647 5.648c.1.1.234.148.367.143a.491.491 0 00.34-.144h.001l.008-.008 5.64-5.64z"></path>
+                        </svg>
+
+                        <svg class="chevronUp" fill="currentColor" focusable="false" role="img" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg" height="24px" width="24px"><title>chevron up</title>
+                            <path d="M18.003 14.112c.2.2.204.521.008.716l-.707.708a.506.506 0 01-.716-.01l-4.587-4.587-4.587 4.587c-.2.2-.521.205-.716.01l-.708-.707a.507.507 0 01.01-.717l5.647-5.648c.1-.1.234-.148.367-.143.125.002.247.05.34.144h.001a.364.364 0 01.008.008l5.64 5.64z"></path>
+                        </svg>
+
+                    </span>
+                </div>
+               <ul id="FooterJobseekerLinks" class="AccordionList-items AccordionList-togglableItems">
+                    <li class="AccordionList-item"><a class="AccordionList-link"
+                                                      href="{{path('module_blog',{'city':board.locality.slugcity, 'nameboard':board.slug})}}">
+                            <div class="AccordionList-text">Vos Affiches</div>
+                        </a></li>
+                    <li class="AccordionList-item"><a class="AccordionList-link" href="{{path('module_event',{'city':board.locality.slugcity, 'nameboard':board.slug})}}">
+                            <div class="AccordionList-text">Vos lives (évènements, localisation en temps réel..)</div>
+                        </a></li>
+                    <li class="AccordionList-item">
+                        {%  if isActivity('module_found', vartwig.tabActivities) %}
+                        <a class="AccordionList-link" href="{{path('module_found',{'city':board.locality.slugcity, 'nameboard':board.slug}) }}">
+                            <div class="AccordionList-text">Menus</div>
+                        </a>
+                        {% else %}
+                            <a class="AccordionList-link" href="{{ path('addmodule_website',{'activ':'module_found','id':board.id}) }}">
+                                <div class="AccordionList-text">Activez le module "Restaurant-traiteur"</div>
+                            </a>
+                        {% endif %}
+
+                    </li>
+                    <li class="AccordionList-item">
+                        {%  if isActivity('module_shop', vartwig.tabActivities) %}
+                        <a class="AccordionList-link" href="{{path('module_shop',{'city':board.locality.slugcity, 'nameboard':board.slug})}}">
+                            <div class="AccordionList-text">Offre</div>
+                        </a>
+                        {% else %}
+                            <a class="AccordionList-link" href="{{ path('addmodule_website',{'activ':'module_shop','id':board.id}) }}">
+                                <div class="AccordionList-text">Ouvrez votre boutique</div>
+                            </a>
+                        {% endif %}
+                    </li>
+                </ul>
+
+            </li>
+
+            <li data-toogle-accordion="toog-parameters">
+                <div role="button"
+                     class="AccordionList-header AccordionList-item AccordionList-headerItem AccordionList-collapsed"
+                     tabindex="0" aria-haspopup="true" aria-controls="toog-parameters" aria-expanded="false"
+                     data-element-toogle="toog-parameters" data-gnav-action="open">
+                    <div class="AccordionList-text">Parametres panneau</div>
+                    <span class="AccordionList-actionIcon">
+                        <svg class="chevronDown" fill="currentColor" focusable="false" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="24px" width="24px"><title>chevron down</title><path
+                                    d="M18.002 9.888c.2-.2.204-.521.008-.716l-.707-.708a.506.506 0 00-.716.01L12 13.06 7.413 8.474a.507.507 0 00-.716-.01l-.708.707a.507.507 0 00.01.717l5.647 5.648c.1.1.234.148.367.143a.491.491 0 00.34-.144h.001l.008-.008 5.64-5.64z"></path></svg>
+                        <svg
+                                class="chevronUp" fill="currentColor" focusable="false" role="img" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg" height="24px" width="24px"><title>chevron up</title><path
+                                    d="M18.003 14.112c.2.2.204.521.008.716l-.707.708a.506.506 0 01-.716-.01l-4.587-4.587-4.587 4.587c-.2.2-.521.205-.716.01l-.708-.707a.507.507 0 01.01-.717l5.647-5.648c.1-.1.234-.148.367-.143.125.002.247.05.34.144h.001a.364.364 0 01.008.008l5.64 5.64z"></path></svg>
+                    </span>
+                </div>
+
+                <ul id="FooterEmployersLinks" class="AccordionList-items AccordionList-togglableItems">
+                    {#
+                    <li class="AccordionList-item"><a class="AccordionList-link" href="{{ path('members',{'id':board.id}) }}">
+                            <div class="AccordionList-text">Membres du panneau</div>
+                        </a>
+                    </li>
+                    #}
+                    <li class="AccordionList-item"><a class="AccordionList-link"href="{{ path('spaceweblocalize_init',{'id':board.id}) }}">
+                            <div class="AccordionList-text">Localisation</div>
+                        </a></li>
+                    <li class="AccordionList-item"><a class="AccordionList-link" href="{{ path('spaceweb_mod',{'id':board.id}) }}">
+                            <div class="AccordionList-text">Modules</div>
+                        </a>
+                    </li>
+                    <li class="AccordionList-item"><a class="AccordionList-link" href="{{ path('opendays_edit',{'id':board.id}) }}">
+                            <div class="AccordionList-text">Horaires</div>
+                        </a>
+                    </li>
+                    <li class="AccordionList-item"><a class="AccordionList-link" href="{{ path('website_edit',{'id':board.id}) }}">
+                            <div class="AccordionList-text">info panneau</div>
+                        </a>
+                    </li>
+                </ul>
+
+            </li>
+
+            <li data-toogle-accordion="toog-partners">
+                <div role="button"
+                     class="AccordionList-header AccordionList-item AccordionList-headerItem AccordionList-collapsed"
+                     tabindex="0" aria-haspopup="true" aria-controls="toog-partners" aria-expanded="false"
+                     data-element-toogle="toog-partners" data-gnav-action="open">
+                    <div class="AccordionList-text">Partners</div>
+                    <span class="AccordionList-actionIcon">
+                        <svg class="chevronDown" fill="currentColor" focusable="false" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="24px"
+                                                                width="24px"><title>chevron down</title>
+                            <path
+                                    d="M18.002 9.888c.2-.2.204-.521.008-.716l-.707-.708a.506.506 0 00-.716.01L12 13.06 7.413 8.474a.507.507 0 00-.716-.01l-.708.707a.507.507 0 00.01.717l5.647 5.648c.1.1.234.148.367.143a.491.491 0 00.34-.144h.001l.008-.008 5.64-5.64z"></path></svg><svg
+                                class="chevronUp" fill="currentColor" focusable="false" role="img" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg" height="24px" width="24px">
+                            <title>chevron up</title>
+                            <path
+                                    d="M18.003 14.112c.2.2.204.521.008.716l-.707.708a.506.506 0 01-.716-.01l-4.587-4.587-4.587 4.587c-.2.2-.521.205-.716.01l-.708-.707a.507.507 0 01.01-.717l5.647-5.648c.1-.1.234-.148.367-.143.125.002.247.05.34.144h.001a.364.364 0 01.008.008l5.64 5.64z"></path></svg></span>
+                </div>
+
+
+
+
+                <ul id="FooterAboutLinks" class="AccordionList-items AccordionList-togglableItems">
+                    <li class="AccordionList-item">
+                        <div class="ii_cub">
+                            {{ include('aff_customer/cubes/'~agent~'/actions.html.twig') }}
+                            <div class="contener-cube">
+                                {{ include('aff_customer/cubes/'~agent~'/cube-partners.html.twig') }}
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="ospace"></div>
+{#
+        <div class="legal-wrapper">
+            <div class="legal-footer"><span class="legal-footer--item">©2021 AffiChanGe</span>
+                <ul class="legal-footer-links">
+                    <li>
+                        <a href=""
+                           data-query="?from=gnav-footer-homepage" data-gnav-element-name="Cookies">Cookies</a></li>
+                    <li>
+                        <a href=""
+                           data-query="?from=gnav-footer-homepage" data-gnav-element-name="Privacy">Confidentialité</a>
+                    </li>
+                    <li>
+                        <a href="" data-query="&amp;from=gnav-footer-homepage"
+                           data-gnav-element-name="Terms">Conditions d'utilisation</a></li>
+                </ul>
+            </div>
+        </div>
+#}
+    </footer>
+</div>

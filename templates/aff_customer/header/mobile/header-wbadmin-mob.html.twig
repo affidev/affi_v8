@@ -1,0 +1,6 @@
+<div class="head-bull_mob">
+    {% for menu2 in vartwig.menu2 %}
+        <a href="{{ path(menu2.route,{'id':board.id}) }}" class="scroll_top b_mob {{ menu2.class }}" role="button">
+           <i class="{{ menu2.i }}" aria-hidden="true"></i>{{menu2.name}}</a>
+    {%  endfor %}
+</div>

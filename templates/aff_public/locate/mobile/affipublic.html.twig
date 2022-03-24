@@ -1,0 +1,35 @@
+
+{# showWb - version mobile#}
+{% block body %}
+    <main class="affi-listmb">
+        <!-- affiches -->
+        <section class="tglaff" id="tgl_0">
+            <div class="fx-content_rep_event_mob">
+                {% if events|length >0 %}
+                    <div class="web-inf_mob">
+                        <h3>en ce moment...</h3>
+                    </div>
+                    {{ include('aff_public/view/lasteventscity.html.twig') }}
+                {%  endif %}
+            </div>
+
+            <div class="fx-content_rep_v8_mob">
+                {{ include('aff_public/view/lastnoticecity_mob.html.twig') }}
+            </div>
+        </section>
+        <!-- panneaux -->
+        <section class="tglaff" id="tgl_1" style="display: none">
+            <div class="fx-content_rep_v8_mob">
+                {{ include('aff_public/view/noticeboard_mob.html.twig') }}
+            </div>
+        </section>
+        {%  if official|length >0 %}
+            <a class="goaff_v6" target="_blank" href="{{ official[0].url }}"><i class="fa fa-link"></i> voir le site officiel de cette localité</a>
+        {%  endif %}
+    {#   {{ include('footer/desk/affichange_footer_rel.html.twig') }}   #}
+    </main>
+{%  endblock body %}
+{% use "js/js_public.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

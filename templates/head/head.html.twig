@@ -1,0 +1,29 @@
+<meta charset="UTF-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,text/html,charset=utf-8"/>
+<meta name="description" content="{{vartwig.description}}">
+<meta name="country" content="France">
+<meta name="geo.country" content="FR">
+<meta name="keywords" content="{% for keyword in vartwig.tagueries %}{{ keyword.name }}, {% endfor %}">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta name="copyright"content="nbcom">
+<meta name="author" content="{{vartwig.author??""}}">
+<meta name="revised" content="Monday, Feburary 2th, 2022, 8:15 am">
+<link rel= "shotcut icon" href="{{asset('app/icons/favicon.ico')}}">
+<meta property="og:url" content="https://affichange.com{{ app.request.pathinfo }}">
+<meta property="og:title" content="{{vartwig.title}}">
+<meta property="og:description" content="{{vartwig.description}}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="affichange">
+<meta property="og:image" content="https://affichange.com/img/AffiChanGe.png">
+<meta property="og:image:secure_url" content="https://affichange.com/img/AffiChanGe.png">
+<link rel=canonical" href="https://affichange.com{{ app.request.pathinfo }}/">
+<link rel="manifest" href="{{ asset('_manifest.json') }}" data-pwa-version="set_by_pwa.js">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('app/icons/affi-192x192.png') }}">
+<link rel="stylesheet" href="{{ asset('fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<link rel="stylesheet" href="{{ asset('fonts/googlefont/style.css') }}">
+{{ encore_entry_link_tags('app') }}
+

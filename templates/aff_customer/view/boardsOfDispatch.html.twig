@@ -1,0 +1,42 @@
+<div class="af_flx-C-nW">
+    <h2>Vos panneaux partenaires</h2>
+    {% if partner|length > 0 %}
+        <div class="list-partn">
+            {% for rocket in partner %}
+                <a href="{{ path( 'show_website', {"slugcity":rocket.locality.city,"slug":rocket.slug}) }}" class="pop_partner" data-website="{{ rocket.id }}">
+                    <div class="item-partner">
+                        {%  if rocket.template.logo.namefile is defined %}
+                            <div class="pict-part" style="background-image: url('{{ asset('spaceweb/template/'~rocket.template.logo.namefile) }}')"></div>
+                        {%  else %}
+                            <div class="pict-part" style="background-image: url('{{ asset('img/pinsaffi.png' ) }}')"></div>
+                        {%  endif %}
+                        <div class="part-n">
+                            <div class="nm-part">{{rocket.namewebsite}}</div>
+                            <div class="loc-part">{{rocket.locality.city}}</div>
+                        </div>
+                        <div class="tag-part">{{rocket.attached?"publié":"libre"}}</div>
+                    </div>
+                </a>
+                {% if loop.last %}
+                    <div class="ln-sep"></div>
+                {% endif %}
+            {%  endfor %}
+        </div>
+        <div class="me_ampoul">
+            <a href="{{path('search_partner')}}" class="bt-andestand">ajoutez/recherchez</a>
+        </div>
+    {% else %}
+        <div class="pop_item-rep">
+            {#  <i class="fa fa-times abs-croos"></i> #}
+            <div class="notbd-img">
+                <div class="i-partner"><i class="fa fa-address-book-o"></i></div>
+            </div>
+            <div class="modal_innerpopo">
+                <p>pas encore de partenaire</p>
+                <div class="me_ampoul">
+                    <a href="{{path('search_partner')}}" class="bt-andestand">ajoutez/recherchez</a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>

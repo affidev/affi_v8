@@ -1,0 +1,18 @@
+{% block body %}
+<section class="_wb-board_mob">
+    <!-- head du board -->
+    <div class="head-wb_mob">
+        <div class="head-1 _fx-R">
+            {{ include('aff_website/elements/'~agent~'/logoboardlink.html.twig') }}
+        </div>
+    </div>
+    {%  set ite = 0 %}
+    {{ include('aff_website/boards/'~agent~'/showallothers.html.twig') }}
+</section>
+{%  endblock body %}
+{% use "js/js_public_wb.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+

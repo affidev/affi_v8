@@ -1,0 +1,88 @@
+<colgroup><col style="mso-width-source:userset;mso-width-alt:12430;width:262pt" width="350"><br />
+ <col style="mso-width-source:userset;mso-width-alt:4209;width:89pt" width="118"><br />
+ <col style="mso-width-source:userset;mso-width-alt:6400;width:135pt" width="180"><br />
+ <col style="mso-width-source:userset;mso-width-alt:7964;width:168pt" width="224"><br />
+ <col style="mso-width-source:userset;mso-width-alt:3242;width:68pt" width="91"><br />
+ <col style="mso-width-source:userset;mso-width-alt:3925;width:83pt" width="110"><br />
+ </colgroup><tbody><tr style="height:14.4pt" height="19"><br />
+  <td class="xl66" style="height:14.4pt;width:262pt" width="350" height="19">poule</td><br />
+  <td class="xl66" style="width:89pt" width="118">date</td><br />
+  <td class="xl66" style="width:135pt" width="180">club recevant</td><br />
+  <td class="xl66" style="width:168pt" width="224">club visiteur</td><br />
+  <td class="xl66" style="width:68pt" width="91">score locaux</td><br />
+  <td class="xl66" style="width:83pt" width="110">score visiteurs</td><br />
+ </tr><br />
+ <tr style="height:14.4pt" height="19"><br />
+  <td style="height:14.4pt" height="19">1ERE DTM - 44</td><br />
+  <td class="xl65">03/10/2020</td><br />
+  <td class="xl66">HBC DU LAC</td><br />
+  <td class="xl66">PONT-CHATEAU HANDBALL</td><br />
+  <td class="xl70">26</td><br />
+  <td class="xl69">26</td><br />
+ </tr><br />
+ <tr style="height:14.4pt" height="19"><br />
+  <td style="height:14.4pt" height="19">D1FPL-C ; DIV 1 FEMININE TERRITORIALE -<br />
+  POULE C ;</td><br />
+  <td class="xl65">04/10/2020</td><br />
+  <td class="xl66">HBC DU LAC</td><br />
+  <td class="xl66">HAND AIZENAY</td><br />
+  <td class="xl67">23</td><br />
+  <td class="xl69">24</td><br />
+ </tr><br />
+ <tr style="height:14.4pt" height="19"><br />
+  <td style="height:14.4pt" height="19">D2FPL;2DIV FEM TERRITORIALE PDLL; POULE D</td><br />
+  <td class="xl65">04/10/2020</td><br />
+  <td class="xl66">HBC DU LAC</td><br />
+  <td class="xl66">HERIC HANDBALL</td><br />
+  <td class="xl68">24</td><br />
+  <td class="xl66">19</td><br />
+ </tr><br />
+ <tr style="height:14.4pt" height="19"><br />
+  <td style="height:14.4pt" height="19">U12M HONNEUR A POULE 5</td><br />
+  <td class="xl65">03/10/2020</td><br />
+  <td class="xl66">LAETITIA NANTES HB 2</td><br />
+  <td class="xl66">HBC DU LAC</td><br />
+  <td class="xl69">27</td><br />
+  <td class="xl67">10</td><br />
+ </tr><br />
+ <tr style="height:14.4pt" height="19"><br />
+  <td style="height:14.4pt" height="19">U13F HONNEUR A POULE 3</td><br />
+  <td class="xl65">03/10/2020</td><br />
+  <td class="xl66">HBC DU LAC</td><br />
+  <td class="xl66">SUD ESTUAIRE HANDBALL CLUB</td><br />
+  <td class="xl68">16</td><br />
+  <td class="xl66">6</td><br />
+ </tr><br />
+ <tr style="height:14.4pt" height="19"><br />
+  <td style="height:14.4pt" height="19">U14M HONNEUR A POULE 7</td><br />
+  <td class="xl65">03/10/2020</td><br />
+  <td class="xl66">HBC DU LAC 1</td><br />
+  <td class="xl66">ASC LA MONTAGNE</td><br />
+  <td class="xl67">13</td><br />
+  <td class="xl69">29</td><br />
+ </tr><br />
+ <tr style="height:14.4pt" height="19"><br />
+  <td style="height:14.4pt" height="19">U16M HONNEUR A POULE 1</td><br />
+  <td class="xl65">04/10/2020</td><br />
+  <td class="xl66">HBC DU LAC</td><br />
+  <td class="xl66">ETOILE SPORTIVE DU LAC HANDBALL</td><br />
+  <td class="xl68">35</td><br />
+  <td class="xl66">17</td><br />
+ </tr><br />
+ <tr style="height:14.4pt" height="19"><br />
+  <td style="height:14.4pt" height="19">U19M HONNEUR A POULE 4</td><br />
+  <td class="xl65">03/10/2020</td><br />
+  <td class="xl66">HBC DU LAC</td><br />
+  <td class="xl66">PONT-CHATEAU HANDBALL</td><br />
+  <td class="xl67">21</td><br />
+  <td class="xl66">35</td><br />
+ </tr><br />
+ <tr style="height:14.4pt" height="19"><br />
+  <td style="height:14.4pt" height="19"><br></td><br />
+  <td><br></td><br />
+  <td class="xl66"><br></td><br />
+  <td class="xl66"><br></td><br />
+  <td class="xl66"><br></td><br />
+  <td class="xl66"><br></td><br />
+ </tr><br />
+</tbody>

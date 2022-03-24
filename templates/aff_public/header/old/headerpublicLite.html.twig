@@ -1,0 +1,29 @@
+{# header simple home public mobile  #}
+<nav class="nav-af_mb">
+    <div class="_in-l-bb2_content sha">
+        <div class="blukx_mb">
+
+            <div class="_in-he_mb">
+                <div class="flx-lik-_mb" >
+                    <div class="univ _i-Wbs bulletoggle " data-affitgl="tgl_4">{{ include('svg/50x50_AfCHG_blanc.html.twig') }}</div>
+                </div>
+
+                <div class="info-artc_mb">
+                    <div class="_ti1-lit">{{ city }}</div>
+                </div>
+
+                <div class="flx-lik-_mb">
+                    {#  <div id="nav_user"><i class="univ fa fa-user-circle-o" aria-hidden="true"></i></div> #}
+                    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                    <a href="{{path('ospace')}}"><i class="univ fa fa-user-circle-o" aria-hidden="true"></i></a>
+
+                    {% else %}
+                        <div class="pop-connect-glass_mb">
+                            <a  href="{{path('app_login') }}"><i class="univ fa fa-user-circle-o" aria-hidden="true"></i></a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

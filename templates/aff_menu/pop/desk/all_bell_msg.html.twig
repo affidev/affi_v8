@@ -1,0 +1,12 @@
+<div class="_nav-bell-wb">
+    {%  if notifs is defined  and notifs|length >0%}
+        <a class="_nav_item _na_blog" href="{{ path('all_message_customer') }}">
+            <div class="bul_cp">
+                <div class="space_tag_loc">
+                    <div class="bul-pop" id="nbcathblog" >{{notifs|length}}</div>
+                </div>
+            </div>
+            <div class="ico_be" {# id="nav_notifs"  #}><i class="fa fa-envelope" aria-hidden="true"></i></div>
+        </a>
+    {% endif %}
+</div>

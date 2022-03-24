@@ -1,0 +1,15 @@
+<div class="space-see_mob">
+    <a class="nav-see-space_mob" href="{{ path('show_website',{'city':board.locality.slugcity,'nameboard':board.slug}) }}">
+        <h2>{{ board.namewebsite??"" }}</h2>
+    </a>
+</div>
+
+{#
+<div class="nav_bulle_to_go_mob">
+                {% if board.template.logo %}
+                <div class="bull_wb_mob _bta-act-r" id="shwlaff" style="background-image: url('{{ asset('spaceweb/template/'~board.template.logo.namefile ) }}')"></div>
+                {% else %}
+                    <div class="bull_wb_mob _bta-act-r" id="shwlaff" style="background-image: url('{{ asset('img/pinsaffi.png') }}')"></div>
+                {% endif %}
+            </div>
+#}

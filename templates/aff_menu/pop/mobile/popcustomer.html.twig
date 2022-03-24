@@ -1,0 +1,94 @@
+<nav class="account bg_aff" id="popuser">
+    <div class="inner-account">
+
+        <div class="inner-stap1">
+            <div class="mycpt">
+                <a class="pop-wb" href="{{path('profil_dispatch')}}">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                    <div class="inerlink" >Mon compte</div>
+                </a>
+                <div class="pop-empty"></div>
+            </div>
+
+            <div class="inner-ft" >
+                <a class="pop-logout" href="{{path('app_logout') }}">
+                    <i class="fa fa-power-off" aria-hidden="true"></i>
+                    <div class="connect inerlink"> Deconnexion</div>
+                </a>
+            </div>
+        </div>
+        <div class="inner-stap3">
+                <div class="start-bd">
+                    <a href="{{ path('list_board') }}"><h5>Mes panneaux</h5></a>
+                </div>
+                <a class="pop-mn _cl-cl" href="{{ path('ospace', {'city':board.locality.city,'nameboard':board.slug}) }}">
+                    {% if board.template.logo %}
+                        <div  class="bkgrndlogo" style="background-image: url('{{ asset('spaceweb/template/'~board.template.logo.namefile ) }}')"></div>
+                    {% else %}
+                        <div class="bkgrndlogo" style="
+                                background-image: url('{{ asset('img/pinsaffi.png') }}')"></div>
+                    {% endif %}
+                    <div class="inerlink">{{ board.namewebsite|capitalize }}</div>
+                    <city>{{ board.locality.city }}</city>
+                </a>
+
+            {#
+                {% for pw in dispatch.spwsite|slice(0,4) %}
+
+                    <a class="pop-mn _cl-cl" href="{{ path('ospace', {'city':pw.website.locality.city,'nameboard':pw.website.slug}) }}">
+                        {% if pw.website.template.logo %}
+                            <div  class="bkgrndlogo" style="background-image: url('{{ asset('spaceweb/template/'~pw.website.template.logo.namefile ) }}')"></div>
+                        {% else %}
+                            <div class="bkgrndlogo" style="
+                                    background-image: url('{{ asset('img/pinsaffi.png') }}')"></div>
+                        {% endif %}
+                        <div class="inerlink">{{ pw.website.namewebsite|capitalize }}</div>
+                    </a>
+                {%  endfor %}
+            #}
+        </div>
+
+        <div class="inner-stap3">
+            {% if is_granted('ROLE_SUPER_ADMIN') %}
+            <a class="pop-mn _cl-cl" href="{{path('back_admin',{'keyboard':key_admin}) }}">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+                <div class="inerlink">Backoffice</div>
+            </a>
+            {% endif %}
+        </div>
+{#
+        <div class="inner-stap3 inner-stap-4">
+            {%  if wbsitesuser is defined %}
+                <div class="start-bd">
+                    <h5>mes panneaux..</h5>
+                </div>
+                {% for spw in wbsitesuser|slice(0,4) %}
+                    {% if spw.role is same as("client") %}
+                        {%  set website = spw.website %}
+                        <a class="pop-mn _cl-cl" href="{{path('show_website', {'slugcity':website.locality.city,'slug':website.slug})}}">
+                            {{ include('aff_website/navigation/logolite.html.twig') }}
+                            <div class="inerlink">{{ website.namewebsite|capitalize }}</div>
+                        </a>
+                    {% else %}
+                        {%  set website = spw.website %}
+                        <a class="pop-mn _cl-cl" href="{{path('tab_spaceweb', {'id':website.id})}}">
+                            {{ include('aff_website/navigation/logolite.html.twig') }}
+                            <div class="inerlink">{{ website.namewebsite|capitalize }}</div>
+                        </a>
+                    {% endif %}
+                {%  endfor %}
+                {%  if wbsitesuser|length >4 %}
+                    <a class="tit_affi tit_affitgl" href="{{ path('list_website') }}">Tous mes panneaux</a>
+                {%  endif %}
+            {% endif %}
+        </div>
+#}
+    </div>
+</nav>
+
+
+
+
+
+
+

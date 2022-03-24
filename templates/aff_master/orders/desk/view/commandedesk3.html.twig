@@ -1,0 +1,232 @@
+    <style>
+        @page {
+            margin: 0cm 0cm;
+        }
+        main {
+            margin-top: 5cm;
+            margin-left: 2cm;
+            margin-right: 2cm;
+            margin-bottom: 3cm;
+        }
+        header{
+            position: fixed;
+            top: 1cm;
+            left: 0cm;
+            right: 0cm;
+            height: 4cm;
+        }
+        footer {
+            position: fixed;
+            bottom: 0cm;
+            left: 0cm;
+            right: 0cm;
+            height: 3cm;
+
+            /** Extra personal styles
+            background-color: #03a9f4;
+            color: white;
+            text-align: center;
+            line-height: 1.5cm;
+             **/
+        }
+        section{
+            background: white;
+            padding: 15px 30px;
+            color: black;
+            width: auto;
+            height: auto;
+        }
+
+        .section-in{
+            margin: auto;
+        }
+        .foot-commande{
+        }
+        img{
+            width: 80px;
+            height: auto;
+        }
+        span{
+            color:dodgerblue;
+        }
+        .header-pdf{
+        }
+        .header-pdf h6{
+            font-size: 1rem;
+        }
+        .title-page{
+            text-align: center
+        }
+        .content-fact{
+        }
+        .total-fact{
+            text-align: center;
+        }
+        .solde_table{
+            width: 300px;
+        }
+        .footer-fac{
+            padding: 15px;
+            font-size: 0.8rem;
+        }
+        .footer-brand{
+            text-align: center;
+            font-size: 0.6rem;
+            line-height: 2px;
+        }
+        .name-brand .h3, h3{
+            font-size: 1em;
+        }
+        li{
+            text-decoration: none;
+            list-style: none;
+        }
+        .td0{
+
+        }
+        .td1{
+
+        }
+        .td2{
+
+        }
+        .td3{
+
+            text-align: center;
+        }
+        .td4{
+
+            text-align: center;
+        }
+        .td5{
+
+            text-align: right;
+        }
+        .periode{
+            text-align: left;
+        }
+        .logo-top{
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+
+<main>
+{% set website = order.wbcustomer.website %}
+
+<header>
+    <div class="header-pdf">
+        <div class="logo-top"><img src="https://affichange.com/img/AffiChanGe.png" width="100%" height="100%" alt="logo affichange"></div>
+        <h6 class="title-pdf">AffiChanGe</h6>
+    </div>
+
+</header>
+
+<footer class="footer-brand">
+    <h3 class="name-brand">AffiChange - NBCOM</h3>
+    <p> SAS au capital de 1000 € - RCS Saint Nazaire 795 072 115 000012 Ape : 6012Z</p>
+    <div class="info-brand">
+        <div class="brand-info">
+            <div class="brand-li">3, rue de la tranquillité 44830 - Bouaye</div>
+            <div class="brand-li"><a href="https://affichange.com/msg/formcontact/affichange/Dc7zkgFhLpCoH5a2vbiNGUOZ">affichange@</a></div>
+        </div>
+    </div>
+    <p>affichange.com - <span class="Afg">affichange</span></p>
+</footer>
+
+
+<section>
+    <div class="info-brand">
+        <div class="customer">
+            <h5>{{ website.namewebsite }}</h5>
+            <div class="brand-info">
+                {%  if website.template.sector.adresse|length > 0 %}
+                    <div class="brand-li">{{ website.template.sector.adresse[0].numero}}  {{ website.template.sector.adresse[0].nomVoie}}</div>
+                    <div class="brand-li">{{ website.template.sector.adresse[0].nomCommune }}</div>
+                    <div class="brand-li">{{ website.template.sector.adresse[0].codePostal }}</div>
+                {% else %}
+                    <div class="brand-li">non renseigné</div>
+                    <div class="brand-li">non renseigné</div>
+                    <div class="brand-li">non renseigné</div>
+                {%  endif %}
+            </div>
+        </div>
+    </div>
+
+    <h5 class="title-page">Commande N° {{ order.numcommande }} du {{ order.date|format_date(locale='fr') }}</h5>
+    <p>N° client : {{ website.createAt|date("Y") }}-WB-{{ website.id }}{{ order.wbcustomer.numero }} </p>
+    <p>administrateur website : {{ dispatch.name }} </p>
+    <h5 style="text-align: center">Prestations :</h5>
+    {% if order.products[0].subscription.starttime is not null %}
+        <p>pour la periode du : {{ order.products[0].subscription.starttime|date('d/m/y') }} au {{ order.products[0].subscription.endtime|date('d/m/y') }}</p>
+    {% endif %}
+
+
+    <div class="content-fact">
+        <table class="list__table__match table table-striped match-dom" style="font-size: 0.8rem; margin: auto;">
+            <thead>
+            <tr>
+                <th>Réference</th>
+                <th>Designation</th>
+                <th> - </th>
+                <th> qté/budget </th>
+                <th>prix/ taux</th>
+                <th>total HT</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for cmd in order.products %}
+                {% if cmd.remised %}
+                    {%  set price = cmd.priceht %}
+                {% else %}
+                    {%  set price = cmd.product.price %}
+                {% endif %}
+                <tr>
+                    <td class="td0">{{ cmd.product.name }}</td>
+                    <td class="td1">{{ cmd.product.description }}</td>
+                    <td class="td2">{{ cmd.description }}</td>
+                    <td class="td3">{{ cmd.multiple }}</td>
+                    {%  if cmd.product.unit is same as('€') %}
+                        <td class="td4">{{ price|number_format(2,',', '.') }} €  HT</td>
+                        <td class="td5">{{ ( price*cmd.multiple )|number_format(2,',', '.') }} €  HT</td>
+                    {% else %}
+                        <td class="td4">{{ price }} %</td>
+                        <td class="td5">{{ (( price*cmd.multiple )/100)|number_format(2,',', '.') }} €  HT</td>
+                    {%  endif %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <div class="total-fact">
+        <table class="solde_table table table-striped">
+            <thead>
+            <tr>
+                <th>Total H.T</th>
+                <th>TVA(20%)</th>
+                <th>Total TTC</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{order.totalht|number_format(2,',', '.') }} € </td>
+                <td>{{ order.totaltva|number_format(2,',', '.') }} € </td>
+                <td>{{ order.totalttc|number_format(2,',', '.') }} € </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+    <div class="footer-fac">
+        <h3 class="reg-fact">Réglement : </h3>
+        <p  class="mention-fac">Nous nous réservons la propriété des droits de création, de développement et le maintien des services et abonnements définis par la présente facture jusqu’au paiement intégral de leur prix. Le client reconnaît avoir pris connaissance des conditions générales de vente et déclare accepter sans réserve. Aucun escompte ne sera accordé et ne pourra être déduit directement par le client. Tout retard de paiement entraînera des pénalités de retard égales à 3 fois le taux d’intérêt légal soit 1.95% et une indemnité forfaitaire de 20% des sommes réclamées.
+        </p>
+    </div>
+</section>
+
+</main>

@@ -1,0 +1,13 @@
+{%  block content %}
+    <section class="vaiss-lib">
+        <div class="_pg-act">
+            <div class="fx-cub ii_cub2">
+                {{ include('aff_websiteadmin/parameters/view/form_update.html.twig') }}
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+{% use "js/js_edit_website.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

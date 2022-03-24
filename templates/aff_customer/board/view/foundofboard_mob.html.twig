@@ -1,0 +1,97 @@
+<div class="af_flx-C fx-c w100">
+    <div class="list-incub_mob">
+        <div class="pos-incub-i">
+            <a class="bt-newmod"
+               href="{{ path('module_carte',{'city':board.locality.slugcity, 'nameboard':board.slug}) }}">Liste des
+                plats</a>
+            <a class="bt-newmod" href="{{ path('new_carte',{'id':board.id}) }}">Ajouter des plats</a>
+            <a class="bt-newmod" href="{{ path('new_menu',{'id':website.id}) }}">Nouveau menu</a>
+        </div>
+    </div>
+    <div class="list-incub_mob">
+        {% for formule in formules %}
+            {%  if formule.media.imagejpg[0] is defined  %}
+                {%  set ill= formule.media.imagejpg[0].getwebPath %}
+            {%  else %}
+                {%  set ill= "img/AffiChange.png" %}
+            {% endif %}
+            <div class="pos-incub-l_mob">
+                <div class="af_flx-C">
+                    <div class="tit-pos-cub_mob">{{ formule.name }}</div>
+
+                    <div class="publiedby">date de publication : du {{ formule.parution.starttime|date('d:m:Y') }}
+                        au {{ formule.parution.endtime|date('d:m:Y') }}</div>
+                    <div class="_cg1enf">créée le : {{ formule.createAt|date("j-m-Y") }}</div>
+                    <div class="pos-incub-px w-cb3">
+                        <div class="_2tb-cr2">
+                            <a href="{{ path('edit_menu_day', {'id':formule.id}) }}"  class="_bb-Bt-45-r">
+                                <div class="_bb-sz45-1 _vil-01">
+                                    <div class="spwb_header aleat-item">
+                                        <div class="_i-cO">
+                                            <div class="_icO-bl" ><i class=" fa fa-edit" data-descr="editer.."></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="{{ path('form-duplicate_formule', {'id':formule.id}) }}"  class="_bb-Bt-45-r">
+                                <div class="_bb-sz45-1 _vil-01">
+                                    <div class="spwb_header aleat-item">
+                                        <div class="_i-cO">
+                                            <div class="_icO-rd" ><i class="fa fa-files-o" aria-hidden="true" data-descr="dupliquer.."></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="{{ path('form-delete_formule', {'id':formule.id}) }}"  class="_bb-Bt-45-r">
+                                <div class="_bb-sz45-1 _vil-01">
+                                    <div class="spwb_header aleat-item">
+                                        <div class="_i-cO">
+                                            <div class="_icO-rd" ><i class=" fa fa-trash" data-descr="en bulle.."></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="{{ path('form-publied_formule', {'id':formule.id}) }}"  class="_bb-Bt-45-r">
+                                <div class="_bb-sz45-1 _vil-01">
+                                    <div class="spwb_header aleat-item">
+                                        <div class="_i-cO">
+                                            {%  if formule.publied %}
+                                                <div class="_icO-rd green" ><i class="fa fa-flag-checkered" aria-hidden="true"></i></div>
+                                            {% else %}
+                                                <div class="_icO-rd red" ><i class="fa fa-flag" aria-hidden="true"></i></div>
+                                            {%  endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    {#
+                    <a class="pop_button" href="{{ path('board_blog',{'id':tab.id}) }}">modifier
+                        <i class="fa fa-comments-o" aria-hidden="true"></i>
+                    </a>
+                    #}
+                </div>
+                <div class="inf_cub_mob">
+                    <div class="illust-list_mob">
+                        <div class="iner-illust_mob" style="background-image: url('{{ asset(ill) }}')"></div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="pop-board">
+                <div class="pos-incub">
+                    <div class="_t-c _m-lr-5">
+                        <div class="til_rlt">pas encore de formule</div>
+                    </div>
+                    <a class="bt-pp" href="{{ path('new_menu',{'id':website.id}) }}"><i class="fa fa-edit" aria-hidden="true"></i>créez</a>
+                    <div class="timdate_pos">
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+

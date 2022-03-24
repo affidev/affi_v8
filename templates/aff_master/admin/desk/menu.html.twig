@@ -1,0 +1,13 @@
+{% block menu %}
+    <div class="_fx-abs fx-c _bg-op-trs _sz6 _bdrad glob_affi _co-B">
+        <div class="_ext-p shtf">
+            <a href="{{ path('cargo_public') }}" class="_i-Wbs">{{ include('svg/50x50_AfCHG_blanc.html.twig') }}</a>
+        </div>
+    </div>
+    {{ include('aff_menu/pop/'~agent~'/modal-pop-customer.html.twig') }}
+    {{ include('aff_menu/pop/'~agent~'/profilnav.html.twig') }}
+
+    {{ include('aff_master/menus/backoffice.html.twig') }}
+{%  endblock menu %}
+
+{#   {{ include('aff_master/header/header_backoffice.html.twig') }} #}

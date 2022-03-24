@@ -1,0 +1,14 @@
+<div class="_pic-website" title="panneau info de {{ board.namewebsite }}">
+    {% if board.template.logo.namefile is defined %}
+        {%  set pict = asset('spaceweb/template/'~board.template.logo.namefile ) %}
+    {%  else %}
+        {%  set pict = asset('img/pinsaffi.png') %}
+    {%  endif %}
+    <div class="web-inf af_flx-nW">
+        <div class="bull-website" style="background-image: url({{ pict }})"></div>
+        <h1>{{ board.namewebsite }}</h1>
+        <div class="tobulle-inf bulletoggle" data-affitgl="tgl_3">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+        </div>
+    </div>
+</div>

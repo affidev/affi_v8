@@ -1,0 +1,21 @@
+{% block body %}
+    <div class="_wb">
+        <div class="container-bo_v5">
+            {{ include('aff_websiteadmin/menu/'~agent~'/parameter_menu.html.twig') }}
+            <section class="_wb-ospace">
+                <div class="head-wb-space">
+                </div>
+                <div class="ii_cub">
+                    {{ include('aff_websiteadmin/cubes/actions.html.twig') }}
+                    <div class="contener-cube">
+                        {{ include('aff_websiteadmin/cubes/initmodule.html.twig') }}
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}
+{% use "js/js_edit_website.html.twig" %}
+ {% block javascripts %}
+     {{ parent() }}
+ {% endblock %}

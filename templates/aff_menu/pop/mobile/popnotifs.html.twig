@@ -1,0 +1,22 @@
+<nav class="account bg_aff" id="popnotif">
+    <div class="inner-account">
+
+        <div class="pop-tab_menu _cl-cl">
+            <div class="af_flx-C">
+                {%  for notif in notifs %}
+                <div class="bubble-menu-litt-rock mn-border">
+                    {%  if  notif.classmodule is same as('blog') or notif.classmodule is same as('shop')%}
+                        <a class="mn-link" href="{{ path('list_msg_board') }}">{{ notif.subject}}</a>
+                    {%  else %}
+                        <a class="mn-link" href="{{ path('board_'~ notif.classmodule, {'id': notif.idmodule, 'notif':notif.id} ) }}">{{ notif.subject}}</a>
+                    {% endif %}
+                </div>
+                {%  endfor %}
+            </div>
+        </div>
+
+    </div>
+</nav>
+
+
+

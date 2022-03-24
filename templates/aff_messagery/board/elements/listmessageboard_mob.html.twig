@@ -1,0 +1,53 @@
+<div class="inf-msg_mob">
+    <div class="wb-logo-pop">
+        {% if msg.websitedest.template.logo %}
+            <div   class="wb_logo" style="background-image: url('{{ asset('spaceweb/template/'~msg.websitedest.template.logo.namefile ) }}')"></div>
+        {% else %}
+            <div  class="wb_logo" style="background-image: url('{{ asset('img/pinsaffi.png') }}')"></div>
+        {% endif %}
+    </div>
+</div>
+
+<div class="_li-fx fx-cst">
+
+    <div class="origin_mob">
+        <div class="origin_iner_mob">
+                <h5>{{msg.websitedest.namewebsite }}</h5>
+        </div>
+        <div>
+            {%  if  msg.tballmsgs.lastconvers %}
+                {%  set datetosee = msg.tballmsgs.lastconvers %}
+            {%  else %}
+                {%  set datetosee = msg.createAt %}
+            {% endif %}
+
+            {% if datetosee|format_datetime('short', 'none', locale='fr') is same as ("now"|format_datetime('short', 'none', locale='fr')) %}
+                <div class="dt_msg_mob">{{- datetosee|format_datetime('none', 'short', locale='fr') -}}</div>
+            {% else %}
+                <div class="dt_msg_mob">{{- datetosee|format_datetime('medium', 'none', locale='fr')|slice(0,-4) -}}</div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="af_flx-W">
+        {% if not msg.isspaceweb %}
+            <div class="sender_mob {{ msg.sender ?"":"_co-bk"}}">Nouveau contact</div>
+        {% endif %}
+
+        {% if msg.isspaceweb %}
+            <div class="sender_mob {{ msg.sender ?"":"_co-bk"}}">{{- msg.tballmsgs.dispatch.name|trim -}}&nbsp;:&nbsp;</div>
+        {% else %}
+            <div class="sender_mob {{ msg.sender ?"":"_co-bk"}}">{{- msg.tballmsgs.contact.useridentity.firstname|trim -}}&nbsp;:&nbsp;</div>
+        {% endif %}
+
+        {%  if  msg.tballmsgs.extract is not null%}
+            <div class="obje_mob">{{- msg.tballmsgs.extract|u.truncate(20, '...', false) -}}</div>
+        {%  else %}
+            <div class="obje_mob">&nbsp;...</div>
+        {%  endif %}
+
+    </div>
+</div>
+
+
+

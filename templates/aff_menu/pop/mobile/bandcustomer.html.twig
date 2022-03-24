@@ -1,0 +1,40 @@
+<nav class="bandcustomer_mob" id="popuser">
+    <div class="inner-bandcusto_mob">
+
+        <div class="banner-stap_mob">
+            <div class="button-wp">
+                <a class="pop_button" href="{{path('app_logout') }}">Deconnexion
+                    <i class="fa fa-power-off"></i>
+                </a>
+            </div>
+
+            <a class="button-wp" href="{{path('profil_dispatch')}}">
+                <button class="pop_button">Mon compte
+                    <i class="fa fa-info-circle"></i>
+                </button>
+            </a>
+            {#
+            <div class="button-wp">
+                <button class="pop_button-big">catchs
+                    <i class="fa fa-star"></i>
+                </button>
+            </div>
+            #}
+{#
+            <div class="button-wp">
+                <button class="pop_button">{{board.namewebsite}}
+                    <i class="fa fa-wheelchair-alt"></i>
+                </button>
+            </div>
+#}
+        </div>
+        {{ include('aff_menu/pop/'~agent~'/logoliterelative.html.twig') }}
+    </div>
+</nav>
+
+
+
+
+
+
+

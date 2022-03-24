@@ -1,0 +1,8 @@
+{% block body %}
+    {%  set entity, typ = offre, "shop" %}
+    {{ include('aff_website/shop/'~agent~'showoffremob.html.twig') }}
+{%  endblock body %}
+{% use "js/js_public_wb.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

@@ -1,0 +1,145 @@
+{% block body %}
+<section class="_wb-board_mob">
+        <div class="map-wb_mob">
+            <div class="wp-info">
+                <div class="inner-info">
+                    <div class="w_titleinfo_mob">
+                        <h1>{{ board.namewebsite }}</h1>
+                        <h2>{{ website.template.description }}</h2>
+                    </div>
+                </div>
+                <div class="af_flx-W fx-c pdbt15 a_centwhite">
+                        <div class="w_titleinfo">
+                            <h2 title="info de {{ website.namewebsite }}">{{ website.template.activities }}</h2>
+
+                            {% if website.template.sector.adresse[0] is defined %}
+                                {%  set adr = website.template.sector.adresse[0] %}
+                                <h5 class="adrrss"> {{ adr.numero }} {{ adr.nomvoie }} {{ adr.codepostal }} {{ adr.nomcommune }} </h5>
+                            {% else %}
+                                <h3 class="adrrss">{{ website.locality.city }}</h3>
+                            {%  endif %}
+                            {%  if website.attached %}
+                            {{ include('aff_website/generies/opencity.html.twig') }}
+                            {%  endif %}
+                        </div>
+
+                            {%  if  website.template.url is defined %}
+                            <button class="pop_button com_a_col">
+                                <i class="fa fa-link"></i>{{ website.template.url }}
+                            </button>
+                            {%  endif %}
+
+                            {%  if  website.template.telephonespaceweb is defined %}
+                                <a class="pop_button com_a_col" href="tel:"{{ website.template.telephonespaceweb }}>
+                                    <i class="fa fa-phone"></i>
+                                    <div class="com_a_in">Appellez</div>
+                                {#    <div class="tel">{{ website.template.telephonespaceweb }}</div> #}
+                                </a>
+                            {%  endif %}
+                    {%  if website.attached %}
+                            {% if website.contactation is not null %}
+                                <div class="button-wp">
+                                    <button class="bulletoggle pop_button com_a_col" data-tglswitch="tgl_9" data-action="sh">
+                                        <i class="fa fa-comment"></i>contactez
+                                    </button>
+                                </div>
+                            {% endif %}
+
+                            <a href="{{ path('board', {'slugcity': website.locality.slugcity ,'slug': website.slug }) }}" class="pop_button com_a_col">
+                                <i class="fa fa-star"></i>
+                                <div class="com_a_in">les affiches</div>
+                           </a>
+                    {%  endif %}
+                </div>
+            </div>
+        </div>
+        {%  if website.attached %}
+            <div class="ol-2 tglaff"  id="tgl_9" style="display: none">
+                {% if dispatch is null %}
+                    {{ include('aff_messagery/board/form/form_contact_board.html.twig') }}
+                {%  else %}
+                    <div id="adcomment">
+                        <add-comment slug="{{ website.slug }}" id="{{ website.id }}" module="_board"></add-comment>
+                    </div>
+                {%  endif %}
+            </div>
+
+            <div class="map-wb_mob">
+
+                    {%  if notices['event']|length >0 %}
+                        {%  set event =notices['event']|first %}
+                        {{ include('aff_website/event/view/modale_event_mob.html.twig') }}
+                    {%  endif %}
+
+                    {%  if notices['menu'] is defined and notices['menu']|length >0 %}
+                        {{ include('aff_website/formule/view/modale_menu_mob.html.twig') }}
+                    {%  endif %}
+
+            </div>
+            <div class="wp-event">
+                <div class="inner-event">
+                        <h3 class="goaff_event_mob">dernière affiche</h3>
+                        {%  set ite = 0 %}
+                        <div class="flex-notb_v8-mob">
+                            {%  set ite = 1 %}
+                            {%  if notices['post'] is defined and notices['post']|length >0 %}
+                                {% set notice = notices['post']|first %}
+                                {{ include('aff_website/elements/'~agent~'/cardpublication_mob.html.twig') }}
+                            {%  else %}
+                                <div class="affiche">
+                                    <div class="evnet_titre_v5">pas d'autre affiche actuellement !!</div>
+                                </div>
+                            {%  endif %}
+                        </div>
+                    </div>
+            </div>
+        {% else %}
+            <div class="wp-event">
+                <div class="inner-event">
+                    <h3 class="goaff_event_mob">dernière affiche</h3>
+                    <div class="flex-notb_v8-mob">
+                        <div class="affiche">
+                            {{ include('aff_website/pop/bullator_wb-point_mob.html.twig') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {%  endif %}
+</section>
+{%  endblock body %}
+{% use "js/js_public_wb.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+
+   {#
+   <div class="af_flx-W fx-c">
+       <button class="pop_button bulletoggle" aria-label="info website" data-affitgl="tgl_info"><i class="fa fa-info-circle"></i> infos</button>
+   </div>
+   #}
+
+
+
+                {# <div class="inner-info tglaff"  id="tgl_info" style="display: none">
+
+
+
+
+
+                <div class="illustr-info" >
+                    <div class="e_pictinfo">
+                        {% if website.template.logo.namefile is defined %}
+                            <div class="bkgrndlogo" style="background-image: url('{{ asset('spaceweb/template/'~website.template.logo.namefile??"" ) }}')"></div>
+                        {% endif %}
+                    </div>
+                </div>
+                #}
+
+{#
+<div class="ol-3 tglaff"  id="tgl_2" style="display: none">
+    {{ include('aff_website/website/view/websiteLink.html.twig') }}
+</div>
+<div class="ol-10 tglaff" id="tgl_3" style="display: none">
+</div>
+#}

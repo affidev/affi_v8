@@ -1,0 +1,17 @@
+{% block body %}
+<div class="container-websit">
+    <div class="wb-zone-cmd">
+            {{ include('aff_website/elements/'~agent~'/zonecommand.html.twig') }}
+    </div>
+    <section class="affi_board">
+        {%  set ite = 0 %}
+        {{ include('aff_website/boards/'~agent~'/showallothers.html.twig') }}
+    </section>
+</div>
+{%  endblock body %}
+{% use "js/js_public_wb.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+

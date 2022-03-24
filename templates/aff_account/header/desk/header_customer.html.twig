@@ -1,0 +1,29 @@
+
+<div class="bo_nav-custo nav-afdk">
+    {%  if vartwig.nav is defined %}
+        {% for nav in vartwig.nav %}
+            {% if loop.first %}
+                <div class="bta-lk_v2 affitoggle _bta-act" data-affitgl="tgl_0">
+                    <div class="mn-logo_wb mn-bb"><i class="{{nav.i}}" aria-hidden="true"></i>{{nav.name}}</div>
+                </div>
+            {% else %}
+                <div class="bta-lk_v2 affitoggle" data-affitgl="tgl_{{loop.index0}}">
+                    <div class="mn-logo_wb mn-bb"><i class="{{nav.i}}" aria-hidden="true"></i>{{nav.name}}</div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {%  endif %}
+    {%  if vartwig.linknav is defined %}
+        <a href="{{ path(vartwig.linknav.route) }}" class="mn-logo_wb mn-bb" role="button"><i class="{{vartwig.linknav.i}}" aria-hidden="true"></i>{{vartwig.linknav.name}}</a>
+    {%  endif %}
+    {%  if vartwig.titlenav is defined %}
+        <div class="tit-custo">
+                <div class="mx_nav_cter">
+                    <div class="men_col_custo">
+                        <div class="mn-logo_wb mn-bb">{{vartwig.titlenav.tit}}</div>
+                    </div>
+                </div>
+        </div>
+    {%  endif %}
+</div>
+

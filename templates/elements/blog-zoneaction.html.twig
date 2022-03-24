@@ -1,0 +1,32 @@
+
+   <div class="zone-inf-publication cube-bd">
+        <div class="op-publication">
+            {%  if post.media.imagejpg[0] is defined  %}
+                {%  set ill= post.media.imagejpg[0].getwebPath %}
+            {%  else %}
+                {%  set ill= "img/AffiChange.png" %}
+            {% endif %}
+                <div class="pict-publi">
+                    <div class="iner-illust" style="background-image: url('{{ asset(ill) }}')"></div>
+                </div>
+
+                <div class="in-op-pub">
+                    <h2>{{ post.titre }}</h2>
+                    <div class="publiedby">publié le : {{ post.createAt|date("j-m-Y") }}</div>
+                </div>
+
+       {% if (dispatch.id is same as (post.author.id))  or (dispatch.id == 1) %}
+            <div class="tools-msg">
+                <a class="e-tool" title="edition de l'affiche" href="{{ path('edit_post', {'id':post.id}) }}"><i class=" fa fa-edit" data-descr="editer.."></i></a>
+                <a class="e-tool" title="etat de la publication"  href="{{ path('publied_post', {'id':post.id, 'board':board.id}) }}">
+                    {%  if post.publied %}
+                        <div class="_icO-rd green"><i class="fa fa-flag-checkered" aria-hidden="true"></i></div>
+                    {% else %}
+                        <div class="_icO-rd red"><i class="fa fa-flag" aria-hidden="true"></i></div>
+                    {%  endif %}
+                </a>
+                <a class="e-tool" title="messagerie" href="{{ path('form-delete_post', {'id':post.id}) }}"><i class=" fa fa-trash" data-descr="en bulle.."></i></a>
+            </div>
+       {% endif %}
+    </div>
+   </div>

@@ -1,0 +1,29 @@
+<div class="wpb_text_column wpb_content_element "><br />
+<div class="wpb_wrapper"><br />
+<p>E924M, poêle à bois PIAZZETTA.<br><br />
+Chauffage par convection et par rayonnement. Chambre de combustion en Aluker, cortps de chauffe en acier.</p><br />
+</div><br />
+</div><br />
+<div class="wpb_text_column wpb_content_element  vc_custom_1557495092323"><br />
+<div class="wpb_wrapper"><br />
+<p><span style="color: #a8a8a8">Catégorie :</span> Poêle tendance<br><br />
+<span style="color: #a8a8a8">Marque : PIAZZETTA</span><br><br />
+<span style="color: #a8a8a8">Type de combustible : </span>Bûche Bois<br><br />
+<span style="color: #a8a8a8">Couleur disponible : </span>Blanc, Gris ardesia, Rouge lave</p><br />
+</div><br />
+</div><br />
+<div class="wpb_text_column wpb_content_element "><br />
+<div class="wpb_wrapper"><br />
+<p><strong>Poêle étanche</strong> = performances et qualité de l’air.</p><br />
+<p><strong>Kit accumulation</strong> : ce kit assure du chauffage pendant plusieurs heures après extinction du poêle.</p><br />
+</div><br />
+</div><br />
+<div class="aio-icon-component    style_1"><div id="Info-box-wrap-1790" class="aio-icon-box default-icon"><div class="aio-icon-default"><div class="ult-just-icon-wrapper  "><div class="align-icon" style="text-align:center;"><br />
+<div class="aio-icon none " style="color:#333;font-size:32px;display:inline-block;"><br />
+<i class="fas fa-chevron-circle-right" aria-hidden="true"></i><br />
+</div></div></div></div><div class="aio-icon-header"><h3 class="aio-icon-title ult-responsive" data-ultimate-target="#Info-box-wrap-1790 .aio-icon-title" data-responsive-json-new="{&quot;font-size&quot;:&quot;&quot;,&quot;line-height&quot;:&quot;&quot;}">Performance du poêle</h3></div> <div class="aio-icon-description ult-responsive" data-ultimate-target="#Info-box-wrap-1790 .aio-icon-description" data-responsive-json-new="{&quot;font-size&quot;:&quot;&quot;,&quot;line-height&quot;:&quot;&quot;}" style="color:#a8a8a8;">Puissance nominale : 7 kw<br><br />
+Rendement : 83.59%<br><br />
+Emission (% CO à 13 % O2) : 0,04 %<br><br />
+Emission particules : 9.1 mg/Nm3<br><br />
+Bûche : 20 cm<br><br />
+Dimensions :&nbsp;ø52 x&nbsp; H115 cm</div></div></div>

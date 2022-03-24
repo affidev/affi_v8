@@ -1,0 +1,60 @@
+<div class="cbe-fx4 cube-bd">
+    <div class="cbe_cnt">
+        <div class="c_i_b">
+            <div class="in_cib">
+
+            <div class="in-cib-lrg-tit">
+                <h3 class="tit-cib-lg">Catchs</h3>
+                <div class="space_tag_loc">
+                    <div class="space-tag">
+                        <div class="bull_tag active" >
+                            {%  if bulles|length >0 %}
+                            <div class="-br-Ma">{{ bulles.nbrvieuw }}</div>
+                            {%  else %}
+                                <div class="-br-Ma">0</div>
+                            {%  endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="list-cube fx-row">
+                    {%  if bulles|length >0 %}
+                        {% for bulle in bulles.bullettes %}
+                            <div class="list-incub">
+                                <div class="pos-incub-i">
+                                    <div class="pos-incub-l">
+                                        <div class="all-in">
+                                    <span class="tit-pos-cub">
+                                        {{bulle.spacewebanswser.name}}
+                                    </span>
+                                        </div>
+                                        <div class="timdate_pos">
+                                            {{bulle.create_at|date('d/m/Y')}}
+                                        </div>
+                                    </div>
+                                    <div class="img-pos" style="background-image: url('{{asset(prod.pict.getwebpath ??'nul')}}')"></div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {%  endif %}
+                </div>
+
+
+                <div class="gAulCf">
+                    <div class="bt-cub" role="button">
+                        <div class="in_cibS-Vd"></div>
+                        <div class="in_cibS-bot"></div>
+                        <span class="in_cibS-spn1">
+                            <span class="in_cibS-spn2">
+                                <div class="in_cibS-svg">
+                                    <svg></svg>
+                                </div>
+                                <span class="tit-cb">Ajoutez</span>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

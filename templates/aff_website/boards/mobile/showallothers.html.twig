@@ -1,0 +1,13 @@
+<main class="affi-listmb">
+    <div class="fx-content_rep_v8_mob">
+        <div class="flex-notb_v8-mob">
+            {% for notice in notices.taball[ite:] %}
+            {{ include('aff_website/elements/'~agent~'/cardpublication_mob.html.twig') }}
+            {%  else %}
+                <div class="affiche">
+                    <div class="evnet_titre_v5">pas d'autre affiche actuellement !!</div>
+                </div>
+            {%  endfor %}
+        </div>
+    </div>
+</main>

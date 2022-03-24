@@ -1,0 +1,28 @@
+{%  block content %}
+<section class="vaiss-lib">
+    <div class="_pg-act">
+        <div class="fx-cub ii_cub2">
+            <div class="ii-comd">
+                <div class="act-list">
+                    {% for message in app.flashes('info') %}
+                        <div class="_fx-Tflhs">
+                            <div class="comd-flhs">
+                                <h5>info !</h5>
+                                <div class="_rlm-a">
+                                    <div class="msg-flhs">{{ message }}.</div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {{ include('aff_master/'~directory~'/view/cube-websites.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+{% use "js/js_customer.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+

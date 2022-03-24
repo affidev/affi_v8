@@ -1,0 +1,11 @@
+{{ include('elements/bulle-header.html.twig') }}
+<div class="nav_see">
+    {{ include('aff_search/'~agent~'/just-see.html.twig',{city:website.locality.slugcity}) }}
+    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        {{ include('aff_menu/pop/'~agent~'/all_bell_msg.html.twig') }}
+
+    {%  endif %}
+
+    {{ include('aff_menu/pop/'~agent~'/modal-pop-customer.html.twig') }}
+</div>
+

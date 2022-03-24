@@ -1,0 +1,27 @@
+{% extends 'backofficeaffi.html.twig' %}
+
+{%  block content %}
+<div class="bord-flex-chg-bkoff ii-comd">
+    <div class="act-list">
+       <h1>Mise a jour effectuée</h1>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">liste</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for list in lists %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{ list }}</td>
+                </tr>
+                {%  endfor %}
+                </tbody>
+            </table>
+    </div>
+</div>
+{% endblock content %}
+
+

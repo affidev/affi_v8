@@ -1,0 +1,31 @@
+<div class="menu-bo_sp">
+    <div class="pop-tab_menu _cl-cl">
+        <div class="af_flx-C">
+            <div class="bubble-menu-litt-rock mn-border {{ vartwig.m1 ? "actsel" :"" }}">
+                <a class="mn-link" href="{{path('ospace',{'city':board.locality.slugcity, 'nameboard':board.slug})}}">Le panneau</a>
+            </div>
+            <div class="bubble-menu-litt-rock mn-border {{ vartwig.m2 ? "actsel" :"" }}">
+                <a class="mn-link" href="{{path('module_blog',{'city':board.locality.slugcity, 'nameboard':board.slug})}}">Affiches</a>
+            </div>
+            <div class="bubble-menu-litt-rock mn-border {{ vartwig.m3 ? "actsel" :"" }}">
+                <a class="mn-link" href="{{path('module_event',{'city':board.locality.slugcity, 'nameboard':board.slug})}}">Evenements</a>
+            </div>
+            <div class="bubble-menu-litt-rock mn-border {{ vartwig.m4 ? "actsel" :"" }}">
+                    {%  if isActivity('module_shop', vartwig.tabActivities) %}
+                        <a class="mn-link" href="{{path('module_shop',{'city':board.locality.slugcity, 'nameboard':board.slug})}}">Boutique</a>
+                    {% else %}
+                        <h3>Boutique</h3><a href="{{ path('addmodule_website',{'activ':'module_shop','id':board.id}) }}" class="maj onmj">Installer</a>
+                    {% endif %}
+            </div>
+            <div class="bubble-menu-litt-rock mn-border {{ vartwig.m5 ? "actsel" :"" }}">
+
+                    {%  if isActivity('module_found', vartwig.tabActivities) %}
+                    <a class="mn-link" href="{{path('module_found',{'city':board.locality.slugcity, 'nameboard':board.slug}) }}">Vos Menus</a>
+                    {% else %}
+                        <h3>Vos Menus</h3><a href="{{ path('addmodule_website',{'activ':'module_found','id':board.id}) }}" class="maj onmj">Installer</a>
+                    {% endif %}
+
+            </div>
+        </div>
+    </div>
+</div>

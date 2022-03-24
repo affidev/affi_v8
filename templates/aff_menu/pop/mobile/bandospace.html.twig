@@ -1,0 +1,48 @@
+<nav class="bandcustomer" id="popuser">
+    <div class="inner-bandcusto">
+
+        <div class="banner-stap1">
+            <div class="button-wp_abs">
+                <a class="pop_button" href="{{path('app_logout') }}">Deconnexion
+                    <i class="fa fa-power-off"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="banner-stap2">
+            <a class="button-wp" href="{{path('profil_dispatch')}}">
+                <button class="pop_button-big">Mon compte
+                    <i class="fa fa-info-circle"></i>
+                </button>
+            </a>
+            <div class="button-wp">
+                <button class="pop_button-big">catchs
+                    <i class="fa fa-star"></i>
+                </button>
+            </div>
+            <div class="button-wp">
+                <button class="pop_button-big">{{board.namewebsite}}
+                    <i class="fa fa-wheelchair-alt"></i>
+                </button>
+            </div>
+            {% if is_granted('ROLE_SUPER_ADMIN') %}
+            <a class="button-wp" href="{{path('back_admin',{'keyboard':key_admin}) }}">
+                <button class="pop_button-big">Backoffice
+                    <i class="fa fa-times-circle-o"></i>
+                </button>
+            </a>
+            {% endif %}
+        </div>
+
+        <div class="banner-stap3">
+
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+

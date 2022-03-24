@@ -1,0 +1,46 @@
+{% block body %}
+<div class="container-websit">
+    <div class="wb-zone-cmd">
+        <!-- head du board -->
+    </div>
+    <div class="twpart-website">
+        {%  if website.attached %}
+            {{ include('aff_website/website/view/card_website.html.twig') }}
+            <div class="_wb-module-first-col">
+
+                <div class="ol-2 tglaff"  id="tgl_9" style="display: none">
+                    {% if dispatch is null %}
+                        {{ include('aff_messagery/board/form/form_contact_board.html.twig') }}
+                    {%  else %}
+                        <div id="adcomment">
+                            <add-comment slug="{{ website.slug }}" id="{{  website.id }}" module="_board"></add-comment>
+                        </div>
+                    {%  endif %}
+                </div>
+
+                <div class="ol-3 tglaff"  id="tgl_2" style="display: none">
+                    {{ include('aff_website/website/view/websiteLink.html.twig') }}
+                </div>
+
+                {%  if notices['event']|length >0 %}
+                    {%  set event =notices['event']|first %}
+                    {{ include('aff_website/event/view/modale_event.html.twig') }}
+                {%  endif %}
+                {%  if notices['menu'] is defined and notices['menu']|length >0 %}
+                    {%  set menu =notices['menu'] %}
+                    {{ include('aff_website/formule/view/modale_menu.html.twig') }}
+                {%  endif %}
+
+
+                {{ include('aff_website/website/view/modale_board.html.twig') }}
+            </div>
+        {% else %}
+            {{ include('aff_website/website/view/card_website-noatttached.html.twig') }}
+        {%  endif %}
+    </div>
+</div>
+{%  endblock body %}
+{% use "js/js_public_wb.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

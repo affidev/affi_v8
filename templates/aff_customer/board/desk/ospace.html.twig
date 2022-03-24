@@ -1,0 +1,78 @@
+{% block body %}
+    <div class="_wb">
+        <div class="container-bo_v5">
+            {{ include('aff_customer/menu/'~agent~'/websitemenu.html.twig') }}
+            <section class="_wb-ospace">
+
+
+                    {#<div class="head-wb-admin">
+
+
+                        {% if  website.template.background %}
+                            <div class="website-sh-bo" style="background-image: url('{{ website.template.background.getWebPath }}')">
+                                {{ include('elements/wb-zoneinfo.html.twig') }}
+                            </div>
+                        {%  else %}
+                            <div class="website-sh" style="background-color: #0a53be">
+                                {{ include('elements/wb-zoneinfo.html.twig') }}
+                            </div>
+                        {%  endif %}
+                        </div>
+                    #}
+
+
+                    {#
+                    <div class="map-wb">
+                        <div class="content_iner-info">
+                            {% if website.template.sector.adresse[0] is defined %}
+                                {%  set adr = website.template.sector.adresse[0] %}
+                                <div class="adrrss">  {{ adr.numero }} {{ adr.nomvoie }} {{ adr.codepostal }} {{ adr.nomcommune }} </div>
+                            {%  endif %}
+                            <a href="tel.{{ website.template.telephonespaceweb }}">{{ website.template.telephonespaceweb }}</a>
+                            <p>{{ website.template.activities }}</p>
+                        </div>
+                    </div>
+                    #}
+
+                <div class="ii_cub">
+                    {{ include('aff_customer/cubes/actions.html.twig') }}
+                    <div class="contener-cube">
+                        {{ include('aff_customer/cubes/cube-partners.html.twig') }}
+                  {#
+                    {{ include('aff_customer/cubes/cube-messagery.html.twig') }}
+                    {{ include('aff_customer/cubes/cube-link.html.twig') }}
+                    {{ include('aff_customer/cubes/cube-infoweb.html.twig') }}
+                  #}
+                    </div>
+                </div>
+{#
+            <div class="zone-command">
+                <div class="button-wp">
+                    <button class="bulletoggle pop_button" data-affitgl="tgl_3">Messagerie
+                        <i class="fa fa-flag"></i>
+                    </button>
+                </div>
+                <div class="button-wp">
+                    <button class="bulletoggle pop_button" data-affitgl="tgl_1">Ses partenaires
+                        <i class="fa fa-flag"></i>
+                    </button>
+                </div>
+                <div class="button-wp">
+                    <button class="bulletoggle pop_button" data-affitgl="tgl_0">actualité
+                        <i class="fa fa-flag"></i>
+                    </button>
+                </div>
+            </div>
+#}
+
+
+
+                {#   {{ include('aff_website/view/board.html.twig') }} #}
+        </section>
+    </div>
+</div>
+{%  endblock body %}
+{% use "js/js_ospaceboard.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

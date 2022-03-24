@@ -1,0 +1,29 @@
+<div class="flex-notb_v8-mob">
+    <div class="web-inf_mob">
+        <h3>dernières affiches</h3>
+    </div>
+    {% for notice in lastsnotice %}
+        {%  if notice.post is defined %}
+            <div class="last-postall_mob">
+                {{include('aff_public/view/noticecity.html.twig')}}
+                {%  if notice.post.htmlcontent.fileblob is defined %}
+                <content-notices data-cat="post" data-id="{{notice.post.id}}"></content-notices>
+                {%  endif %}
+            </div>
+        {%  elseif  notice.offre is defined%}
+            <div class="last-postall_mob">
+                {{include('aff_public/view/offrecity.html.twig')}}
+                {%  if notice.offre.product.htmlcontent.fileblob is defined %}
+                <content-notices data-cat="offre" data-id="{{notice.offre.id}}"></content-notices>
+                {%  endif %}
+            </div>
+        {%  endif %}
+    {%  else %}
+        <div class="flex-board">
+            <div class="centered-fil_mob">
+            <h2>  Pas de nouvelle affiche actuellement sur {{ city|capitalize }}</h2>
+            </div>
+        </div>
+    {%  endfor %}
+</div>
+

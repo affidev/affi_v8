@@ -1,0 +1,23 @@
+
+    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        <div class="button-wp">
+            <button class="pop_button {{ isfollow?'todefollow':'' }}" id="followtor" data-idbulle="{{ isfollow }}" data-entity="{{ board.id }}" data-typ="wb">
+                    {{ isfollow?'ne plus suivre':'suivre ce panneau' }}
+                    <i class="fa fa-star" aria-hidden="true"></i>
+            </button>
+        </div>
+    {%  else %}
+        <div class="button-wp">
+            <button class="pop_button" id="catchaffi" title="vous devez être connecté pour activer les bulles">
+                suivre ce panneau
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </button>
+            <div class="infocastch" id="tgl_catch">
+                <div class="iner-inf-catch">
+                    Pour ajouter cette publication à votre panneau personnel
+                    <a href="{{ path('app_login') }}">Connectez-vous</a>
+                </div>
+            </div>
+        </div>
+    {%  endif %}
+

@@ -1,0 +1,48 @@
+<div class="_nav-bell-wb">
+
+    {%  if notifs is defined  and notifs|length >0%}
+        <div class="_nav_item _na_blog">
+            <div class="bul_cp">
+                <div class="space_tag_loc">
+                    <div class="bul-pop" id="nbcathblog" >{{notifs|length}}</div>
+                </div>
+            </div>
+            <div class="ico_be" id="nav_notifs"><i class="fa fa-star" aria-hidden="true"></i></div>
+        </div>
+    {% endif %}
+
+
+    {%  if catchs.blog is defined  and catchs.blog|length >0%}
+    <div class="_nav_item _na_blog">
+        <div class="bul_cp">
+            <div class="space_tag_loc">
+                <div class="bul-pop" id="nbcathblog" >{{catchs.blog|length}}</div>
+            </div>
+        </div>
+        <a class="ico_be" href="{{path('favoris_board') }}"><i class="fa fa-star" aria-hidden="true"></i></a>
+    </div>
+    {% endif %}
+
+    {%  if catchs.event is defined and catchs.event|length >0%}
+    <div class="_nav_item _na_evnet">
+        <div class="bul_cp">
+            <div class="space_tag_loc">
+                <div class="bul-pop" id="nbcathevent">{{catchs.event|length}}</div>
+            </div>
+        </div>
+        <a class="ico_be" href="{{path('favoris_board') }}"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+    </div>
+    {% endif %}
+    {#
+    <div class="_nav_item _na_msg">
+        <div class="bul_cp">
+            <div class="space_tag_loc">
+                {%  if msgsnoread is defined %}
+                    <div class="bul-pop" >{{msgsnoread|length}}</div>
+                {% endif %}
+            </div>
+        </div>
+        <a class="ico_be" href="{{path('all_message_customer') }}"><i class="fa fa-comments-o" aria-hidden="true"></i></a>
+    </div>
+    #}
+</div>

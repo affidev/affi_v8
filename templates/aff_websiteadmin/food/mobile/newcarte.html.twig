@@ -1,0 +1,9 @@
+{% block body %}
+    <section class="_wb-ospace_mob">
+        {{ include('aff_websiteadmin/'~directory~'/form/'~agent~'/addarticleformule.html.twig') }}
+    </section>
+{% endblock body%}
+{% use "js/js_newcarte.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

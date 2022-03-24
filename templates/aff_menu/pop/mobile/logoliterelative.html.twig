@@ -1,0 +1,8 @@
+<div class="wb-logo-rel">
+{% if board.template.logo %}
+<a  href="{{ path('ospace',{'city':board.locality.slugcity,'nameboard':board.slug}) }}" class="wb_logo adm" style="background-image: url('{{ asset('spaceweb/template/'~board.template.logo.namefile ) }}')"></a>
+{% else %}
+<a href="{{ path('ospace',{'city':board.locality.slugcity,'nameboard':board.slug}) }}" class="wb_logo adm" style="
+                background-image: url('{{ asset('img/pinsaffi.png') }}')"></a>
+{% endif %}
+</div>

@@ -1,0 +1,35 @@
+<nav class="bandcustomer" id="popuser">
+    <div class="inner-bandcusto">
+        <div class="banner-stap">
+            <a class="button-wp" href="{{path('profil_dispatch')}}">
+                <button class="pop_button">Mon compte
+                    {% if app.session.get('avatar') is defined and app.session.get('avatar') is not null %}
+                    <div class="avataff" id="nav_user" style="background-image: url({{ asset('upload/avatar/'~app.session.get('avatar')) }})"></div>
+                    {%  else %}
+                    <i class="fa fa-user"  aria-hidden="true"></i>
+                    {%  endif %}
+                </button>
+            </a>
+            <div class="button-wp">
+                <a class="pop_button" href="{{path('app_logout') }}">Deconnexion
+                    <i class="fa fa-power-off"></i>
+                </a>
+            </div>
+
+            {% if is_granted('ROLE_SUPER_ADMIN') %}
+            <a class="button-wp" href="{{path('back_admin',{'keyboard':key_admin}) }}">
+                <button class="pop_button"> Backoffice
+                    <i class="fa fa-times-circle-o"></i>
+                </button>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+

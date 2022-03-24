@@ -1,0 +1,9 @@
+{% block body %}
+ <div class="fx_wb-c">
+  {{ include('aff_account/gestion/view/'~agent~'/list-factures.html.twig') }}
+ </div>
+{%  endblock body %}
+{% use "js/js_customer.html.twig" %}
+{% block javascripts %}
+ {{ parent() }}
+{% endblock %}

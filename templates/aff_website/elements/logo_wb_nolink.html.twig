@@ -1,0 +1,7 @@
+<div class="wbsite-logo-inf">
+    {% if website.template.logo.namefile is defined %}
+        <div  class="wb_logo" style="background-image: url('{{ asset('spaceweb/template/'~website.template.logo.namefile ) }}')"></div>
+    {% else %}
+        <div class="wb_logo" style="background-image: url('{{ asset('img/pinsaffi.png') }}')"></div>
+    {% endif %}
+</div>

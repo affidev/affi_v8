@@ -1,0 +1,14 @@
+knp_paginator :
+  page_range : 5
+  default_options :
+    page_name : page                  # nom de la page des paramètres requête
+    sort_field_name : sort            # sorte nom de paramètre de requête de champ
+    sort_direction_name : direction   # sorte direction nom de paramètre de requête
+    distinct : true                   #garantissent des résultats distincts, utiles lorsque les requêtes ORM utilisent des instructions GROUP BY
+    filter_field_name : filterField   # champ de filtre nom du paramètre de requête
+    filter_value_name : filterValue   # valeur du filtre nom du paramètre de requête
+  template :
+    pagination: 'knp/affi_pagination.html.twig'
+    #pagination: 'knp/bulma_pagination.html.twig'
+    sortable: '@KnpPaginator/Pagination/sortable_link.html.twig' # sort link template
+    filtration: '@KnpPaginator/Pagination/filtration.html.twig'  # filters template

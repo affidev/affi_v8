@@ -1,0 +1,63 @@
+<div class="cbe-fx">
+    <div class="cbe_cnt">
+        <div class="c_i_b">
+            <div class="in_cib">
+
+            <div class="in-cib-lrg-tit">
+                <div class="tit-cib-lg">dernières commande</div>
+            </div>
+            <div class="_t-c _m-lr-5">
+                <div class="til_rlt">compte actif</div>
+                <div class="space_tag_loc">
+                    <div class="space-tag">
+                        <div class="bull_tag active" >
+                            <div class="-br-Ma">2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="Rt3Tbf">
+                    <div class="nX2Utf">
+                        <table class="list__table__match table table-striped match-dom" style="margin: auto;">
+                            <thead>
+                            <tr>
+                                <th>N°cmd</th>
+                                <th>date</th>
+                                <th>Montant</th>
+                                <th> etat /show</th>
+                                <th>edit</th>
+                                <th>fac</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {%  if  customer is not null %}
+                            {% for cmd in customer.numclient.orders %}
+                                <tr>
+                                    <td>{{cmd.numcommande}}</td>
+                                    <td>{{cmd.date|date('d/m/Y')}}</td>
+                                    <td>{{cmd.totalttc|number_format(2,',', '.')}} € TTC</td>
+                                    {% if cmd.valider %}
+                                        <td><span style="color:red">facturé</span></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    {% else %}
+                                        <td style="display: inline-block">
+                                            <a class="bt_affi" href="{{ path('back_admin_show_commande', {'id': cmd.id}) }}"><i class="fa fa-eye"></i></a> -
+                                            <a class="bt_affi" href="{{ path('back_admin_show_commande-desk', {'id': cmd.id}) }}"><i class="fa fa-desktop"></i></a>
+                                        </td>
+                                        <td><a class="bt_affi" href="{{ path('edit_command', {'id':cmd.id}) }}" ><i class="fa fa fa-edit"></i></a></td>
+                                        <td><a class="bt_affi" href="{{ path('back_admin_gest_factured', {'id':cmd.id}) }}" ><i class="fa fa fa-money"></i></a></td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                            {%  endif %}
+                            </tbody>
+                        </table>
+                        <div class="kxr9cf"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

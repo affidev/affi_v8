@@ -1,0 +1,44 @@
+{%  if locate is not null %}
+
+    {#
+    {% if locate.namefile is defined and locate.namefile is not null %}
+        <div class="rondcity" style="background-image: url({{ asset('cities/'~locate.namefile) }})">
+            <div class="simpl-flex">
+                <div class="_ext-p shtf">
+                    <div class="_i-Wbs bulletoggle " data-affitgl="tgl_10">{{ include('svg/50x50_AfCHG_blanc.html.twig') }}</div>
+                    <span class="locate">{{ city|capitalize }}</span>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <a class="_fx-R-bs _sz250 glob_affi _co-B" href="{{ path('cargo_public',{'slugcity':city}) }}">
+            <div id="citynow">
+                <div class="_i-Wbs" >{{ include('svg/50x50_AfCHG_blanc.html.twig') }}</div>
+            </div>
+            <div class="_ext-p shtf sty_affi">
+                <h1>{{ city|capitalize }}</h1>
+            </div>
+        </a>
+    {% endif %}
+    #}
+
+    <a class="_fx-R-bs _sz250 glob_affi _co-B" href="{{ path('cargo_public',{'slugcity':city}) }}">
+        <div id="citynow">
+            <div class="_i-Wbs" >{{ include('svg/50x50_AfCHG_blanc.html.twig') }}</div>
+        </div>
+        <div class="_ext-p shtf sty_affi">
+            <h1>{{ city|capitalize }}</h1>
+        </div>
+    </a>
+
+
+{%  else %}
+    <div class="_fx-C-bs _sz250 glob_affi _co-B">
+        <div id="glassrocket">
+            <div class="_i-Wbs bulletoggle " data-affitgl="tgl_10">{{ include('svg/50x50_AfCHG_blanc.html.twig') }}</div>
+        </div>
+        <div class="_ext-p shtf sty_affi">
+            <h1>AffiChanGe</h1>
+        </div>
+    </div>
+{%  endif %}

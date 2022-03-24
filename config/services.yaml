@@ -1,16 +1,112 @@
-# This file is the entry point to configure your own services.
-# Files in the packages/ subdirectory configure your dependencies.
-
-# Put parameters here that don't need to change on each machine where the app is deployed
-# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
+    locale: 'fr'
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: 'web@affichange.com'
+    mailer_password: null
+    retry_ttl: 7200 # Value in seconds, logic will use as hours
+    token_ttl: 86400
+    firewall_name: main
+    user_class: App\Entity\User
+    app_affi: '%env(APP_AFFI)%'
+    key_admin: '%env(KEY_ADMIN)%'
+    path_facture: '5OpmlGr8574-t657aERZqsdt-457'
+    router.request_context.host: 'affichange.com'
+    router.request_context.scheme: 'https'
+    router.request_context.base_url: ''
+    asset.request_context.base_path: '%router.request_context.base_url%'
+    asset.request_context.secure: true
+    typesense_key: '%env(TYPESENSE_KEY)%'
+    typesense_host: '%env(TYPESENSE_HOST)%'
 
 services:
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        bind:
+            $retryTtl: '%retry_ttl%'
+            $tokenTtl: '%token_ttl%'
+            $firewallName: '%firewall_name%'
+            $userClass: '%user_class%'
+            $hoster: '%typesense_host%'
+            $apiKey: '%typesense_key%'
 
+    App\Infrastructure\Search\Typesense\TypesenseClient:
+        arguments:
+            $hoster: '%typesense_host%'
+            $apiKey: '%typesense_key%'
+
+
+    App\Infrastructure\Search\IndexerInterface:
+        class: App\Infrastructure\Search\Typesense\TypesenseIndexer
+
+    App\Infrastructure\Search\SearchInterface:
+        class: App\Infrastructure\Search\Typesense\TypesenseSearch
+
+    redirectionListener:
+        class: App\Listener\RedirectionListener
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+
+    app.form.registration:
+        class: App\Form\RegistrationType
+        tags:
+            - { name: form.type, alias: app_user_registration }
+
+    app.doctrine_listener_resa_creation_listener:
+        class: App\DoctrineListener\ResaCreationListener
+        tags:
+            - { name: doctrine.event_listener, event: postPersist }
+
+    app.doctrine_listener_dispatch_listener:
+        class: App\DoctrineListener\DispatchListener
+        tags:
+            - { name: doctrine.orm.entity_listener, event: prePersist, entity: App\Entity\DispatchSpace\DispatchSpaceWeb }
+            - { name: doctrine.orm.entity_listener, event: preUpdate, entity: App\Entity\DispatchSpace\DispatchSpaceWeb }
+
+    app.doctrine_listener_website_listener:
+        class: App\DoctrineListener\WebsiteListener
+        tags:
+            - { name: doctrine.orm.entity_listener, event: prePersist, entity: App\Entity\Websites\Website }
+            - { name: doctrine.orm.entity_listener, event: preUpdate, entity: App\Entity\Websites\Website }
+
+    app_doctrine_listener_offre_listener:
+        class: App\DoctrineListener\OffreListener
+        tags:
+            - { name: doctrine.orm.entity_listener, event: prePersist, entity: App\Entity\Marketplace\Offres }
+            - { name: doctrine.orm.entity_listener, event: preUpdate, entity: App\Entity\Marketplace\Offres }
+
+    app_doctrine_listener_offer_listener:
+        class: App\DoctrineListener\OfferListener
+        tags:
+            - { name: doctrine.orm.entity_listener, event: prePersist, entity: App\Entity\Module\Offer' }
+            - { name: doctrine.orm.entity_listener, event: preUpdate, entity: App\Entity\Module\Offer' }
+
+    app_doctrine_listener_postation_listener:
+        class: App\DoctrineListener\PostListener
+        tags:
+            - { name: doctrine.orm.entity_listener, event: prePersist, entity: App\Entity\Posts\Post }
+            - { name: doctrine.orm.entity_listener, event: preUpdate, entity: App\Entity\Posts\Post }
+
+    app_doctrine_listener_gps_listener:
+        class: App\DoctrineListener\GpsListener
+        tags:
+            - { name: doctrine.orm.entity_listener, event: prePersist, entity: App\Entity\Sector\Gps }
+            - { name: doctrine.orm.entity_listener, event: preUpdate, entity: App\Entity\Sector\Gps }
+
+
+    App\Infrastructure\Orm\DoctrineSchemaListener:
+        tags: [ 'doctrine.event_subscriber' ]
+
+    CurlUrl:
+        class: App\Service\CurlUrl
+
+    validator.check.url:
+        class: App\Validator\Constraints\contraintsCheckUrlValidator
+        arguments: [ '@CurlUrl' ]
+        tags:
+            - { name: validator.constraint_validator, alias: validatorCheckUrl }
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
     App\:
@@ -21,5 +117,15 @@ services:
             - '../src/Kernel.php'
             - '../src/Tests/'
 
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller/'
+        tags: [ 'controller.service_arguments' ]
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\EventListener\RedirectExceptionListener:
+        tags:
+            - { event: kernel.exception, name: kernel.event_listener }

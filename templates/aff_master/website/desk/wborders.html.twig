@@ -1,0 +1,21 @@
+{% extends 'backofficeaffi.html.twig' %}
+
+{%  block content %}
+<div class="bord-flex-chg-bkoff ii-comd">
+    <div class="act-list">
+        {% for message in app.flashes('info') %}
+            <div class="_fx-Tflhs">
+                <div class="comd-flhs">
+                    <h5>info !</h5>
+                    <div class="_rlm-a">
+                        <div class="msg-flhs">{{ message }}.</div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        {{ include('aff_master/orders/view/cube-orders.html.twig') }}
+    </div>
+</div>
+{% endblock content %}
+
+

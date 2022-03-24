@@ -1,0 +1,10 @@
+{% extends 'webadmin.html.twig' %}
+{% block head %}
+    {{ parent() }}
+    <link href="{{ asset('scripts/external/google-code-prettify/prettify.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% use 'aff_websiteadmin/menu.html.twig' %}
+{% block core %}
+    {{ include('aff_websiteadmin/'~directory~'/'~agent~'/'~vartwig.maintwig~'.html.twig') }}
+{% endblock core %}

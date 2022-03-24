@@ -1,0 +1,21 @@
+{% block body %}
+    <div class="showwb_fx_v6">
+        <div class="contact-fixed">
+            <div class="_fx-C cdr-lit-trans" >
+            </div>
+        </div>
+    </div>
+    <div class="fx_wb-c">
+        {{ include('aff_website/header/headerwpshow.html.twig') }}
+        {{include('aff_website/formule/desk/showmenudesk.html.twig')}}
+    </div>
+    <div class="partners_v6">
+        {#   {{ include('aff_website/public/desk/view/websiteLink.html.twig') }}  #}
+    </div>
+{%  endblock body %}
+{% use "js/js_wb.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+

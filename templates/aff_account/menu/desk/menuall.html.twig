@@ -1,0 +1,17 @@
+<div class="affinav-rel">
+    <a href="{{ path('cargo_public',{'slugcity':dispatch.locality.slugcity}) }}" class="_fx-abs _sz250 glob_affi _co-B">
+        <div class="_ext-p af_flx-nW fx-c">
+            <div class="_i-Wbs" >{{ include('svg/50x50_AfCHG_bleu.html.twig') }}</div>
+        </div>
+    </a>
+    <div class="head-bull_admin">
+
+        <h2>{{dispatch.name|capitalize}}</h2>
+
+    </div>
+    {{ include('aff_menu/pop/'~agent~'/modal-pop-customer.html.twig') }}
+   {#  {{ include('aff_menu/pop/'~agent~'/bell_msg.html.twig') }}  #}
+    {#
+    {{ include('aff_menu/pop/'~agent~'/logoliteadm.html.twig') }}
+    #}
+</div>

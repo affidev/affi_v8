@@ -1,0 +1,18 @@
+<div class="littlespacevague_lrg_v5">
+    <a href="{{ path('cargo_public',{'slugcity':board.locality.slugcity}) }}" class="_fx-abs _sz250 glob_affi _co-B">
+        <div class="_ext-p af_flx-nW fx-c">
+            <div class="_i-Wbs" >{{ include('svg/50x50_AfCHG_blanc.html.twig') }}</div>
+            <div class="_i-Wbs">
+                <h1>{{board.locality.city}}</h1>
+            </div>
+        </div>
+    </a>
+    <div class="_fx-R_v3">
+        <div class="head-bull pd_head">
+            <h3>{{dispatch.name|capitalize}}</h3>
+        </div>
+    </div>
+    {{ include('aff_menu/pop/'~agent~'/modal-pop-customer.html.twig') }}
+    {{ include('aff_menu/pop/'~agent~'/bell_msg.html.twig') }}
+    {{ include('aff_menu/pop/'~agent~'/logoliteadm.html.twig') }}
+</div>

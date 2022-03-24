@@ -1,0 +1,6 @@
+{% extends 'basepublic.html.twig' %}
+
+{% use 'aff_public/menu.html.twig' %}
+{% block core %}
+    {{ include('aff_public/'~directory~'/'~agent~'/'~vartwig.maintwig~'.html.twig') }}
+{% endblock core%}

@@ -1,0 +1,36 @@
+<div class="flex-board">
+    {% for spw in dispatch.spwsite %}
+        <div class="wb_board">
+
+            <a href="{{ path( 'ospace', {"city":spw.website.locality.city,"nameboard":spw.website.slug}) }}" class="pop_item-rep_v6" data-website="{{ spw.website.id }}">
+        {#  <i class="fa fa-times abs-croos"></i> #}
+            <div class="notbd-img">
+                {%  if spw.website.template.logo.namefile is defined %}
+                <div class="iner-img_notbd" style="background-image: url('{{ asset('spaceweb/template/'~spw.website.template.logo.namefile) }}')"></div>
+                {%  else %}
+                    <div class="iner-img_notbd" style="background-image: url('{{ asset('img/pinsaffi.png' ) }}')"></div>
+
+                {%  endif %}
+            </div>
+            <div class="modal_innerpopo">
+                <p>{{spw.website.namewebsite}} </p>
+                <div class="me_ampoul">
+                </div>
+            </div>
+        </a>
+        </div>
+    {% else %}
+        <div class="pop_item-rep">
+            {#  <i class="fa fa-times abs-croos"></i> #}
+            <div class="notbd-img">
+                <div class="iner-img_notbd" style="background-image: url('{{ asset('img/pinsaffi.png' ) }}')"></div>
+            </div>
+            <div class="modal_innerpopo">
+                <p>pas encore de panneau attaché à votre compte</p>
+                <div class="me_ampoul">
+                    snif
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,18 @@
+{% block website %}
+    {{ include('aff_master/contents/no-talk.html.twig') }}
+{%  endblock website %}
+{%  block content %}
+<section class="vaiss-lib">
+    <div class="_pg-act">
+        <div class="fx-cub ii_cub">
+            {{ include('aff_master/orders/form/cmdWform.html.twig') }}
+        </div>
+    </div>
+</section>
+{%  endblock content %}
+{% use "js/js_Waddproduct.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+

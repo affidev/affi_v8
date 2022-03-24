@@ -1,0 +1,26 @@
+{{ include('elements/bulle-header-lite.html.twig') }}
+<div class="menuhome-af_mb">
+    {{ include('aff_menu/pop/'~agent~'/inimember.html.twig') }}
+</div>
+
+    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        {{ include('aff_public/pop/'~agent~'/bell_msg.html.twig') }}
+        {{ include('aff_menu/pop/'~agent~'/profilnav.html.twig') }}
+        {{ include('aff_menu/pop/'~agent~'/popcustomer.html.twig') }}
+    {%  else %}
+        {{ include('aff_menu/pop/'~agent~'/popnoconnect.html.twig') }}
+    {%  endif %}
+
+{#  si besoin d'affichez l'image de city uniquement
+{% if locate.namefile is defined and locate.namefile is not null %}
+    {%  endif %}
+#}
+
+{%  if locate %}
+    {{ include('aff_public/header/header-nav_mob.html.twig') }}
+{%  endif %}
+
+
+
+
+

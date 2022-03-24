@@ -1,0 +1,44 @@
+{% form_theme form 'aff_security/form/affi_label.html.twig' %}
+{% trans_default_domain 'affi' %}
+{% block body %}
+    <div class="log-machina" id="machina" data-identify="{{ app.session.get('identify') }}">
+        <h1 class="title_log">{{vartwig.title}}</h1>
+        <div class="svg-bulle_open">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">{# <circle cx="100" cy="100" r="80"/>#}</svg>
+            <div class="content_login_affi">
+
+                 <div class="stape">
+                    <h2>Entrez votre adresse mail</h2>
+                    <p>Cette adresse sera votre identifiant de connection à votre espace personnel.</p>
+                    <div id="testmail"></div>
+                    <test-mail></test-mail>
+                 </div>
+
+                <div class="stape" style="display: none">
+                    <div class="sous_connector">
+                        {{ form_start(form) }}
+
+                        {% set terms_link %}<a href="{{ path('cgu') }}">{% trans %}services described{% endtrans %}</a>{% endset %}
+                        {% set general_terms_and_conditions %}{{ "consent_checkbox"|trans({ '%general_terms_and_conditions%': terms_link })|raw }}{% endset %}
+
+                        {{ form_widget(form.email) }}
+                        {{ form_label(form.plainPassword, 'form.plainPassword'|trans, {'label_attr': {'class': 'label-log'}}) }}
+                        {{ form_widget(form.plainPassword,{'attr': {'class': 'nopad'}}) }}
+                        <label class="label-log-check" for="{{ form.charte.vars.id }}">
+                            <div class="lab-input">{{ form_widget(form.charte) }}</div>
+                            <div class="lab-text">{{ general_terms_and_conditions|raw }}</div>
+                        </label>
+                        {{form_rest(form)}}
+                        <input type="submit" value="Go"/>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% use "js/js_auto_create.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

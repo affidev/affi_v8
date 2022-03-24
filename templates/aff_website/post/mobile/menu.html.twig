@@ -1,0 +1,18 @@
+{# menu post mobile #}
+{{ include('aff_menu/menus/'~agent~'/modale_mob_customer.html.twig') }}
+
+<div class="searchbar_mob">
+    {{ include('aff_search/'~agent~'/board-see.html.twig',{city:website.locality.slugcity}) }}
+    {#
+    <div class="button-search">
+        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+            {% if pw %}
+                {{ include('aff_menu/pop/'~agent~'/logoliteadm.html.twig') }}
+
+            {%  endif %}
+        {%  endif %}
+    </div>
+    #}
+</div>
+
+{#      {{ include('aff_website/pop/bullator_mob.html.twig') }}   #}

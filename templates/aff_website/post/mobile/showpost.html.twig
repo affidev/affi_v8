@@ -1,0 +1,8 @@
+{% block body %}
+    {{ include('aff_website/post/'~agent~'showpostmob.html.twig') }}
+{%  endblock body %}
+{% use "js/mobile/js_public_wb.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+

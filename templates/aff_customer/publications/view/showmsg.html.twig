@@ -1,0 +1,43 @@
+<div class="flrow">
+    <div class="fx-cub ii_cub2">
+        <div class="O_list-cube">
+            <div class="list-incub">
+                <div class="pos-incub-i">
+                  <a class="bt-newmod" href="">repondre</a>
+                </div>
+            </div>
+            <div class="list-incub">
+                {%  if post.media.imagejpg[0] is defined  %}
+                    {%  set ill= post.media.imagejpg[0].getwebPath %}
+                {%  else %}
+                    {%  set ill= "img/AffiChange.png" %}
+                {% endif %}
+                <div class="mod-incub">
+                    <div class="pos-incub-i">
+                        <div class="pos-incub-l w-cb1">
+                            <div class="tit-pos-cub">{{ post.titre }}</div>
+                            <div class="inf_cub">
+                                <div class="illust-list">
+                                    <div class="iner-illust" style="background-image: url('{{ asset(ill) }}')"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           {{ include('aff_customer/publications/view/readmessage.html.twig') }}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+{# menu naviagtion center market desk #}
+<div class="_in-l-bb2_content  bx-sha nav-afdk">
+    <div class="flx-lik-lo">
+        {{include('website/commun/logolite.html.twig')}}
+        {% if admin[0] %}
+            <a href="{{ path('tab_spaceweb',{'id':website.id}) }}" class="bta-lk_logo" >
+                <div class="logo_wb _co-bb"><i class="fa fa-undo" aria-hidden="true"></i> Retour back office</div>
+            </a>
+        {% endif %}
+    </div>
+
+    <div class="info-artc">
+        <div class="_ti1">
+            <h1 itemprop = "title">{{ offre.titre }}</h1>
+        </div>
+        <div class="event_second_titl">
+        </div>
+        <div class="fil-post">
+            <span class="datepubli_event">mis en ligne le : <time itemprop = "startDate" pubdate><b>{{ offre.createAt|date("d-m-Y") }}</b></time></span>
+            <span class="datepubli_event">par : <b>{{ offre.author.name }}</b></span>
+        </div>
+    </div>
+</div>
+
+<nav id="af_navdk">
+    <div class="_in-l-bb2_v2 forin_bb2_v2">
+
+        {% for nav in vartwig.nav %}
+            {% if loop.first %}
+                <div class="bta-lk_v2 affitoggle _bta-act" data-affitgl="tgl_0">
+                    <div class="mn-logo_wb mn-bb"><i class="{{nav.i}}" aria-hidden="true"></i>{{nav.name}}</div>
+                </div>
+            {% else %}
+                <div class="bta-lk_v2 affitoggle" data-affitgl="tgl_{{loop.index0}}">
+                    <div class="mn-logo_wb mn-bb"><i class="{{nav.i}}" aria-hidden="true"></i>{{nav.name}}</div>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+</nav>

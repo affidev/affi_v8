@@ -1,0 +1,10 @@
+{% block body %}
+    <section class="_wb-ospace_mob">
+            {{ include('aff_websiteadmin/shop/form/formaddoffre.html.twig') }}
+    </section>
+
+{% endblock body%}
+{% use "js/js-offre.html.twig" %}
+{% block javascripts %}
+{{ parent() }}
+{% endblock %}

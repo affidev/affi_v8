@@ -1,0 +1,63 @@
+{% if lastpost.media.imagejpg[0].namefile is defined %}
+    <img  class="bull-post-last_mb"src="{{ asset('upload/module/'~lastpost.media.imagejpg[0].namefile ) }}" alt="">
+{% else %}
+    <img class="bull-post-last_mb" src="{{ asset('img/pinsaffi.png') }}" alt="">
+{% endif %}
+<div class="pop-post-abs_v2">
+    <div class="bef-post_v2">
+        <div class="first_head_v2">
+            <div class="scooped_v2">
+                <div itemprop="title_v2" class="evnet_titre">
+                    <h1 class="evnet_titre_v2">{{lastpost.titre}}</h1>
+                </div>
+            </div>
+        </div>
+        {% if lastpost.subject is not same as (" ") %}
+        <div class="_fx-R_v2 _fx-convers_inv_v2">
+            <div class="info-post_mb_v2">
+                <div class="event_second_titl_v2">
+                    <h3>{{lastpost.subject|u.truncate(80, '...')}}</h3>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <aside class="event_info_v2">
+            <div class="meet-avs_v2">
+                <div class="_l-bb1_v2">
+                    <div class="_in-l-bb1-post_v2">
+                        <span class="datepubli_event">mis en ligne le : <time itemprop = "startDate" pubdate><b>{{ lastpost.createAt|date("d-m-Y") }}</b></time>&nbsp;par&nbsp;</span>
+                        <span class="datepubli_event">{{lastpost.author.name| upper}}</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+
+
+<!-- ancien pop-->
+{#
+<a href="{{path('show_post',{'slugcity':website.locality.slugcity,'slug':website.slug, 'posta':post.slug, 'id':post.id }) }}" class="bubble-cargo-litt-rock_v2">
+    {% if post.media.imagejpg[0].namefile is defined %}
+        <img  class="bull-post"src="{{ asset('upload/module/'~post.media.imagejpg[0].namefile ) }}" alt="">
+    {% else %}
+        <img class="bull-post_v2-" src="{{ asset('img/pinsaffi.png') }}" alt="">
+    {% endif %}
+    <div class="pop-post-name_v2-">
+        <h3>{{post.titre}}</h3>
+        <p>{{post.subject|u.truncate(80, '...')}}</p>
+        <div class="userHome_v2-">
+            <em>publié par {{post.author.name| upper}}</em>
+            <span> - </span>
+            <span class="litledate">  {{post.createAt|date('\\l\\e j:m:Y')}}</span>
+
+              <span>soufflez il y a : <time class="event_date" itemprop = "startDate" datetime = "{{ post.createAt|date("d-m-YTh:i") }}">{{ post.CreatedAtAgo }}</time></span>
+
+            {% for taguerie in post.tagueries %}
+                <em class="tag-comment bg-green-dark theme-post grid-center-left">{{taguerie.name}} </em>
+            {% endfor %}
+        </div>
+    </div>
+</a>
+ #}

@@ -1,0 +1,73 @@
+<nav class="bandcustomer" id="popuser">
+    <div class="inner-bandcusto">
+
+        <div class="banner-stap">
+            <a class="button-wp" href="{{path('profil_dispatch')}}">
+                <button class="pop_button-big">Mon compte
+                    {% if app.session.get('avatar') is defined and app.session.get('avatar') is not null %}
+                    <div class="avataff" id="nav_user" style="background-image: url({{ asset('upload/avatar/'~app.session.get('avatar')) }})"></div>
+                    {%  else %}
+                    <i class="fa fa-user"  aria-hidden="true"></i>
+                    {%  endif %}
+                </button>
+            </a>
+
+            {%  if catchs.blog is defined  and catchs.blog|length >0%}
+            <div class="button-wp">
+                <a class="pop_button-big" href="{{path('favoris_board') }}">favoris
+                    <div class="_nav_item _na_blog">
+                        <div class="bul_cp">
+                            <div class="space_tag_loc">
+                                <div class="bul-pop" id="nbcathblog" >{{catchs.blog|length}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+
+            {%  if catchs.event is defined and catchs.event|length >0%}
+            <div class="button-wp">
+                <a class="pop_button-big" href="{{path('favoris_board') }}">agenda
+                <div class="_nav_item _na_evnet">
+                    <div class="bul_cp">
+                        <div class="space_tag_loc">
+                            <div class="bul-pop" id="nbcathevent">{{catchs.event|length}}</div>
+                        </div>
+                    </div>
+                </div>
+               </a>
+            </div>
+            {% endif %}
+
+
+            <div class="button-wp">
+                <button class="pop_button-big">{{board.namewebsite}}
+                    {{ include('aff_menu/pop/'~agent~'/logopop.html.twig') }}
+                </button>
+            </div>
+
+            <div class="button-wp">
+                <a class="pop_button-big" href="{{path('app_logout') }}">Deconnexion
+                    <i class="fa fa-power-off"></i>
+                </a>
+            </div>
+
+            {% if is_granted('ROLE_SUPER_ADMIN') %}
+            <a class="button-wp" href="{{path('back_admin',{'keyboard':key_admin}) }}">
+                <button class="pop_button-big"> Backoffice
+                    <i class="fa fa-times-circle-o"></i>
+                </button>
+            </a>
+            {% endif %}
+        </div>
+
+    </div>
+</nav>
+
+
+
+
+
+
+

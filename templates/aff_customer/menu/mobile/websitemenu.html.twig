@@ -1,0 +1,16 @@
+<a class="btn btn-send {{ vartwig.m1 ? "actsel" :"" }} mimg" href="{{path('ospace',{'city':board.locality.slugcity, 'nameboard':board.slug})}}">Le panneau</a>
+<a class="btn btn-send {{ vartwig.m2 ? "actsel" :"" }} mimg" href="{{path('module_blog',{'city':board.locality.slugcity, 'nameboard':board.slug})}}">affiche</a>
+<a class="btn btn-send {{ vartwig.m3 ? "actsel" :"" }} mimg" href="{{path('module_event',{'city':board.locality.slugcity, 'nameboard':board.slug})}}">event</a>
+<a class="btn btn-send cnt-arround{{ vartwig.m4 ? "actsel" :"" }} mimg">Ajouter</a>
+{%  if isActivity('module_shop', vartwig.tabActivities) %}
+    <a class="btn btn-send cnt-arround{{ vartwig.m4 ? "actsel" :"" }} mimg" href="{{path('module_shop',{'city':board.locality.slugcity, 'nameboard':board.slug})}}">boutique</a>
+{% else %}
+    <a class="btn btn-send cnt-arround{{ vartwig.m4 ? "actsel" :"" }} mimg maj onmj" href="{{ path('addmodule_website',{'activ':'module_shop','id':board.id}) }}">Installer votre boutique</a>
+{% endif %}
+
+{%  if isActivity('module_found', vartwig.tabActivities) %}
+    <a class="btn btn-send cnt-arround{{ vartwig.m5 ? "actsel" :"" }} mimg" href="{{path('module_found',{'city':board.locality.slugcity, 'nameboard':board.slug}) }}">Vos Menus</a>
+{% else %}
+    <a class="btn btn-send cnt-arround{{ vartwig.m5 ? "actsel" :"" }} mimg maj onmj" href="{{ path('addmodule_website',{'activ':'module_found','id':board.id}) }}">installez Menus</a>
+{% endif %}
+
