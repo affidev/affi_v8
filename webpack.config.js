@@ -14,6 +14,10 @@ Encore
     // only needed for CDN's or sub-directory deploy
     //.setManifestKeyPrefix('build/')
 
+    .copyFiles({
+        from: 'node_modules/tinymce/skins',
+        to: 'skins/[path]/[name].[ext]'
+    })
     /*
      * ENTRY CONFIG
      *
@@ -47,9 +51,10 @@ Encore
     .addEntry('calendaraffi', './assets/js/plug_calendar.js')
     .addEntry('addentity', './assets/elements/indexentity.js')
     .addEntry('localitate', './assets/elements/indexlocate.js')
-    .addEntry('wyswyg', './assets/js/scripts/bootstrap-wysiwyg.js')
-    .addEntry('hotkeys', './assets/js/scripts/external/jquery.hotkeys.js')
-    .addEntry('prettify', './assets/js/scripts/external/google-code-prettify/prettify.js')
+    //.addEntry('wyswyg', './assets/js/scripts/bootstrap-wysiwyg.js')
+    //.addEntry('hotkeys', './assets/js/scripts/external/jquery.hotkeys.js')
+    //.addEntry('prettify', './assets/js/scripts/external/google-code-prettify/prettify.js')
+    .addEntry('tinymceloc', './assets/js/tinymceloc.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

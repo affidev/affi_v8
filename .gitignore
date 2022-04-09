@@ -7,6 +7,8 @@
 /public/bundles/
 /var/
 /vendor/
+/tests/
+/migrations/
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###

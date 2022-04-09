@@ -5,11 +5,21 @@
 
         <div class="content-form-post">
             <div class="white-tab">
-                <label for="titreoffre">Titre du produit</label>
+                <select id="store" style="/* display: none; */">
+                    <option value="16">Atelier</option>
+                    <option value="9">Produit</option>
+                    <option value="26">Service</option>
+                    <option value="13">Trock</option>
+                    <option value="18">data</option>
+                </select>
+            </div>
+
+            <div class="white-tab">
+                <label for="titreoffre">Intitulé</label>
                 <input type="text" class="form-affi" name="titreoffre" id="titreoffre" placeholder="titre....." required="required">
                 <span class="error" aria-live="polite"></span>
 
-                <label for="legende">détail du produit</label>
+                <label for="legende">en quelques mots...</label>
                 <textarea class="form-affi" name="legende" id="legende"
                           placeholder="Entrez une description courte" rows="1" ></textarea>
                 <span class="error" aria-live="polite"></span>

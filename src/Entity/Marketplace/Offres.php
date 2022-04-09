@@ -61,6 +61,13 @@ class Offres
 
     /**
      * @Groups({"offres_post:read", "parutions:read", "simplebuble"})
+     * @ORM\OneToOne(targetEntity="App\Entity\Marketplace\Categories")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $catagory;
+
+    /**
+     * @Groups({"offres_post:read", "parutions:read", "simplebuble"})
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $keymodule;
@@ -521,6 +528,18 @@ class Offres
     public function setTbmessages(?TabpublicationMsgs $tbmessages): self
     {
         $this->tbmessages = $tbmessages;
+
+        return $this;
+    }
+
+    public function getCatagory(): ?Categories
+    {
+        return $this->catagory;
+    }
+
+    public function setCatagory(?Categories $catagory): self
+    {
+        $this->catagory = $catagory;
 
         return $this;
     }

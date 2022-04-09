@@ -268,8 +268,8 @@ select {
     padding: 0.65rem 0.5rem;
     font-size: 1rem;
     border: 2px solid var(--gray-200);
-    background-color: var(--gray-100);
-    color: var(--gray-800);
+    /*background-color: var(--gray-100);
+    color: var(--gray-800);*/
     border-radius: 10px;
     margin-bottom: 25px;
 }
@@ -677,8 +677,8 @@ span[data-descr]:hover::after {
 }
 .preview img{
     position: relative;
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 250px;
     border: none;
     padding: 15px;
 }

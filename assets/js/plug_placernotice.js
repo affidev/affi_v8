@@ -59,6 +59,7 @@
             indexd = indexd + nbcol
             let col = 0;
             tabslice.each(function (index) {
+
                 tabnot[cpt] = new notice(cpt, $(this), col, row, nbcol, mrg);
                 cpt++
                 col++

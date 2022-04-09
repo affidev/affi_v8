@@ -13,7 +13,7 @@ $(document).ready(function () {
     } else if (replace) {
         notices = $('.last-postall_mob');
     }
-    if (agent && replace) panneau.placernotice(notices); // plugin sur panneau
+  //  if (agent && replace) panneau.placernotice(notices); // plugin sur panneau
 
     // navigation pop notif :
     let btnotif = $('#nav_notifs'), pnotif = $('#popnotif');
@@ -242,5 +242,20 @@ $(document).ready(function () {
                 console.log(r)
             })
     });
+
+
+    async function dodo() {
+            await pause();
+            if (agent && replace) panneau.placernotice(notices); // plugin sur panneau
+    }
+
+    function pause(id) {
+        return new Promise(resolve => setTimeout(() => {
+            console.log(`pause  is over`);
+            resolve();
+        }, 1500));
+    }
+
+    dodo()
 
 });

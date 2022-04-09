@@ -13,6 +13,7 @@ import './styles/semcss.scss';
 import './styles/outstyle.css';
 //import "react-datepicker/dist/react-datepicker.css";
 //import 'react-datepicker/dist/react-datepicker-cssmodules.css';
+
 import 'bootstrap';
 import bsCustomFileInput from 'bs-custom-file-input';
 import 'jquery';

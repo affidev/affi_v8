@@ -1,0 +1,902 @@
+<div class="W100"><br />
+<h3>Vous avez surement d&eacute;j&agrave; entendu dire qu&rsquo;un ordinateur, &ccedil;a fonctionne en binaire ou plus pr&eacute;cis&eacute;ment avec des 0 et des 1. Mais finalement pourquoi? et surtout comment &ccedil;a marche le binaire? Nous allons justement r&eacute;pondre &agrave; toutes ces questions cela dans cet article!</h3><br />
+<a href="#slide">slide</a></div><br />
+<div id="slide" class="W100"><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSxTuk-2gx2ACknbDz0pPGaUrtklhc3EED07q6lkpL3hcEcHRwAOlil42qWTSH44jlwEv12iFUVQI1q/embed?start=true&amp;loop=false&amp;delayms=3000" width="960" height="569" frameborder="0" allowfullscreen="allowfullscreen"></iframe><br />
+<p>&nbsp;</p><br />
+<a href="#video">en video</a></div><br />
+<div id="video" class="W100"><br />
+<p><iframe title="YouTube video player" src="https://www.youtube.com/embed/t8b9f5M9yoY" width="886" height="498" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p><br />
+</div><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h2 dir="ltr">Le binaire en informatique</h2><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">Lorsque votre<a href="http://codeur-pro.fr/comment-fonctionne-un-ordinateur/"> processeur</a>, qui est le cerveau du PC, vas traiter les instructions pour faire tourner vos programmes, il vas manipuler des 0 et des 1. De m&ecirc;me, tout ce qui est stock&eacute; sur notre ordinateur est stock&eacute; sous forme binaire. Donc oui, vos photos, vos vid&eacute;os, vos fichiers texte, tout ce qui est sur votre ordinateur est en r&eacute;alit&eacute; repr&eacute;sent&eacute; en m&eacute;moire par une suite de 0 et de 1.</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr"><img src="https://lh6.googleusercontent.com/ZhYDnc0KFq5ykr2yNjIVKZRK19aCXJf9C8nEqjJQC6DvIa-JJLEUK7fx_RhFIvwcNqUYQ6vHmFy6Cpf6KBo4p5QRBB3OqOx5sIwKuWq1HVkVMiGTjkvH7paBLHC5bInklXsgAFCY" alt="Ordinateur et binaire" width="602" height="269"></h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">On appelle cela le langage binaire ou en base 2 car il n&rsquo;y a que 2 possibilit&eacute;s 0 ou 1. C&rsquo;est le langage qu&rsquo;utilise les diff&eacute;rents composants de votre ordinateur pour communiquer entre eux et travailler.</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">A ce stade, vous allez vous dire que les d&eacute;veloppeurs sont vraiment des gens perch&eacute;s et qui aiment se complexifier la vie. Et bien d&eacute;trompez vous, un bon d&eacute;veloppeur est avant tout faignant ou plus exactement il cherche &agrave; faire des choses simples et efficaces. Le binaire est super simple et basique, il n&rsquo;y a que 2 &eacute;tats 1 et 0, vrai ou faux</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">De plus si on regarde de quoi est constitu&eacute; un processeur, par exemple, et bien vous allez voir qu&rsquo;il est compos&eacute; de plusieurs Milliards de transistors. Mais un transistor c&rsquo;est quoi? et bien pour simplifier c&rsquo;est une sorte d&rsquo;interrupteur command&eacute; &eacute;lectriquement. Quand il laisse passer le courant on dit que cela correspond au 1 alors que si le courant ne passe pas, cela correspond au 0. Il n&rsquo;y a que deux &eacute;tats possibles ce qui correspond &agrave; notre bon vieux binaire.</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr"><img src="https://lh4.googleusercontent.com/IF8VdpH5O8jFoWB88w-QjxHr5dwc00nF1mxphQJF5aX-S5mgdMAfAggdLqftCzB_k9LiYNvBgD8vPm_pR3slsZux0rT6KODvbJHdh2pDVafQuKcEVwQTlWqmIqELCrLjM474ZQW3" alt="Binaire et transistor" width="602" height="200"></h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h2 dir="ltr">Binaire et repr&eacute;sentation</h2><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<div dir="ltr" align="left"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br />
+<table><colgroup><col width="488"><col width="82"><col width="32"></colgroup><br />
+<tbody><br />
+<tr><br />
+<td><br><br><br><br><br />
+<h1 dir="ltr">Langages interpr&eacute;t&eacute;s et langages compil&eacute;s</h1><br />
+</td><br />
+<td><br><br><br><br />
+<p dir="ltr"><img title="Imprimer" src="https://lh4.googleusercontent.com/DMAfeljsrKo-6ImHU1rrymi4vXYdMV_l0d-KIhQV0MD00qceTYFShlBxsktYQ2q3G16RCZfGezhZuEVey-rSNdZCiai13XyvjVeTiJ9NQvQpQm7cozxfAijc9qSgMZ0O-IzYs8cS" width="32" height="32"></p><br />
+</td><br />
+<td>&nbsp;</td><br />
+</tr><br />
+</tbody><br />
+</table><br />
+</div><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">On peut distinguer deux grands types de langages : les langages interpr&eacute;t&eacute;s et les langages compil&eacute;s. Pour les langages support&eacute;s sur le site on a :</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p><br><br></p><br />
+<p>&nbsp;</p><br />
+<p><br><br><br></p><br />
+<p><br><br><br><br></p><br />
+<ul><br />
+<ul><br />
+<ul><br />
+<ul><br />
+<li dir="ltr" aria-level="1"><br><br><br><br />
+<p dir="ltr" role="presentation">langages interpr&eacute;t&eacute;s : Java (+ JavaScool) et Python ;</p><br />
+</li><br />
+</ul><br />
+</ul><br />
+</ul><br />
+</ul><br />
+<p><br><br><br><br></p><br />
+<p><br><br><br></p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p><br><br><br></p><br />
+<p><br><br><br><br></p><br />
+<ul><br />
+<ul><br />
+<ul><br />
+<ul><br />
+<li dir="ltr" aria-level="1"><br><br><br><br />
+<p dir="ltr" role="presentation">langages compil&eacute;s : C, C++, Pascal et OCaml.</p><br />
+</li><br />
+</ul><br />
+</ul><br />
+</ul><br />
+</ul><br />
+<p><br><br><br><br></p><br />
+<p><br><br><br></p><br />
+<p>&nbsp;</p><br />
+<p><br><br></p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h3 dir="ltr">Langages interpr&eacute;t&eacute;s</h3><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Dans ces langages, le code source (celui que vous &eacute;crivez) est interpr&eacute;t&eacute;, par un logiciel qu'on appelle interpr&eacute;teur. Celui-ci va utiliser le code source et les donn&eacute;es d'entr&eacute;e pour calculer les donn&eacute;es de sortie :</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr"><img src="https://lh5.googleusercontent.com/hy94Y4gdyEs5r6DiSzDcN7uXOLRXdGGXTbJlqj6KEU6DPcMQC2lEDccdOsOYb358uLqfxAJkrLpzQglXsnrXxcKuwTZDnFj6ZUutNP1mBVhMSKoXjFrfcg5V2XU-qg2VZBIpFl3T" alt="Principe d'un langage interpr&eacute;t&eacute;" width="543" height="363"></p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">L'interpr&eacute;tation du code source est un processus &laquo; pas &agrave; pas &raquo; : l'interpr&eacute;teur va ex&eacute;cuter les lignes du code une par une, en d&eacute;cidant &agrave; chaque &eacute;tape ce qu'il va faire ensuite.</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h3 dir="ltr">Langages compil&eacute;s</h3><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Dans ces langages, le code source (celui que vous &eacute;crivez) est tout d'abord compil&eacute;, par un logiciel qu'on appelle compilateur, en un code binaire qu'un humain ne peut pas lire mais qui est tr&egrave;s facile &agrave; lire pour un ordinateur. C'est alors directement le syst&egrave;me d'exploitation qui va utiliser le code binaire et les donn&eacute;es d'entr&eacute;e pour calculer les donn&eacute;es de sortie :</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr"><img title="Principe d'un langage compil&eacute;" src="https://lh6.googleusercontent.com/kk_2XTUgyKRK0zHOQzYvQof-T7h13U8XhNvG0qav2h0j5VsXn4LqlcsXXFVDa7veoUrzsXHoWNBHVUZNTy3c2n2m7Q9smwakUAhr7q00HLWmg-eOLiP4IoQUa5XMxHLi-5Oy_Mht" width="543" height="515"></p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h3 dir="ltr">Principales diff&eacute;rences</h3><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">On pourrait discuter tr&egrave;s longtemps des avantages et inconv&eacute;nients des diff&eacute;rents types de langages mais les deux points qui sont les plus int&eacute;ressants sont les suivants :</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p><br><br></p><br />
+<p>&nbsp;</p><br />
+<p><br><br><br></p><br />
+<p><br><br><br><br></p><br />
+<ul><br />
+<ul><br />
+<ul><br />
+<ul><br />
+<li dir="ltr" aria-level="1"><br><br><br><br />
+<p dir="ltr" role="presentation">Dans un langage interpr&eacute;t&eacute;, le m&ecirc;me code source pourra marcher directement sur tout ordinateur. Avec un langage compil&eacute;, il faudra (en g&eacute;n&eacute;ral) tout recompiler &agrave; chaque fois ce qui pose parfois des soucis.</p><br />
+</li><br />
+</ul><br />
+</ul><br />
+</ul><br />
+</ul><br />
+<p><br><br><br><br></p><br />
+<p><br><br><br></p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p><br><br><br></p><br />
+<p><br><br><br><br></p><br />
+<ul><br />
+<ul><br />
+<ul><br />
+<ul><br />
+<li dir="ltr" aria-level="1"><br><br><br><br />
+<p dir="ltr" role="presentation">Dans un langage compil&eacute;, le programme est directement ex&eacute;cut&eacute; sur l'ordinateur, donc il sera en g&eacute;n&eacute;ral plus rapide que le m&ecirc;me programme dans un langage interpr&eacute;t&eacute;.</p><br />
+</li><br />
+</ul><br />
+</ul><br />
+</ul><br />
+</ul><br />
+<p><br><br><br><br></p><br />
+<p><br><br><br></p><br />
+<p>&nbsp;</p><br />
+<p><br><br></p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">&nbsp;</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">Les ordinateurs sont devenus courants dans nos vies. Pr&eacute;sents &agrave; notre travail mais aussi chez nous. Mais au fait, de quoi se composent-ils&thinsp;? Et &agrave; quoi ressemblera l'ordinateur du futur&thinsp;?</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">&nbsp;</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">Un<a href="https://www.futura-sciences.com/codespromo/hp"> ordinateur</a> est une machine capable d'ex&eacute;cuter un programme, litt&eacute;ralement &laquo;&thinsp;&eacute;crit &agrave; l'avance&thinsp;&raquo;, c'est-&agrave;-dire une s&eacute;rie d'op&eacute;rations. Ce programme est enregistr&eacute; dans une m&eacute;moire et les op&eacute;rations sont r&eacute;alis&eacute;es par un<a href="https://www.futura-sciences.com/tech/actualites/securite-processeurs-intel-deux-failles-securite-touchent-aussi-puces-amd-arm-69737/"> processeur</a>. Ces op&eacute;rations agissent sur des donn&eacute;es, elles aussi enregistr&eacute;es dans la m&eacute;moire.</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h2 dir="ltr">Composition et fonctionnement d&rsquo;un ordinateur</h2><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">Actuellement, les<a href="https://www.futura-sciences.com/tech/dossiers/informatique-proteger-son-ordinateur-conseils-astuces-627/"> ordinateurs</a> sont &eacute;lectroniques.<a href="https://www.futura-sciences.com/tech/definitions/informatique-processeur-594/"> Processeur</a> et m&eacute;moire sont compos&eacute;s de transistors, dont chacun se pr&eacute;sente sous deux &eacute;tats, &agrave; l'instar d'une<a href="https://www.futura-sciences.com/maison/definitions/maison-porte-10855/"> porte</a> (on parle de &laquo;&thinsp;portes logiques&thinsp;&raquo;) qui peut &ecirc;tre ouverte ou ferm&eacute;e : l'information (op&eacute;rations et donn&eacute;es) est cod&eacute;e sous forme de<a href="https://www.futura-sciences.com/tech/definitions/informatique-code-binaire-11934/"> nombres binaires</a>, qui ne comportent que des 0 et des 1.</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">Le processeur d'aujourd'hui, vrai petit ordinateur, comporte aussi une bonne quantit&eacute; de m&eacute;moire et il a le plus souvent plusieurs &laquo;&thinsp;c&oelig;urs&thinsp;&raquo;, c'est-&agrave;-dire des unit&eacute;s de calcul.</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">&nbsp;</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr"><img title="Vue de l&rsquo;int&eacute;rieur d&rsquo;un PC (Personal Computer). &copy; Studio M, fotolia" src="https://lh5.googleusercontent.com/AYXSqHnMX1Jryb7ou_3-C641BxMNBVYG6g_GLkT0gvMzIrzUS8OXPcYCAoZ7AhGTYgFzQQqBHjUZs6zGnThjuZCYqPFcAqUlgYvV4Kiie7zQat7MLXGFz9ACRTUIKYep_rygPCd5" alt="Vue de l&rsquo;int&eacute;rieur d&rsquo;un PC (Personal Computer). &copy; Studio M, fotolia" width="602" height="401"></h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">Vue de l&rsquo;int&eacute;rieur d&rsquo;un PC (Personal Computer). &copy; Studio M, fotolia&nbsp;</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">&nbsp;</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h2 dir="ltr">L'ordinateur minimal</h2><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h3 dir="ltr">La m&eacute;moire et le processeur</h3><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">Un ordinateur comme le votre ou le mien est relativement complexe. Il est fait de plusieurs composants (carte r&eacute;seau, disque dur, m&eacute;moire, moniteur&hellip;) mais en fait, un ordinateur minimal n'a besoin que de deux choses pour calculer : de la m&eacute;moire et d'un processeur.</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">La m&eacute;moire contient des nombres et le processeur va effectuer des calculs sur ces nombres. Le processeur est donc le &laquo; cerveau &raquo; de l'ordinateur.</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr"><img src="https://lh3.googleusercontent.com/hHAti51yqdNzpthdPGB9VNrKNZoBuy71AaZoUQFp3hIkUrFc4V5doRrt6yIHM2G92fTQiENhkXiepRVSgFloB2x0BzNbvE9-J3PW3zfKeOYdOjTtwBezeuWpeo2iRdEj261kCCG9" alt="processeur et m&eacute;moire" width="602" height="161"></h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">Comme vous voyez, les donn&eacute;es se d&eacute;placent : ils transitent de la m&eacute;moire vers le processeur et retournent ensuite dans la m&eacute;moire.</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">Le chemin emprunt&eacute; par les donn&eacute;es est appel&eacute; le bus. Si vous ouvrez votre ordinateur, vous pouvez voir des nappes de c&acirc;bles : ce sont un type de bus.</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h2 dir="ltr">Les programmes</h2><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">Pour servir &agrave; quelque chose, l'ordinateur doit recevoir des donn&eacute;es sur lesquelles il va calculer. Ces donn&eacute;es sont fournies par un programme</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">Un programme, c'est une suite d'instructions &eacute;l&eacute;mentaires, grav&eacute;es en dur sur un disque ou dans la mat&eacute;riel. Quand on allume l&rsquo;ordinateur, les transistors recoivent un 1 ou 0 en fonction du programme grav&eacute; dans la m&eacute;moire.</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">Chaque cycle d'horloge permet d'avancer un peu plus dans les calculs.</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">D&egrave;s que l&rsquo;ordinateur est allum&eacute;, il calcule. En g&eacute;n&eacute;ral, les premiers calculs sont l&agrave; pour permettre de lire d&rsquo;autres programmes, et ainsi de suite : un simple bouton on/off permet alors de charger en m&eacute;moire des milliard de bits.</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">&nbsp;</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h1 dir="ltr">Les algorithmes</h1><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">D&eacute;finition: Un algorithme est une suite d&rsquo;instructions d&eacute;taill&eacute;es qui conduit &agrave; un r&eacute;sultat donn&eacute;.</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Par exemple, une recette de cuisine est un algorithme qui permet d'obtenir le plat voulu. Un protocole est un algorithme qui permet de r&eacute;aliser une exp&eacute;rience en chimie.</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Exemple en math&eacute;matiques d'un algorithme donnant le carr&eacute; d&rsquo;un nombre:</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p><br><br></p><br />
+<p>&nbsp;</p><br />
+<p><br><br><br></p><br />
+<p><br><br><br><br></p><br />
+<ul><br />
+<ul><br />
+<ul><br />
+<ul><br />
+<li dir="ltr" aria-level="1"><br><br><br><br />
+<p dir="ltr" role="presentation">Demander un nombre.</p><br />
+</li><br />
+</ul><br />
+</ul><br />
+</ul><br />
+</ul><br />
+<p><br><br><br><br></p><br />
+<p><br><br><br></p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p><br><br><br></p><br />
+<p><br><br><br><br></p><br />
+<ul><br />
+<ul><br />
+<ul><br />
+<ul><br />
+<li dir="ltr" aria-level="1"><br><br><br><br />
+<p dir="ltr" role="presentation">Le multiplier par lui-m&ecirc;me.</p><br />
+</li><br />
+</ul><br />
+</ul><br />
+</ul><br />
+</ul><br />
+<p><br><br><br><br></p><br />
+<p><br><br><br></p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p><br><br><br></p><br />
+<p><br><br><br><br></p><br />
+<ul><br />
+<ul><br />
+<ul><br />
+<ul><br />
+<li dir="ltr" aria-level="1"><br><br><br><br />
+<p dir="ltr" role="presentation">Afficher le r&eacute;sultat.</p><br />
+</li><br />
+</ul><br />
+</ul><br />
+</ul><br />
+</ul><br />
+<p><br><br><br><br></p><br />
+<p><br><br><br></p><br />
+<p>&nbsp;</p><br />
+<p><br><br></p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Les instructions doivent &ecirc;tre compr&eacute;hensibles par l&rsquo;ex&eacute;cutant:</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p><br><br></p><br />
+<p>&nbsp;</p><br />
+<p><br><br><br></p><br />
+<p><br><br><br><br></p><br />
+<ul><br />
+<ul><br />
+<ul><br />
+<ul><br />
+<li dir="ltr" aria-level="1"><br><br><br><br />
+<p dir="ltr" role="presentation">Pour un &ecirc;tre humain, on utilise le langage courant (langue maternelle).</p><br />
+</li><br />
+</ul><br />
+</ul><br />
+</ul><br />
+</ul><br />
+<p><br><br><br><br></p><br />
+<p><br><br><br></p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p><br><br><br></p><br />
+<p><br><br><br><br></p><br />
+<ul><br />
+<ul><br />
+<ul><br />
+<ul><br />
+<li dir="ltr" aria-level="1"><br><br><br><br />
+<p dir="ltr" role="presentation">Pour une machine, on utilise un langage de programmation (Scratch, Python, Java&hellip;).</p><br />
+</li><br />
+</ul><br />
+</ul><br />
+</ul><br />
+</ul><br />
+<p><br><br><br><br></p><br />
+<p><br><br><br></p><br />
+<p>&nbsp;</p><br />
+<p><br><br></p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">l&rsquo;informatique et le codage :</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Le code informatique est tr&egrave;s important dans le monde num&eacute;rique. Presque tous les appareils &eacute;lectroniques que nous utilisons d&eacute;pendent du code. La fa&ccedil;on dont les choses fonctionnent peut sembler assez d&eacute;routante, mais quand nous le d&eacute;composons, cela est en faite assez simple.</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Les personnes qui cr&eacute;ent du code sont appel&eacute;es programmeurs, codeurs d&eacute;veloppeurs. Ils travaillent tous avec des ordinateurs pour cr&eacute;er des sites Web, des applications ou encore des jeux vid&eacute;o.</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h2 dir="ltr">Qu&rsquo;est-ce que le code ?</h2><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Les ordinateurs ont leur propre langage appel&eacute; &laquo; Code machine &raquo; qui leur dit quoi faire. Comme vous pouvez le constater avec l&rsquo;exemple ci-dessous, cela n&rsquo;a pas beaucoup de sens pour les humains&hellip;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr"><img src="https://lh5.googleusercontent.com/nY_zWZnpOwU_eLXxsVGfbvDakjQCmZbB1riAj9lARnpUyqq4Kgk-pbXh24MYB3DQi-PoDkM95Zduv6QpJRUaqACggY9TY7zurW_h46nNsxPk6c8ta2CTUefb_YuUi5EwojAJ9Yj9" width="311" height="267"></p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Exemple de code machine</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<h2 dir="ltr">Le code informatique, c&rsquo;est quoi ?</h2><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Coder, c&rsquo;est donner des instructions simples &agrave; son ordinateur dans son langage propre afin d'int&eacute;ragir avec lui pour qu'il ex&eacute;cute une fonction. Pour cela, pas besoin de parler en s&eacute;rie de chiffres complexes : on passe par un langage de programmation qui traduit en langage "machines". C'est &agrave; l'aide du code informatique que l'on con&ccedil;oit par exemple des sites internet, des<a href="https://www.magicmaman.com/,le-jeu-video-un-outil-educatif-pour-vos-enfants,129,19544.asp"> jeux vid&eacute;os</a>, des<a href="https://www.magicmaman.com/,applications-smartphones-pour-maman-et-bebe,58,1818541.asp"> applications mobiles</a> ou m&ecirc;me des robots.</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Pour d&eacute;crire un algorithme informatique, on utilise le langage courant; mais de mani&egrave;re &agrave; montrer la logique du programme. Le langage est &agrave; mi-chemin du langage courant et du langage de programmation. Il est appel&eacute; pseudo-code.</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Scratch est un langage de programmation proche d'un pseudo-code. Ce qui facilite sont utilisation par les d&eacute;butants.</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">le pseudo code c&rsquo;est quoi ?</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Un pseudo-code (&eacute;galement appel&eacute; LDA pour Langage de Description d'Algorithmes) fait r&eacute;f&eacute;rence &agrave; une syntaxe ressemblant &agrave; un code, g&eacute;n&eacute;ralement utilis&eacute;e pour indiquer aux humains le fonctionnement d'une syntaxe de code ou pour illustrer la conception d'un &eacute;l&eacute;ment d'architecture de code Cela ne fonctionnera pas si vous essayez de l'ex&eacute;cuter comme un v&eacute;ritable code</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">En<a href="https://fr.wikipedia.org/wiki/Programmation"> programmation</a>, le pseudo-code, &eacute;galement appel&eacute; LDA (pour Langage de Description d'Algorithmes) est une fa&ccedil;on de d&eacute;crire un<a href="https://fr.wikipedia.org/wiki/Algorithmique"> algorithme</a> en langage presque<a href="https://fr.wikipedia.org/wiki/Langage_naturel"> naturel</a>, sans r&eacute;f&eacute;rence &agrave; un<a href="https://fr.wikipedia.org/wiki/Langage_de_programmation"> langage de programmation</a> en particulier.</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">On peut citer les principaux mots cl&eacute;s qui font l'objet d'un relatif consensus (r&eacute;f.<a href="http://users.csc.calpoly.edu/~jdalbey/SWE/pdl_std.html"> http://users.csc.calpoly.edu/~jdalbey/SWE/pdl_std.html</a> [<a href="https://archive.wikiwix.com/cache/?url=http%3A%2F%2Fusers.csc.calpoly.edu%2F~jdalbey%2FSWE%2Fpdl_std.html">archive</a>])</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">- L'affectation repr&eacute;sent&eacute;e par le signe: =</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">- L'alternative repr&eacute;sent&eacute;e par la structure: SI (condition) ALORS (instruction) SINON (instruction)</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">- La r&eacute;p&eacute;tition: REPETER (nombre de fois) (instructions)</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">- La r&eacute;p&eacute;tition conditionnelle: TANTQUE (condition) FAIRE (instruction)</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">- La fonction: FONCTION (nom) (param&egrave;tres) (suite d'instruction)</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">- La s&eacute;quence d'instruction: DEBUT (instructions) FIN</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Il existe bien d'autres conventions mais en g&eacute;n&eacute;ral une douzaine de mots cl&eacute;s suffisent pour d&eacute;crire la plupart des algorithmes et les rendre compr&eacute;hensibles.</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Le pseudo code supporte la notation math&eacute;matique standard, les op&eacute;rateurs + - / *, les comparaisons &lt; = &gt;, et les fonctions habituelles abs, exp, sin, cos, etc.</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Dans la pratique les utilisateurs de pseudo code rajoutent quelques mots cl&eacute;s faciles &agrave; comprendre: LIRE, ECRIRE, CASE, etc.</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Cependant, l'informatique th&eacute;orique montre qu'il suffit des trois primitives SI ALORS, TANTQUE et DEBUT FIN pour d&eacute;crire tout algorithme.</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Il n'est donc pas n&eacute;cessaire de multiplier les &eacute;l&eacute;ments de pseudo code.</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">scratch :</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">Scratch est un langage de programmation graphique manipulable et ex&eacute;cutable par le logiciel de m&ecirc;me nom &agrave; vocation &eacute;ducative. Ainsi, Scratch est &agrave; la fois un environnement de d&eacute;veloppement et un moteur d'ex&eacute;cution du langage Scratch mais aussi un site web.</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr"><a href="https://scratch.mit.edu/">Scratch</a> est un langage de programmation sp&eacute;cialement con&ccedil;u pour les enfants &agrave; partir de 8 ans. Il a &eacute;t&eacute; cr&eacute;&eacute; par le MIT et am&eacute;lior&eacute; depuis 2003. De nombreuses universit&eacute;s am&eacute;ricaines l&rsquo;utilisent pour enseigner les fondements de l&rsquo;informatique (computer science). Nous allons faire nos premiers pas avec ce langage !</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr"><img src="https://lh6.googleusercontent.com/cM_E1cK7_HFvkPsflE4wu_QGEL_VBP7MzvApg3tjFgdQQwWDkek7Ske3hLmUq5H50qalpfecTGwh2RU_BFbNvrSK5tHGKienfLsN7XRckwHGFT60vqatoJFSTJesfAo6cWP9Wch5" width="602" height="404"></p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr"><a href="https://scratch.mit.edu/">Scratch</a> est un langage de programmation sp&eacute;cialement con&ccedil;u pour les enfants &agrave; partir de 8 ans. Il a &eacute;t&eacute; cr&eacute;&eacute; par le MIT et am&eacute;lior&eacute; depuis 2003. De nombreuses universit&eacute;s am&eacute;ricaines l&rsquo;utilisent pour enseigner les fondements de l&rsquo;informatique (computer science). Nous allons faire nos premiers pas avec ce langage !</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p>&nbsp;</p><br />
+<p dir="ltr">article en cours ()</p>

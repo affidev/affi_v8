@@ -1,3 +1,11 @@
+import tinymce from "tinymce";
+import 'tinymce/themes/silver';
+import 'tinymce/icons/default/icons';
+import 'tinymce/plugins/code';
+import 'tinymce/models/dom/model';
+import 'tinymce/plugins/image';
+import 'tinymce/langs/fr_FR';
+
 $(document).ready(function() {
 
 
@@ -9,20 +17,37 @@ $(document).ready(function() {
         website=$('.wb-inf-'),
         postar=$('#postar'),
         post=postar.data('post'),
-        incontenthtml=postar.data('content'),
         id=website.attr('data-idwb'),
         slug= website.attr('data-slugwb'),
         contenthtml,
-        editor = $('#editor'),
+        incontenthtml=postar.data('content'),
+       // editor = $('#editor'),
+        editor = $('#mytextarea'),
         datatoAjax=false;
 
+    tinymce.init({
+        selector: '#mytextarea',
+        menubar: false,
+        toolbar: 'styleselect bold italic alignleft aligncenter alignright bullist indent code image',
+        plugins: ['code','image'],
+        language:  'fr_FR',
+    });
 
+    let med = tinymce.get('mytextarea');
+/*
+    if(incontenthtml!==""){
+        // med.load()incontenthtml);
+        med.setContent(incontenthtml)
+    }
+
+ */
+    if(incontenthtml==="") contenthtml=false;
 
     //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    version développement : affi-v5.2  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     let  routeaddnews = '/member/wb/post/add-news-ajx',
          redirect = '/board/sucess/blog/show/'+id;
 
-    function initToolbarBootstrapBindings() {
+ /*   function initToolbarBootstrapBindings() {
 
         var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier','Courier New', 'Comic Sans MS', 'Helvetica','Impact','Lucida Grande','Lucida Sans','Tahoma','Times','Times New Roman','Verdana'],
              fontTarget = $('[title=Font]').siblings('.dropdown-menu');
@@ -47,6 +72,8 @@ $(document).ready(function() {
             $('#voiceBtn').hide();
         }
     }
+    */
+/*
     function showErrorAlert (reason, detail) {
         var msg='';
         if (reason==='unsupported-file-type') { msg = "Unsupported format " +detail; }
@@ -57,18 +84,19 @@ $(document).ready(function() {
             '<strong>File upload error</strong> '+msg+' </div>').prependTo('#alerts');
     }
 
-    initToolbarBootstrapBindings();
-    editor.wysiwyg({ fileUploadError: showErrorAlert} );
+ */
+
+   // initToolbarBootstrapBindings();
+  //  editor.wysiwyg({ fileUploadError: showErrorAlert} );
 
     //window.prettyPrint && prettyPrint();
-    if(incontenthtml!==""){
-        editor.html(incontenthtml);
-    }
+
     let tabfield={
             titrenews: $('#titrenews'),
             contentOne: $('#contentOne'),
     };
 
+    /*
     function updateTextareaHeight(input) {
         if (input !== null) {
             input.style.height = 'auto';
@@ -81,6 +109,10 @@ $(document).ready(function() {
     });
 
     updateTextareaHeight(document.getElementById('contentOne'));
+
+
+     */
+
 
     let propp =function(p){
         if(p){
@@ -135,8 +167,9 @@ $(document).ready(function() {
 
     let preparajax = function () {     // pour creation de news
         if (editor.length) {
-            editor.cleanHtml();
-            contenthtml = editor.html();
+           // editor.cleanHtml();
+
+            contenthtml = med.getContent();
         } else {
             contenthtml = false
         }

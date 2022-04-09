@@ -6,7 +6,7 @@ $(document).ready(function() {
         contenthtml,
         cpt=0,
         editor = $('#editor'),
-        taboffre={tx:"",id:"",idwb:idwb,promostat:false,content:"",etat:"neuf",promonat:"choice", more:false,calendar:false,prod:false,link:false,promo:false},
+        taboffre={tx:"",id:"",idwb:idwb,promostat:false,content:"",etat:"neuf",promonat:"choice", more:false,calendar:false,prod:false,link:false,promo:false, cat:""},
         collapseaffi=$('.colapsaffi'),
         offre=$('#initoffert').attr('data-taboffre'),
         datatoAjax=false;

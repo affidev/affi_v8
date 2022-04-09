@@ -1,12 +1,11 @@
 {% block body %}
-    <div class="_wb">
-        <div class="container-bo_v5">
-            {{ include('aff_customer/menu/'~agent~'/websitemenu.html.twig') }}
-            <section class="_wb-ospace">
-                <div class="head-wb-space"></div>
-                    <div id="postar" data-content="" data-post={{post}}></div>
-                    {{ include('aff_websiteadmin/post/form/formaddarticleadmin.html.twig') }}
-
+<div class="_wb">
+    <div class="container-bo_v5">
+        {{ include('aff_customer/menu/'~agent~'/websitemenu.html.twig') }}
+        <section class="_wb-ospace">
+            <div class="head-wb-space"></div>
+                <div id="postar" data-content="" data-post={{post}}></div>
+                {{ include('aff_websiteadmin/post/form/formaddarticleadmin.html.twig') }}
         </section>
     </div>
 </div>

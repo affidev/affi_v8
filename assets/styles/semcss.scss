@@ -1837,6 +1837,21 @@ textarea:focus{
 .afnav-link-brd a{
   color: var(--goaffi);
 }
+.afnav-link-brd_o{
+  display: flex;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  min-height: 4.5rem;
+  border-bottom: 0.125rem solid transparent;
+  border-bottom-color: orangered;
+  -webkit-box-align: baseline;
+  align-items: baseline;
+  margin-right: 1.5rem;
+}
+.afnav-link-brd_o a{
+  color: #ffffff;
+}
 .afnav-alk{
   display: inline-flex;
   transition: color 200ms cubic-bezier(0.645,0.045,0.355,1),box-shadow 200ms cubic-bezier(0.645,0.045,0.355,1);
@@ -2439,6 +2454,7 @@ textarea:focus{
   border: solid 0.5px #f3f2f2;
   border-radius: 5px;
   position: relative;
+  z-index: 505;
 }
 .wp-post{
   width: 100%;
