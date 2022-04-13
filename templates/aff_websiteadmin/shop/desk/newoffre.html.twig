@@ -2,11 +2,30 @@
     <div class="_wb">
         <div class="container-bo_v5">
             {{ include('aff_customer/menu/'~agent~'/websitemenu.html.twig') }}
-            <section class="_wb-ospace">
+            <div class="_wb-ospace">
                 <div class="head-wb-space">
                 </div>
-            {{ include('aff_websiteadmin/shop/form/formaddoffre.html.twig') }}
-            </section>
+                <div class="head_search">
+                    <div class="af_flx-C">
+                        {#   <x-website class="content_relat-search" city="{{ city }}"></x-website> #}
+                        <div class="container-text-info">
+                            <div class="text-info">
+                                <div class="info-af">
+                                    <button class="btn-street text-switch shtext-switch bulleswith" data-textswitch="tgl_0" data-action="nh">Article</button>
+                                    <span class="text-diveder">  </span>
+                                    <button class="btn-street text-switch bulleswith" data-textswitch="tgl_1" data-action="sh">Atelier</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="tglaff" id="tgl_0">
+                     {{ include('aff_websiteadmin/shop/form/formaddoffre.html.twig') }}
+                </section>
+                <section class="tglaff" id="tgl_1" style="display: none">
+                    {{ include('aff_websiteadmin/shop/form/formaddworkshop.html.twig') }}
+                </section>
+            </div>
         </div>
     </div>
 {% endblock body%}

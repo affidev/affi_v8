@@ -1,3 +1,12 @@
+import tinymce from "tinymce";
+import 'tinymce/themes/silver';
+import 'tinymce/icons/default/icons';
+import 'tinymce/plugins/code';
+import 'tinymce/models/dom/model';
+import 'tinymce/plugins/image';
+import 'tinymce/langs/fr_FR';
+
+
 $(document).ready(function() {
 
     let btnpost = $('#post-news'),
@@ -19,6 +28,15 @@ $(document).ready(function() {
     let  routeaddnews = '/member/marketplace/shop/add-promo-ajx',
          redirect = '/board/sucess/shop/show/'+idwb;
 
+
+    tinymce.init({
+        selector: '#mytextarea',
+        menubar: false,
+        toolbar: 'styleselect bold italic alignleft aligncenter alignright bullist indent code image',
+        plugins: ['code','image'],
+        language:  'fr_FR',
+    });
+    let med = tinymce.get('mytextarea');
 
     let propp =function(p){
         if(p){
@@ -106,7 +124,7 @@ $(document).ready(function() {
         e.preventDefault();
         calendara.affCalendar("addday", e)
     });
-
+/*
     function initToolbarBootstrapBindings() {
         /*
         var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Helvetica', 'Impact', 'Lucida Sans', 'Times New Roman', 'Verdana'],
@@ -114,7 +132,9 @@ $(document).ready(function() {
         $.each(fonts, function (idx, fontName) {
             fontTarget.append($('<li><a class="dropdown-item" data-edit="fontName ' + fontName +'" style="font-family:\''+ fontName +'\'">'+fontName + '</a></li>'));
         });
-        */
+
+
+
         if ("onwebkitspeechchange"  in document.createElement("input")) {
             var editorOffset = editor.offset();
             $('#voiceBtn').css('position','absolute').offset({top: editorOffset.top, left: editorOffset.left+editor.innerWidth()-35});
@@ -122,6 +142,8 @@ $(document).ready(function() {
             $('#voiceBtn').hide();
         }
     }
+
+ */
 
     function showErrorAlert (reason, detail) {
         var msg='';
@@ -132,9 +154,13 @@ $(document).ready(function() {
         $('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>'+
             '<strong>File upload error</strong> '+msg+' </div>').prependTo('#alerts');
     }
+
+    /*
     initToolbarBootstrapBindings();
     editor.wysiwyg({ fileUploadError: showErrorAlert} );
     window.prettyPrint && prettyPrint();
+
+     */
 
     (function(){
         if(taboffre.content!==""){

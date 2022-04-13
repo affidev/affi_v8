@@ -4,18 +4,6 @@
     <form class="form-elastic" enctype="multipart/form-data" method="post" name="fileinfo">
 
         <div class="content-form-post">
-            {#
-            <div class="white-tab">
-                <select id="store" style="/* display: none; */">
-                    <option value="16">Atelier</option>
-                    <option value="9">Produit</option>
-                    <option value="26">Service</option>
-                    <option value="13">Trock</option>
-                    <option value="18">data</option>
-                </select>
-            </div>
-            #}
-
             <div class="white-tab">
                 <label for="titreoffre">Intitulé</label>
                 <input type="text" class="form-affi" name="titreoffre" id="titreoffre" placeholder="titre....." required="required">
@@ -36,22 +24,10 @@
             </div>
         </div>
 
-        <div class="content-form-post">
-            <h5>information sur l'etat du produit</h5>
-            <div class="white-tab _fx-R _fx-center">
-                <div class="rad-af">
-                    <input type="radio" required class="" name="etat" id="carac1" value="occasion" {# {{ etat is same as("occasion")?"checked":"" }} #}>
-                    <label for="carac1">occasion</label>
-                </div>
-                <div class="rad-af">
-                    <input type="radio" required class="" name="etat" id="carac2" value="neuf" {# {{ etat is same as("neuf")?"checked":"" }} #}>
-                    <label for="carac2">neuf</label>
-                </div>
-            </div>
-        </div>
         <div class="white-tab _fx-R _fx-center">
-            <div class="op-avanc colapsaffi" data-afficolapse="more" data-toggle="collapse" data-target="#collapseOpmore" aria-expanded="false" aria-controls="collapseOpmore"><i class="fastrong fa fa-caret-square-o-down" aria-hidden="true"></i> plus d'informations (optionnel)</div>
-            <div class="collapse" id="collapseOpmore">
+            <div class="op-avanc colapsaffi" data-afficolapse="more" data-toggle="collapse" data-target="#collapseOpmore2" aria-expanded="false" aria-controls="collapseOpmore2">
+                <i class="fastrong fa fa-caret-square-o-down" aria-hidden="true"></i> date et information sur le déroulement de l'atelier</div>
+            <div class="collapse" id="collapseOpmore2">
                 <div class="card-form">
 
                     <div class="form-cube">
@@ -82,7 +58,9 @@
             </div>
         </div>
         <input type="hidden" name="token" value="{{ csrf_token('edit-offre') }}"/>
-        <input type="hidden" name="catagory" value="offre"/>
+        <input type="hidden" name="catagory" value="workshop"/>
+        <input type="hidden" name="etat" id="carac1" value="" {# {{ etat is same as("occasion")?"checked":"" }} #}>
+
     </form>
 
     <div class="content-form-post">
