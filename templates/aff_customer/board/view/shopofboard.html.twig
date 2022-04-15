@@ -1,11 +1,10 @@
 <div class="flrow">
     <div class="fx-cub ii_cub2">
         <div class="O_list-cube">
-
             <div class="pos-incub-i">
-                  <a class="bt-newmod" href="{{ path('new_offre',{'id':board.id}) }}">Nouvel article</a>
+                <a class="bt-newmod" href="{{ path('new_offre',{'id':board.id}) }}">Nouvel article</a>
+                <a class="bt-newmod" href="{{ path('new_workshop',{'id':board.id}) }}">Nouvel atelier</a>
             </div>
-
             <div class="list-incub">
                   {%  for tab in shops %}
                         {%  if tab.media.imagejpg[0] is defined  %}

@@ -47,6 +47,7 @@ Encore
     .addEntry('cargo', './assets/js/aff_cargo.js')
     .addEntry('calendara', './assets/js/aff_calendara.js')
     .addEntry('offre', './assets/js/aff_offre.js')
+    .addEntry('workshop', './assets/js/aff_workshop.js')
     .addEntry('buller','./assets/js/aff_addbulle.js')
     .addEntry('calendaraffi', './assets/js/plug_calendar.js')
     .addEntry('addentity', './assets/elements/indexentity.js')

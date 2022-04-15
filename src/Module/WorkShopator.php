@@ -1,14 +1,14 @@
 <?php
-// derniere mise a jour : 19/10/21
+// derniere mise a jour : 15/04/22
 
 namespace App\Module;
+
 
 use App\Entity\Marketplace\DescriptProduct;
 use App\Entity\Marketplace\Noticeproducts;
 use App\Entity\Marketplace\Offres;
 use App\Entity\Media\Imagejpg;
 use App\Entity\Media\Media;
-use App\Entity\Media\Pdfstore;
 use App\Entity\Module\TabpublicationMsgs;
 use App\Entity\UserMap\Taguery;
 use App\Lib\MsgAjax;
@@ -18,11 +18,10 @@ use App\Repository\Entity\TagueryRepository;
 use App\Util\CalDateAppointement;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\NonUniqueResultException;
 
 
 
-class Offrator
+class WorkShopator
 {
 
     private EntityManagerInterface $em;
@@ -32,7 +31,7 @@ class Offrator
     private OffresRepository $repoffre;
 
     /**
-     * Postar constructor.
+     * WorkShopator constructor.
      * @param EntityManagerInterface $entityManager
      * @param TagueryRepository $tagueryRepository
      * @param OffresRepository $offrerepro
@@ -51,7 +50,7 @@ class Offrator
      * @param $offre Offres
      * @return array
      */
-    public function preEditOffre(Offres $offre): array
+    public function preEditWorkShop(Offres $offre): array
     {
         $taboffre=[];
         $taboffre['id']=$offre->getId();
@@ -92,7 +91,7 @@ class Offrator
     /**
      * @return array
      */
-    public function preNewOffre(): array
+    public function preNewWorkShop(): array
     {
         $taboffre=[];
         $taboffre['id']=0;
@@ -115,9 +114,8 @@ class Offrator
      * @param $q
      * @param $tab
      * @return array
-     * @throws NonUniqueResultException
      */
-    public function newOffre($dispatch, $board, $q, $tab): array
+    public function newWorkShop($dispatch, $board, $q, $tab): array
     {
         $taboffre = get_object_vars($tab);
 
@@ -249,7 +247,7 @@ class Offrator
      * @param Offres $offres
      * @return array
      */
-    public function publiedOffres($idoffre, Offres $offres): array
+    public function publiedWorkShop($idoffre, Offres $offres): array
     {
         foreach ($offres as $el){
             if($el->getId() == $idoffre){
@@ -272,58 +270,11 @@ class Offrator
      * @param Offres $offres
      * @return array
      */
-    public function publiedOneOffre(Offres $offres): array
+    public function publiedOneWorkShop(Offres $offres): array
     {
         $offres->setPublied(!$offres->getPublied());
         $this->em->persist($offres);
         $this->em->flush();
         return MsgAjax::MSG_POSTOK;
     }
-
-
-
-    /*-------------------------------------------------------------------------------------------------------------*/
-
-    protected function Addpdf()
-    {
-        if ($this->pdf) {
-            $options = [
-                'file' => $this->pdf,
-                "type" => "pdf",
-                "name" => ""];
-            $this->createmediasPdf($options);
-        }
-        return true;
-    }
-
-    protected function createmediasPdf($options)
-    { //todo n'edst pas operationnel
-        $storepdf = new Pdfstore;
-        $storepdf->setPdf($options['file']);
-        $this->em->persist($storepdf);
-        $this->em->flush();
-        $path = $this->getRootDir($storepdf);
-
-        $imagick = new Imagick($path);
-        $pathconvers = __DIR__ . '/../../public/converspdf/converted.jpg';
-        $imagick->setImageFormat("png");
-        //$imagick->readImage($pdffile);
-        $imagick->writeImages($pathconvers, true);
-
-        $options['filesource'] = $pathconvers;
-        $imagejpg = new Imagejpg();
-        $imagejpg->setDirFile($options);
-        $this->media->setPdfstore($storepdf);
-        $this->media->setExtension('pdf');
-        $this->media->addImagejpg($imagejpg);
-        $this->em->persist($this->media);
-        return true;
-    }
-
-    protected function getRootDir($storepdf)
-    {
-        // On retourne le chemin relatif vers l'image pour notre code PHP
-        return __DIR__ . '/../../public/' . $storepdf->getPdfPath();
-    }
-
 }
